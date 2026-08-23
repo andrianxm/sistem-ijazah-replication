@@ -30,6 +30,9 @@ Menyediakan bukti terukur (*empirical evidence*) dari pengujian yang dibahas dal
 ### 📁 `4_plotting_scripts`
 Berisi skrip Python (menggunakan `matplotlib` dan `pandas`) yang digunakan untuk mengonversi data dari folder `3_raw_measurements` menjadi grafik yang dipublikasikan di dalam naskah (misalnya `plot_figure5_latency.py`).
 
+### 📁 `5_test_scripts`
+Berisi *script* Node.js (seperti `uji-matriks.cjs`, `uji-cascading-revoke.cjs`, dll.) yang menjadi mesin utama penggerak pengujian. Skrip inilah yang membuktikan bahwa seluruh logika pengujian (seperti manipulasi *stale state* atau skenario *issuance-mismatch*) dilakukan secara otomatis, deterministik, dan sengaja dirancang sedemikian rupa sejak awal eksekusi, bukan ditafsirkan setelah hasil keluar.
+
 ---
 
 ## 🚀 Cara Menjalankan Ulang Pengujian
