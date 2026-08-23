@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 STAGE_ORDER = [
     "F01 Report data (PDDikti)",
     "F02 Eligibility check (PDDikti)",
-    "F03 Reserve NINA/PIN (PISN)",
+    "F03 Generate NINA (PISN)",
     "F04 Generate PDF (SIA)",
     "F05 Encrypt and upload (IPFS/Pinata)",
     "F07 Mint token (Polygon Amoy)",

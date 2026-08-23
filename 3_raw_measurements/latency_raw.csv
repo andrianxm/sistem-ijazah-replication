@@ -1,171 +1,171 @@
 stage,latency_ms
-F03 Reserve NINA/PIN (PISN),17
+F03 Generate NINA (PISN),17
 F04 Generate PDF (SIA),3352
 F05 Encrypt and upload (IPFS/Pinata),8922
 F07 Mint token (Polygon Amoy),3270
-F03 Reserve NINA/PIN (PISN),26
+F03 Generate NINA (PISN),26
 F04 Generate PDF (SIA),1912
 F05 Encrypt and upload (IPFS/Pinata),6844
 F07 Mint token (Polygon Amoy),2353
-F03 Reserve NINA/PIN (PISN),18
+F03 Generate NINA (PISN),18
 F04 Generate PDF (SIA),1432
 F05 Encrypt and upload (IPFS/Pinata),7123
 F07 Mint token (Polygon Amoy),2488
 F01 Report data (PDDikti),208
 F02 Eligibility check (PDDikti),198
-F03 Reserve NINA/PIN (PISN),346
+F03 Generate NINA (PISN),346
 F04 Generate PDF (SIA),4740
 F01 Report data (PDDikti),201
 F02 Eligibility check (PDDikti),103
-F03 Reserve NINA/PIN (PISN),427
+F03 Generate NINA (PISN),427
 F04 Generate PDF (SIA),1035
 F05 Encrypt and upload (IPFS/Pinata),7156
 F07 Mint token (Polygon Amoy),2230
 F01 Report data (PDDikti),121
 F02 Eligibility check (PDDikti),117
-F03 Reserve NINA/PIN (PISN),311
+F03 Generate NINA (PISN),311
 F04 Generate PDF (SIA),1054
 F05 Encrypt and upload (IPFS/Pinata),7009
 F07 Mint token (Polygon Amoy),2077
 F01 Report data (PDDikti),134
 F02 Eligibility check (PDDikti),121
-F03 Reserve NINA/PIN (PISN),296
+F03 Generate NINA (PISN),296
 F04 Generate PDF (SIA),975
 F05 Encrypt and upload (IPFS/Pinata),7426
 F07 Mint token (Polygon Amoy),4074
 F01 Report data (PDDikti),114
 F02 Eligibility check (PDDikti),134
-F03 Reserve NINA/PIN (PISN),264
+F03 Generate NINA (PISN),264
 F04 Generate PDF (SIA),1194
 F05 Encrypt and upload (IPFS/Pinata),8787
 F07 Mint token (Polygon Amoy),1944
 F01 Report data (PDDikti),174
 F02 Eligibility check (PDDikti),185
-F03 Reserve NINA/PIN (PISN),369
+F03 Generate NINA (PISN),369
 F04 Generate PDF (SIA),1072
 F05 Encrypt and upload (IPFS/Pinata),7537
 F07 Mint token (Polygon Amoy),2522
 F01 Report data (PDDikti),103
 F02 Eligibility check (PDDikti),98
-F03 Reserve NINA/PIN (PISN),234
+F03 Generate NINA (PISN),234
 F04 Generate PDF (SIA),976
 F05 Encrypt and upload (IPFS/Pinata),6988
 F07 Mint token (Polygon Amoy),2353
 F01 Report data (PDDikti),98
 F02 Eligibility check (PDDikti),93
-F03 Reserve NINA/PIN (PISN),267
+F03 Generate NINA (PISN),267
 F04 Generate PDF (SIA),1118
 F05 Encrypt and upload (IPFS/Pinata),8600
 F07 Mint token (Polygon Amoy),2473
 F01 Report data (PDDikti),215
 F02 Eligibility check (PDDikti),86
-F03 Reserve NINA/PIN (PISN),225
+F03 Generate NINA (PISN),225
 F04 Generate PDF (SIA),797
 F05 Encrypt and upload (IPFS/Pinata),7248
 F07 Mint token (Polygon Amoy),2411
 F01 Report data (PDDikti),100
 F02 Eligibility check (PDDikti),102
-F03 Reserve NINA/PIN (PISN),271
+F03 Generate NINA (PISN),271
 F04 Generate PDF (SIA),934
 F05 Encrypt and upload (IPFS/Pinata),7979
 F07 Mint token (Polygon Amoy),1987
 F01 Report data (PDDikti),105
 F02 Eligibility check (PDDikti),87
-F03 Reserve NINA/PIN (PISN),211
+F03 Generate NINA (PISN),211
 F04 Generate PDF (SIA),819
 F05 Encrypt and upload (IPFS/Pinata),7166
 F07 Mint token (Polygon Amoy),2177
 F01 Report data (PDDikti),90
 F02 Eligibility check (PDDikti),96
-F03 Reserve NINA/PIN (PISN),192
+F03 Generate NINA (PISN),192
 F04 Generate PDF (SIA),927
 F05 Encrypt and upload (IPFS/Pinata),8271
 F07 Mint token (Polygon Amoy),2763
 F01 Report data (PDDikti),97
 F02 Eligibility check (PDDikti),76
-F03 Reserve NINA/PIN (PISN),185
+F03 Generate NINA (PISN),185
 F04 Generate PDF (SIA),762
 F05 Encrypt and upload (IPFS/Pinata),8234
 F07 Mint token (Polygon Amoy),2691
 F01 Report data (PDDikti),71
 F02 Eligibility check (PDDikti),69
-F03 Reserve NINA/PIN (PISN),178
+F03 Generate NINA (PISN),178
 F04 Generate PDF (SIA),700
 F05 Encrypt and upload (IPFS/Pinata),7165
 F07 Mint token (Polygon Amoy),1688
 F01 Report data (PDDikti),67
 F02 Eligibility check (PDDikti),67
-F03 Reserve NINA/PIN (PISN),165
+F03 Generate NINA (PISN),165
 F04 Generate PDF (SIA),882
 F05 Encrypt and upload (IPFS/Pinata),7052
 F07 Mint token (Polygon Amoy),2299
 F01 Report data (PDDikti),71
 F02 Eligibility check (PDDikti),70
-F03 Reserve NINA/PIN (PISN),199
+F03 Generate NINA (PISN),199
 F04 Generate PDF (SIA),753
 F05 Encrypt and upload (IPFS/Pinata),7316
 F07 Mint token (Polygon Amoy),2455
 F01 Report data (PDDikti),73
 F02 Eligibility check (PDDikti),73
-F03 Reserve NINA/PIN (PISN),175
+F03 Generate NINA (PISN),175
 F04 Generate PDF (SIA),760
 F05 Encrypt and upload (IPFS/Pinata),7103
 F07 Mint token (Polygon Amoy),2656
 F01 Report data (PDDikti),62
 F02 Eligibility check (PDDikti),63
-F03 Reserve NINA/PIN (PISN),177
+F03 Generate NINA (PISN),177
 F04 Generate PDF (SIA),699
 F05 Encrypt and upload (IPFS/Pinata),6881
 F07 Mint token (Polygon Amoy),1950
 F01 Report data (PDDikti),74
 F02 Eligibility check (PDDikti),65
-F03 Reserve NINA/PIN (PISN),180
+F03 Generate NINA (PISN),180
 F04 Generate PDF (SIA),740
 F05 Encrypt and upload (IPFS/Pinata),8208
 F07 Mint token (Polygon Amoy),1649
 F01 Report data (PDDikti),82
 F02 Eligibility check (PDDikti),80
-F03 Reserve NINA/PIN (PISN),177
+F03 Generate NINA (PISN),177
 F04 Generate PDF (SIA),775
 F05 Encrypt and upload (IPFS/Pinata),7406
 F07 Mint token (Polygon Amoy),2930
 F01 Report data (PDDikti),54
 F02 Eligibility check (PDDikti),69
-F03 Reserve NINA/PIN (PISN),148
+F03 Generate NINA (PISN),148
 F04 Generate PDF (SIA),760
 F05 Encrypt and upload (IPFS/Pinata),14802
 F07 Mint token (Polygon Amoy),2713
 F01 Report data (PDDikti),51
 F02 Eligibility check (PDDikti),58
-F03 Reserve NINA/PIN (PISN),149
+F03 Generate NINA (PISN),149
 F04 Generate PDF (SIA),779
 F05 Encrypt and upload (IPFS/Pinata),6867
 F07 Mint token (Polygon Amoy),1988
 F01 Report data (PDDikti),48
 F02 Eligibility check (PDDikti),58
-F03 Reserve NINA/PIN (PISN),136
+F03 Generate NINA (PISN),136
 F04 Generate PDF (SIA),733
 F05 Encrypt and upload (IPFS/Pinata),7417
 F07 Mint token (Polygon Amoy),2644
 F01 Report data (PDDikti),49
 F02 Eligibility check (PDDikti),61
-F03 Reserve NINA/PIN (PISN),134
+F03 Generate NINA (PISN),134
 F04 Generate PDF (SIA),783
 F05 Encrypt and upload (IPFS/Pinata),7006
 F07 Mint token (Polygon Amoy),2110
 F01 Report data (PDDikti),81
 F02 Eligibility check (PDDikti),61
-F03 Reserve NINA/PIN (PISN),172
+F03 Generate NINA (PISN),172
 F04 Generate PDF (SIA),800
 F05 Encrypt and upload (IPFS/Pinata),6951
 F07 Mint token (Polygon Amoy),2729
 F01 Report data (PDDikti),50
 F02 Eligibility check (PDDikti),52
-F03 Reserve NINA/PIN (PISN),135
+F03 Generate NINA (PISN),135
 F04 Generate PDF (SIA),697
 F05 Encrypt and upload (IPFS/Pinata),6861
 F07 Mint token (Polygon Amoy),1917
-F03 Reserve NINA/PIN (PISN),17
+F03 Generate NINA (PISN),17
 F04 Generate PDF (SIA),718
 F05 Encrypt and upload (IPFS/Pinata),9383
 F07 Mint token (Polygon Amoy),2307
