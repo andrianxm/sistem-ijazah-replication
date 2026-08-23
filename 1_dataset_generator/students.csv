@@ -1,0 +1,213 @@
+id,nim,name,major,tempatLahir,tanggalLahir,jenisKelamin,facultyId,ipk,nomorSkYudisium,tanggalSkYudisium,pddiktiStatus,statusMesin
+1,20210001,Ajiono Saefullah,Teknik Informatika,Semarang,2000-12-23,L,1,3.13,SK-YUD/2026/0001,2026-05-20,unverified,DRAFT
+2,20210002,Among Iswahyudi,Teknik Informatika,Tasikmalaya,2000-11-15,L,1,3.48,SK-YUD/2026/0002,2026-05-20,unverified,DRAFT
+3,20210003,Gawati Hassanah,Teknik Informatika,Tanjungpinang,2002-05-10,P,1,3.77,SK-YUD/2026/0003,2026-05-20,unverified,DRAFT
+4,20210004,Indah Mangunsong,Teknik Informatika,Metro,2000-11-10,P,1,3.73,SK-YUD/2026/0004,2026-05-20,unverified,DRAFT
+5,20210005,Zulfa Situmorang,Ilmu Komunikasi,Prabumulih,2002-05-31,P,1,3.77,SK-YUD/2026/0005,2026-05-20,unverified,DRAFT
+6,20210006,Cindy Puspasari,Teknik Elektro,Tarakan,2001-03-04,P,1,3.60,SK-YUD/2026/0006,2026-05-20,unverified,DRAFT
+7,20210007,Mitra Pradana,Sistem Informasi,Metro,2003-02-02,L,1,3.94,SK-YUD/2026/0007,2026-05-20,unverified,DRAFT
+8,20210008,Siska Utama,Ilmu Komunikasi,Tanjungpinang,2000-08-25,P,1,3.34,SK-YUD/2026/0008,2026-05-20,unverified,DRAFT
+9,20210009,Lulut Usada,Sistem Informasi,Metro,2000-09-06,L,1,3.69,SK-YUD/2026/0009,2026-05-20,unverified,DRAFT
+10,20210010,Mahdi Simbolon,Sistem Informasi,Lubuklinggau,2003-05-15,L,1,3.74,SK-YUD/2026/0010,2026-05-20,unverified,DRAFT
+11,20210011,Bella Prabowo,Ilmu Komunikasi,Jambi,2003-08-26,P,1,3.54,SK-YUD/2026/0011,2026-05-20,unverified,DRAFT
+12,20210012,Lala Yuniar,Sistem Informasi,Tidore Kepulauan,2001-10-31,P,1,3.25,SK-YUD/2026/0012,2026-05-20,unverified,DRAFT
+13,20210013,Restu Wacana,Sistem Informasi,Bekasi,2001-06-12,P,1,3.95,SK-YUD/2026/0013,2026-05-20,unverified,DRAFT
+14,20210014,Candra Utami,Akuntansi,Meulaboh,2000-08-21,L,1,3.65,SK-YUD/2026/0014,2026-05-20,unverified,DRAFT
+15,20210015,Paris Ramadan,Teknik Informatika,Tangerang Selatan,2003-11-18,P,1,3.82,SK-YUD/2026/0015,2026-05-20,unverified,DRAFT
+16,20210016,Vivi Yuniar,Sistem Informasi,Ambon,2001-05-11,P,1,3.28,SK-YUD/2026/0016,2026-05-20,unverified,DRAFT
+17,20210017,Olivia Nugroho,Ilmu Komunikasi,Subulussalam,2002-01-11,P,1,3.10,SK-YUD/2026/0017,2026-05-20,unverified,DRAFT
+18,20210018,Candra Wahyudin,Akuntansi,Serang,2003-01-18,L,1,3.51,SK-YUD/2026/0018,2026-05-20,unverified,DRAFT
+19,20210019,Anita Kusumo,Teknik Elektro,Banjarmasin,2003-09-18,P,1,3.83,SK-YUD/2026/0019,2026-05-20,unverified,DRAFT
+20,20210020,Bakiadi Laksita,Akuntansi,Blitar,2003-04-06,L,1,3.93,SK-YUD/2026/0020,2026-05-20,unverified,DRAFT
+21,20210021,Pia Marbun,Manajemen,Probolinggo,2001-01-21,P,1,3.83,SK-YUD/2026/0021,2026-05-20,unverified,DRAFT
+22,20210022,Nasab Saragih,Teknik Elektro,Pematangsiantar,2001-08-05,L,1,3.64,SK-YUD/2026/0022,2026-05-20,unverified,DRAFT
+23,20210023,Dirja Prasetyo,Akuntansi,Semarang,2000-04-03,L,1,3.02,SK-YUD/2026/0023,2026-05-20,unverified,DRAFT
+24,20210024,Bagus Usamah,Teknik Informatika,Batu,2000-03-26,L,1,3.06,SK-YUD/2026/0024,2026-05-20,unverified,DRAFT
+25,20210025,Estiawan Winarsih,Ilmu Komunikasi,Kota Administrasi Jakarta Barat,2001-12-09,L,1,3.51,SK-YUD/2026/0025,2026-05-20,unverified,DRAFT
+26,20210026,Fitriani Kuswoyo,Manajemen,Pangkalpinang,2000-05-21,P,1,3.41,SK-YUD/2026/0026,2026-05-20,unverified,DRAFT
+27,20210027,Muni Yolanda,Manajemen,Bima,2003-12-07,L,1,3.09,SK-YUD/2026/0027,2026-05-20,unverified,DRAFT
+28,20210028,Dadap Nasyiah,Teknik Elektro,Kota Administrasi Jakarta Barat,2001-10-16,L,1,3.40,SK-YUD/2026/0028,2026-05-20,unverified,DRAFT
+29,20210029,Yani Pudjiastuti,Akuntansi,Bekasi,2000-05-22,P,1,3.62,SK-YUD/2026/0029,2026-05-20,unverified,DRAFT
+30,20210030,Hasim Laksita,Teknik Informatika,Metro,2001-12-03,L,1,3.82,SK-YUD/2026/0030,2026-05-20,unverified,DRAFT
+31,20210031,Hani Hasanah,Ilmu Komunikasi,Bukittinggi,2001-02-20,P,1,3.66,SK-YUD/2026/0031,2026-05-20,unverified,DRAFT
+32,20210032,Gasti Hakim,Ilmu Komunikasi,Banjarmasin,2002-04-25,P,1,3.52,SK-YUD/2026/0032,2026-05-20,unverified,DRAFT
+33,20210033,Olivia Nuraini,Teknik Informatika,Batam,2000-08-17,P,1,3.91,SK-YUD/2026/0033,2026-05-20,unverified,DRAFT
+34,20210034,Mursita Prakasa,Akuntansi,Sawahlunto,2001-08-12,L,1,3.89,SK-YUD/2026/0034,2026-05-20,unverified,DRAFT
+35,20210035,Lukman Hutapea,Akuntansi,Kota Administrasi Jakarta Selatan,2001-09-04,L,1,3.55,SK-YUD/2026/0035,2026-05-20,unverified,DRAFT
+36,20210036,Halima Saptono,Teknik Elektro,Lubuklinggau,2001-07-31,P,1,3.64,SK-YUD/2026/0036,2026-05-20,unverified,DRAFT
+37,20210037,Jagapati Oktaviani,Teknik Informatika,Pekalongan,2003-12-28,L,1,3.95,SK-YUD/2026/0037,2026-05-20,unverified,DRAFT
+38,20210038,Wardi Tampubolon,Teknik Elektro,Cilegon,2003-07-10,L,1,3.84,SK-YUD/2026/0038,2026-05-20,unverified,DRAFT
+39,20210039,Rahmi Yolanda,Akuntansi,Surabaya,2002-02-11,P,1,3.63,SK-YUD/2026/0039,2026-05-20,unverified,DRAFT
+40,20210040,Eman Latupono,Sistem Informasi,Kotamobagu,2003-07-22,L,1,3.71,SK-YUD/2026/0040,2026-05-20,unverified,DRAFT
+41,20210041,Nasim Siregar,Teknik Elektro,Kota Administrasi Jakarta Pusat,2000-10-24,L,1,3.60,SK-YUD/2026/0041,2026-05-20,unverified,DRAFT
+42,20210042,Mahesa Anggraini,Teknik Elektro,Subulussalam,2003-04-25,L,1,3.04,SK-YUD/2026/0042,2026-05-20,unverified,DRAFT
+43,20210043,Opung Handayani,Teknik Informatika,Batu,2002-03-16,L,1,3.41,SK-YUD/2026/0043,2026-05-20,unverified,DRAFT
+44,20210044,Kenes Firgantoro,Sistem Informasi,Blitar,2003-05-03,L,1,3.55,SK-YUD/2026/0044,2026-05-20,unverified,DRAFT
+45,20210045,Karimah Gunarto,Sistem Informasi,Manado,2003-08-05,P,1,3.20,SK-YUD/2026/0045,2026-05-20,unverified,DRAFT
+46,20210046,Raina Mangunsong,Sistem Informasi,Padang Sidempuan,2003-09-13,P,1,3.22,SK-YUD/2026/0046,2026-05-20,unverified,DRAFT
+47,20210047,Okto Sitorus,Ilmu Komunikasi,Kota Administrasi Jakarta Timur,2003-02-16,L,1,3.39,SK-YUD/2026/0047,2026-05-20,unverified,DRAFT
+48,20210048,Harjaya Firgantoro,Manajemen,Lhokseumawe,2003-06-07,L,1,3.21,SK-YUD/2026/0048,2026-05-20,unverified,DRAFT
+49,20210049,Ajiono Wahyuni,Teknik Informatika,Malang,2000-10-08,L,1,3.31,SK-YUD/2026/0049,2026-05-20,unverified,DRAFT
+50,20210050,Shania Nasyiah,Teknik Elektro,Sawahlunto,2001-04-28,P,1,3.03,SK-YUD/2026/0050,2026-05-20,unverified,DRAFT
+51,20210051,Balangga Riyanti,Teknik Elektro,Sibolga,2001-09-26,L,1,3.69,SK-YUD/2026/0051,2026-05-20,unverified,DRAFT
+52,20210052,Harsana Permata,Manajemen,Pematangsiantar,2000-10-04,L,1,3.04,SK-YUD/2026/0052,2026-05-20,unverified,DRAFT
+53,20210053,Galih Astuti,Teknik Elektro,Surabaya,2000-04-12,L,1,3.63,SK-YUD/2026/0053,2026-05-20,unverified,DRAFT
+54,20210054,Ophelia Saragih,Ilmu Komunikasi,Purwokerto,2002-08-31,P,1,3.31,SK-YUD/2026/0054,2026-05-20,unverified,DRAFT
+55,20210055,Imam Widiastuti,Sistem Informasi,Padang,2003-10-04,L,1,3.64,SK-YUD/2026/0055,2026-05-20,unverified,DRAFT
+56,20210056,Gadang Suwarno,Akuntansi,Pangkalpinang,2000-11-02,L,1,3.75,SK-YUD/2026/0056,2026-05-20,unverified,DRAFT
+57,20210057,Samiah Prabowo,Ilmu Komunikasi,Surabaya,2002-01-16,P,1,3.75,SK-YUD/2026/0057,2026-05-20,unverified,DRAFT
+58,20210058,Oliva Wijayanti,Sistem Informasi,Jayapura,2002-07-13,P,1,3.32,SK-YUD/2026/0058,2026-05-20,unverified,DRAFT
+59,20210059,Ajiono Gunawan,Teknik Informatika,Padangpanjang,2000-12-23,L,1,3.45,SK-YUD/2026/0059,2026-05-20,unverified,DRAFT
+60,20210060,Nasim Winarno,Ilmu Komunikasi,Tomohon,2001-12-22,L,1,3.23,SK-YUD/2026/0060,2026-05-20,unverified,DRAFT
+61,20210061,Gawati Nugroho,Manajemen,Sabang,2003-03-20,P,1,3.66,SK-YUD/2026/0061,2026-05-20,unverified,DRAFT
+62,20210062,Jaga Mansur,Akuntansi,Tomohon,2003-03-16,L,1,3.63,SK-YUD/2026/0062,2026-05-20,unverified,DRAFT
+63,20210063,Yance Pudjiastuti,Manajemen,Kota Administrasi Jakarta Selatan,2001-10-13,P,1,3.15,SK-YUD/2026/0063,2026-05-20,unverified,DRAFT
+64,20210064,Vivi Nurdiyanti,Manajemen,Tasikmalaya,2001-12-08,P,1,3.23,SK-YUD/2026/0064,2026-05-20,unverified,DRAFT
+65,20210065,Empluk Sitorus,Sistem Informasi,Kediri,2001-04-11,L,1,3.51,SK-YUD/2026/0065,2026-05-20,unverified,DRAFT
+66,20210066,Nrima Prabowo,Akuntansi,Padangpanjang,2000-04-03,L,1,3.39,SK-YUD/2026/0066,2026-05-20,unverified,DRAFT
+67,20210067,Rafi Andriani,Ilmu Komunikasi,Tual,2001-07-22,L,1,3.73,SK-YUD/2026/0067,2026-05-20,unverified,DRAFT
+68,20210068,Natalia Ardianto,Manajemen,Prabumulih,2003-10-08,P,1,3.28,SK-YUD/2026/0068,2026-05-20,unverified,DRAFT
+69,20210069,Jinawi Prasetya,Manajemen,Surakarta,2001-02-02,L,1,3.46,SK-YUD/2026/0069,2026-05-20,unverified,DRAFT
+70,20210070,Tari Marbun,Akuntansi,Mojokerto,2003-05-12,P,1,3.87,SK-YUD/2026/0070,2026-05-20,unverified,DRAFT
+71,20210071,Bakda Yuniar,Sistem Informasi,Kota Administrasi Jakarta Selatan,2001-09-17,L,1,3.82,SK-YUD/2026/0071,2026-05-20,unverified,DRAFT
+72,20210072,Gabriella Hasanah,Manajemen,Tomohon,2001-04-22,P,1,3.72,SK-YUD/2026/0072,2026-05-20,unverified,DRAFT
+73,20210073,Zahra Hutapea,Teknik Informatika,Jayapura,2001-11-17,P,1,3.71,SK-YUD/2026/0073,2026-05-20,unverified,DRAFT
+74,20210074,Purwadi Yulianti,Sistem Informasi,Banda Aceh,2000-02-28,L,1,3.03,SK-YUD/2026/0074,2026-05-20,unverified,DRAFT
+75,20210075,Digdaya Mahendra,Sistem Informasi,Tanjungpinang,2001-11-22,L,1,3.11,SK-YUD/2026/0075,2026-05-20,unverified,DRAFT
+76,20210076,Eli Sudiati,Teknik Informatika,Lhokseumawe,2002-06-05,P,1,3.71,SK-YUD/2026/0076,2026-05-20,unverified,DRAFT
+77,20210077,Wisnu Saragih,Manajemen,Tasikmalaya,2002-04-20,L,1,3.86,SK-YUD/2026/0077,2026-05-20,unverified,DRAFT
+78,20210078,Lega Utami,Teknik Elektro,Salatiga,2000-12-20,L,1,3.66,SK-YUD/2026/0078,2026-05-20,unverified,DRAFT
+79,20210079,Patricia Aryani,Ilmu Komunikasi,Balikpapan,2002-08-23,P,1,3.07,SK-YUD/2026/0079,2026-05-20,unverified,DRAFT
+80,20210080,Cici Astuti,Manajemen,Palangkaraya,2003-11-03,P,1,3.60,SK-YUD/2026/0080,2026-05-20,unverified,DRAFT
+81,20210081,Raisa Nasyiah,Ilmu Komunikasi,Madiun,2003-02-04,P,1,3.44,SK-YUD/2026/0081,2026-05-20,unverified,DRAFT
+82,20210082,Estiawan Hartati,Akuntansi,Makassar,2000-12-22,L,1,3.44,SK-YUD/2026/0082,2026-05-20,unverified,DRAFT
+83,20210083,Zizi Simbolon,Teknik Elektro,Kota Administrasi Jakarta Utara,2000-09-22,P,1,3.20,SK-YUD/2026/0083,2026-05-20,unverified,DRAFT
+84,20210084,Puti Anggriawan,Sistem Informasi,Pasuruan,2002-01-24,P,1,3.18,SK-YUD/2026/0084,2026-05-20,unverified,DRAFT
+85,20210085,Muhammad Kusmawati,Teknik Informatika,Kupang,2002-08-01,L,1,3.47,SK-YUD/2026/0085,2026-05-20,unverified,DRAFT
+86,20210086,Talia Prasasta,Manajemen,Pagaralam,2001-03-23,P,1,3.55,SK-YUD/2026/0086,2026-05-20,unverified,DRAFT
+87,20210087,Kamila Hasanah,Teknik Informatika,Lubuklinggau,2001-01-30,P,1,3.24,SK-YUD/2026/0087,2026-05-20,unverified,DRAFT
+88,20210088,Dadi Pratama,Akuntansi,Bengkulu,2002-12-14,L,1,3.26,SK-YUD/2026/0088,2026-05-20,unverified,DRAFT
+89,20210089,Ghaliyati Tarihoran,Akuntansi,Kota Administrasi Jakarta Utara,2000-09-18,P,1,3.01,SK-YUD/2026/0089,2026-05-20,unverified,DRAFT
+90,20210090,Kadir Siregar,Manajemen,Balikpapan,2002-10-15,L,1,3.12,SK-YUD/2026/0090,2026-05-20,unverified,DRAFT
+91,20210091,Nadine Kuswandari,Teknik Informatika,Pariaman,2001-10-05,P,1,3.18,SK-YUD/2026/0091,2026-05-20,unverified,DRAFT
+92,20210092,Himawan Lestari,Teknik Informatika,Bukittinggi,2000-04-18,L,1,3.60,SK-YUD/2026/0092,2026-05-20,unverified,DRAFT
+93,20210093,Chelsea Prayoga,Akuntansi,Pematangsiantar,2000-06-21,P,1,3.73,SK-YUD/2026/0093,2026-05-20,unverified,DRAFT
+94,20210094,Maimunah Salahudin,Teknik Elektro,Singkawang,2003-06-09,P,1,3.94,SK-YUD/2026/0094,2026-05-20,unverified,DRAFT
+95,20210095,Warta Pranowo,Teknik Informatika,Kendari,2002-07-02,L,1,3.25,SK-YUD/2026/0095,2026-05-20,unverified,DRAFT
+96,20210096,Candrakanta Adriansyah,Manajemen,Bandung,2001-08-19,L,1,3.65,SK-YUD/2026/0096,2026-05-20,unverified,DRAFT
+97,20210097,Tiara Suryono,Ilmu Komunikasi,Kota Administrasi Jakarta Selatan,2002-10-23,P,1,3.43,SK-YUD/2026/0097,2026-05-20,unverified,DRAFT
+98,20210098,Irwan Latupono,Teknik Elektro,Batu,2002-03-06,L,1,3.62,SK-YUD/2026/0098,2026-05-20,unverified,DRAFT
+99,20210099,Prima Samosir,Teknik Elektro,Bitung,2002-05-18,L,1,3.78,SK-YUD/2026/0099,2026-05-20,unverified,DRAFT
+100,20210100,Tira Waskita,Manajemen,Bau-Bau,2003-10-08,P,1,3.48,SK-YUD/2026/0100,2026-05-20,unverified,DRAFT
+101,20210101,Tirtayasa Astuti,Teknik Informatika,Kediri,2002-12-08,L,1,3.57,SK-YUD/2026/0101,2026-05-20,unverified,DRAFT
+102,20210102,Prakosa Wulandari,Sistem Informasi,Pematangsiantar,2003-04-14,L,1,3.55,SK-YUD/2026/0102,2026-05-20,unverified,DRAFT
+103,20210103,Indah Najmudin,Manajemen,Parepare,2003-12-26,P,1,3.41,SK-YUD/2026/0103,2026-05-20,unverified,DRAFT
+104,20210104,Juli Sinaga,Teknik Elektro,Tanjungbalai,2002-09-05,P,1,3.81,SK-YUD/2026/0104,2026-05-20,unverified,DRAFT
+105,20210105,Salimah Wacana,Manajemen,Lubuklinggau,2003-04-02,P,1,3.52,SK-YUD/2026/0105,2026-05-20,unverified,DRAFT
+106,20210106,Calista Waskita,Teknik Informatika,Padang Sidempuan,2003-06-16,P,1,3.78,SK-YUD/2026/0106,2026-05-20,unverified,DRAFT
+107,20210107,Karja Tarihoran,Manajemen,Gorontalo,2002-06-28,L,1,3.47,SK-YUD/2026/0107,2026-05-20,unverified,DRAFT
+108,20210108,Wira Suwarno,Teknik Informatika,Sorong,2001-10-01,L,1,3.66,SK-YUD/2026/0108,2026-05-20,unverified,DRAFT
+109,20210109,Nyana Manullang,Manajemen,Jayapura,2001-03-29,L,1,3.01,SK-YUD/2026/0109,2026-05-20,unverified,DRAFT
+110,20210110,Devi Yuliarti,Ilmu Komunikasi,Pekanbaru,2003-04-29,P,1,3.47,SK-YUD/2026/0110,2026-05-20,unverified,DRAFT
+111,20210111,Lidya Laksmiwati,Akuntansi,Meulaboh,2003-12-02,P,1,3.23,SK-YUD/2026/0111,2026-05-20,unverified,DRAFT
+112,20210112,Saka Hidayat,Manajemen,Pekalongan,2001-02-07,L,1,3.75,SK-YUD/2026/0112,2026-05-20,unverified,DRAFT
+113,20210113,Eko Salahudin,Ilmu Komunikasi,Bukittinggi,2003-05-07,L,1,3.55,SK-YUD/2026/0113,2026-05-20,unverified,DRAFT
+114,20210114,Jelita Sitorus,Manajemen,Depok,2002-03-16,P,1,3.52,SK-YUD/2026/0114,2026-05-20,unverified,DRAFT
+115,20210115,Kenzie Winarno,Teknik Informatika,Tidore Kepulauan,2000-12-07,L,1,3.74,SK-YUD/2026/0115,2026-05-20,unverified,DRAFT
+116,20210116,Kiandra Wijayanti,Sistem Informasi,Bandung,2003-03-02,P,1,3.62,SK-YUD/2026/0116,2026-05-20,unverified,DRAFT
+117,20210117,Cinthia Farida,Teknik Informatika,Padang Sidempuan,2000-05-25,P,1,3.86,SK-YUD/2026/0117,2026-05-20,unverified,DRAFT
+118,20210118,Bahuraksa Halimah,Akuntansi,Sungai Penuh,2003-02-15,L,1,3.25,SK-YUD/2026/0118,2026-05-20,unverified,DRAFT
+119,20210119,Zulaikha Wulandari,Teknik Elektro,Probolinggo,2003-06-08,P,1,3.36,SK-YUD/2026/0119,2026-05-20,unverified,DRAFT
+120,20210120,Daryani Usamah,Sistem Informasi,Palangkaraya,2002-09-26,L,1,3.27,SK-YUD/2026/0120,2026-05-20,unverified,DRAFT
+121,20210121,Ibun Marbun,Teknik Informatika,Banjarmasin,2002-10-10,L,1,3.86,SK-YUD/2026/0121,2026-05-20,unverified,DRAFT
+122,20210122,Kasiyah Astuti,Akuntansi,Cimahi,2000-07-31,P,1,3.50,SK-YUD/2026/0122,2026-05-20,unverified,DRAFT
+123,20210123,Lurhur Wibowo,Akuntansi,Kediri,2002-06-23,L,1,3.23,SK-YUD/2026/0123,2026-05-20,unverified,DRAFT
+124,20210124,Michelle Rajasa,Manajemen,Tangerang,2002-08-31,P,1,3.85,SK-YUD/2026/0124,2026-05-20,unverified,DRAFT
+125,20210125,Bagya Handayani,Teknik Elektro,Tanjungbalai,2003-10-12,L,1,3.94,SK-YUD/2026/0125,2026-05-20,unverified,DRAFT
+126,20210126,Zulfa Sihombing,Manajemen,Kendari,2000-10-17,P,1,3.37,SK-YUD/2026/0126,2026-05-20,unverified,DRAFT
+127,20210127,Ratih Sihombing,Ilmu Komunikasi,Kota Administrasi Jakarta Utara,2003-12-20,P,1,3.28,SK-YUD/2026/0127,2026-05-20,unverified,DRAFT
+128,20210128,Viktor Sudiati,Teknik Elektro,Sibolga,2002-12-23,L,1,3.79,SK-YUD/2026/0128,2026-05-20,unverified,DRAFT
+129,20210129,Makara Nainggolan,Ilmu Komunikasi,Sorong,2002-06-25,L,1,3.64,SK-YUD/2026/0129,2026-05-20,unverified,DRAFT
+130,20210130,Galak Farida,Sistem Informasi,Kupang,2000-02-18,L,1,3.35,SK-YUD/2026/0130,2026-05-20,unverified,DRAFT
+131,20210131,Ellis Pangestu,Teknik Elektro,Cimahi,2000-07-11,P,1,3.51,SK-YUD/2026/0131,2026-05-20,unverified,DRAFT
+132,20210132,Yani Sihombing,Teknik Informatika,Batu,2002-12-25,P,1,3.32,SK-YUD/2026/0132,2026-05-20,unverified,DRAFT
+133,20210133,Satya Wastuti,Akuntansi,Bekasi,2002-11-23,L,1,3.93,SK-YUD/2026/0133,2026-05-20,unverified,DRAFT
+134,20210134,Eman Nasyiah,Ilmu Komunikasi,Sawahlunto,2000-06-29,L,1,3.35,SK-YUD/2026/0134,2026-05-20,unverified,DRAFT
+135,20210135,Cici Wulandari,Akuntansi,Singkawang,2000-12-07,P,1,3.02,SK-YUD/2026/0135,2026-05-20,unverified,DRAFT
+136,20210136,Makara Hariyah,Manajemen,Bogor,2003-08-20,L,1,3.29,SK-YUD/2026/0136,2026-05-20,unverified,DRAFT
+137,20210137,Gadang Lailasari,Akuntansi,Meulaboh,2000-06-18,L,1,3.22,SK-YUD/2026/0137,2026-05-20,unverified,DRAFT
+138,20210138,Salsabila Namaga,Sistem Informasi,Sungai Penuh,2001-09-03,P,1,3.71,SK-YUD/2026/0138,2026-05-20,unverified,DRAFT
+139,20210139,Raisa Wasita,Ilmu Komunikasi,Jambi,2003-10-03,P,1,3.27,SK-YUD/2026/0139,2026-05-20,unverified,DRAFT
+140,20210140,Gilda Tarihoran,Akuntansi,Banjarmasin,2000-05-25,P,1,3.65,SK-YUD/2026/0140,2026-05-20,unverified,DRAFT
+141,20210141,Fitriani Maheswara,Teknik Informatika,Sukabumi,2003-10-17,P,1,3.78,SK-YUD/2026/0141,2026-05-20,unverified,DRAFT
+142,20210142,Asirwanda Sitorus,Akuntansi,Batam,2000-12-21,L,1,3.12,SK-YUD/2026/0142,2026-05-20,unverified,DRAFT
+143,20210143,Langgeng Pratama,Sistem Informasi,Kota Administrasi Jakarta Utara,2003-04-02,L,1,3.22,SK-YUD/2026/0143,2026-05-20,unverified,DRAFT
+144,20210144,Kayun Ramadan,Teknik Informatika,Balikpapan,2003-03-11,L,1,3.10,SK-YUD/2026/0144,2026-05-20,unverified,DRAFT
+145,20210145,Lanjar Sinaga,Sistem Informasi,Pontianak,2000-01-24,L,1,3.25,SK-YUD/2026/0145,2026-05-20,unverified,DRAFT
+146,20210146,Jaswadi Hassanah,Teknik Informatika,Pekalongan,2003-02-09,L,1,3.49,SK-YUD/2026/0146,2026-05-20,unverified,DRAFT
+147,20210147,Ozy Wahyuni,Teknik Informatika,Pariaman,2002-01-31,L,1,3.44,SK-YUD/2026/0147,2026-05-20,unverified,DRAFT
+148,20210148,Silvia Kurniawan,Teknik Informatika,Madiun,2001-12-16,P,1,3.86,SK-YUD/2026/0148,2026-05-20,unverified,DRAFT
+149,20210149,Atmaja Mahendra,Akuntansi,Metro,2001-02-05,L,1,3.60,SK-YUD/2026/0149,2026-05-20,unverified,DRAFT
+150,20210150,Mutia Mayasari,Ilmu Komunikasi,Sungai Penuh,2002-06-02,P,1,3.09,SK-YUD/2026/0150,2026-05-20,unverified,DRAFT
+151,20210151,Irfan Hartati,Manajemen,Padangpanjang,2003-07-20,L,1,3.39,SK-YUD/2026/0151,2026-05-20,unverified,DRAFT
+152,20210152,Galar Aryani,Sistem Informasi,Batam,2001-04-01,L,1,3.24,SK-YUD/2026/0152,2026-05-20,unverified,DRAFT
+153,20210153,Bakiman Astuti,Sistem Informasi,Semarang,2000-05-20,L,1,3.70,SK-YUD/2026/0153,2026-05-20,unverified,DRAFT
+154,20210154,Salsabila Maheswara,Manajemen,Kotamobagu,2001-08-22,P,1,3.83,SK-YUD/2026/0154,2026-05-20,unverified,DRAFT
+155,20210155,Kamila Jailani,Ilmu Komunikasi,Jayapura,2002-04-23,P,1,3.20,SK-YUD/2026/0155,2026-05-20,unverified,DRAFT
+156,20210156,Zulfa Puspita,Akuntansi,Pagaralam,2001-06-20,P,1,3.72,SK-YUD/2026/0156,2026-05-20,unverified,DRAFT
+157,20210157,Lulut Wahyuni,Sistem Informasi,Tanjungpinang,2003-04-26,L,1,3.25,SK-YUD/2026/0157,2026-05-20,unverified,DRAFT
+158,20210158,Kamaria Ardianto,Ilmu Komunikasi,Batam,2000-09-21,P,1,3.14,SK-YUD/2026/0158,2026-05-20,unverified,DRAFT
+159,20210159,Bakijan Nuraini,Teknik Elektro,Medan,2000-11-10,L,1,3.40,SK-YUD/2026/0159,2026-05-20,unverified,DRAFT
+160,20210160,Vicky Purnawati,Sistem Informasi,Tomohon,2002-05-20,P,1,3.84,SK-YUD/2026/0160,2026-05-20,unverified,DRAFT
+161,20210161,Mursita Hutapea,Manajemen,Padangpanjang,2001-02-01,L,1,3.63,SK-YUD/2026/0161,2026-05-20,unverified,DRAFT
+162,20210162,Perkasa Mulyani,Teknik Elektro,Pontianak,2000-06-15,L,1,3.41,SK-YUD/2026/0162,2026-05-20,unverified,DRAFT
+163,20210163,Aurora Prasetya,Teknik Informatika,Langsa,2001-07-31,P,1,3.57,SK-YUD/2026/0163,2026-05-20,unverified,DRAFT
+164,20210164,Prakosa Rajasa,Manajemen,Cirebon,2001-02-26,L,1,3.11,SK-YUD/2026/0164,2026-05-20,unverified,DRAFT
+165,20210165,Patricia Pradana,Teknik Elektro,Mojokerto,2001-12-31,P,1,3.79,SK-YUD/2026/0165,2026-05-20,unverified,DRAFT
+166,20210166,Ibrani Budiyanto,Teknik Elektro,Samarinda,2001-11-02,L,1,3.07,SK-YUD/2026/0166,2026-05-20,unverified,DRAFT
+167,20210167,Icha Latupono,Sistem Informasi,Tanjungbalai,2001-08-14,P,1,3.92,SK-YUD/2026/0167,2026-05-20,unverified,DRAFT
+168,20210168,Ibrani Kurniawan,Akuntansi,Mojokerto,2000-12-21,L,1,3.56,SK-YUD/2026/0168,2026-05-20,unverified,DRAFT
+169,20210169,Gawati Sitorus,Ilmu Komunikasi,Pontianak,2003-02-11,P,1,3.07,SK-YUD/2026/0169,2026-05-20,unverified,DRAFT
+170,20210170,Utama Tampubolon,Ilmu Komunikasi,Kendari,2001-05-27,L,1,3.91,SK-YUD/2026/0170,2026-05-20,unverified,DRAFT
+171,20210171,Edi Napitupulu,Ilmu Komunikasi,Cirebon,2000-09-10,L,1,3.15,SK-YUD/2026/0171,2026-05-20,unverified,DRAFT
+172,20210172,Malika Pratiwi,Akuntansi,Sorong,2003-01-14,P,1,3.43,SK-YUD/2026/0172,2026-05-20,unverified,DRAFT
+173,20210173,Irnanto Hidayat,Teknik Elektro,Manado,2001-11-15,L,1,3.60,SK-YUD/2026/0173,2026-05-20,unverified,DRAFT
+174,20210174,Galak Hariyah,Teknik Elektro,Sukabumi,2001-10-21,L,1,3.05,SK-YUD/2026/0174,2026-05-20,unverified,DRAFT
+175,20210175,Malika Prastuti,Teknik Informatika,Samarinda,2002-03-20,P,1,3.75,SK-YUD/2026/0175,2026-05-20,unverified,DRAFT
+176,20210176,Galur Suartini,Teknik Informatika,Bima,2001-11-25,L,1,3.14,SK-YUD/2026/0176,2026-05-20,unverified,DRAFT
+177,20210177,Johan Yuliarti,Manajemen,Pontianak,2000-09-08,L,1,3.24,SK-YUD/2026/0177,2026-05-20,unverified,DRAFT
+178,20210178,Galih Wahyudin,Teknik Elektro,Sorong,2003-09-02,L,1,3.37,SK-YUD/2026/0178,2026-05-20,unverified,DRAFT
+179,20210179,Bella Sitompul,Teknik Elektro,Tebingtinggi,2000-05-17,P,1,3.64,SK-YUD/2026/0179,2026-05-20,unverified,DRAFT
+180,20210180,Ganda Hutapea,Teknik Elektro,Sungai Penuh,2002-04-30,L,1,3.13,SK-YUD/2026/0180,2026-05-20,unverified,DRAFT
+181,20210181,Diah Riyanti,Akuntansi,Sukabumi,2002-10-31,P,1,3.08,SK-YUD/2026/0181,2026-05-20,unverified,DRAFT
+182,20210182,Mumpuni Novitasari,Akuntansi,Banda Aceh,2000-05-16,L,1,3.64,SK-YUD/2026/0182,2026-05-20,unverified,DRAFT
+183,20210183,Elvina Prabowo,Sistem Informasi,Bogor,2001-05-13,P,1,3.73,SK-YUD/2026/0183,2026-05-20,unverified,DRAFT
+184,20210184,Ega Januar,Ilmu Komunikasi,Surabaya,2002-01-11,L,1,3.51,SK-YUD/2026/0184,2026-05-20,unverified,DRAFT
+185,20210185,Lembah Waluyo,Ilmu Komunikasi,Tebingtinggi,2000-08-13,L,1,3.17,SK-YUD/2026/0185,2026-05-20,unverified,DRAFT
+186,20210186,Hendra Utama,Manajemen,Tomohon,2002-09-14,L,1,3.23,SK-YUD/2026/0186,2026-05-20,unverified,DRAFT
+187,20210187,Gina Nasyidah,Manajemen,Medan,2000-12-15,P,1,3.92,SK-YUD/2026/0187,2026-05-20,unverified,DRAFT
+188,20210188,Malika Suryono,Manajemen,Dumai,2003-02-10,P,1,3.48,SK-YUD/2026/0188,2026-05-20,unverified,DRAFT
+189,20210189,Teddy Ramadan,Teknik Elektro,Tasikmalaya,2000-03-17,L,1,3.46,SK-YUD/2026/0189,2026-05-20,unverified,DRAFT
+190,20210190,Edi Hutasoit,Akuntansi,Palangkaraya,2003-01-19,L,1,3.26,SK-YUD/2026/0190,2026-05-20,unverified,DRAFT
+191,20210191,Rendy Hartati,Manajemen,Mojokerto,2003-07-15,L,1,3.88,SK-YUD/2026/0191,2026-05-20,unverified,DRAFT
+192,20210192,Gilda Winarno,Teknik Informatika,Bengkulu,2003-12-23,P,1,3.36,SK-YUD/2026/0192,2026-05-20,unverified,DRAFT
+193,20210193,Widya Maulana,Manajemen,Tual,2000-07-19,P,1,3.27,SK-YUD/2026/0193,2026-05-20,unverified,DRAFT
+194,20210194,Melinda Susanti,Teknik Elektro,Bukittinggi,2000-01-08,P,1,3.08,SK-YUD/2026/0194,2026-05-20,unverified,DRAFT
+195,20210195,Carla Suwarno,Sistem Informasi,Subulussalam,2000-12-12,P,1,3.12,SK-YUD/2026/0195,2026-05-20,unverified,DRAFT
+196,20210196,Bella Kusumo,Akuntansi,Sorong,2003-05-06,P,1,3.47,SK-YUD/2026/0196,2026-05-20,unverified,DRAFT
+197,20210197,Nasim Megantara,Teknik Elektro,Samarinda,2001-03-01,L,1,3.00,SK-YUD/2026/0197,2026-05-20,unverified,DRAFT
+198,20210198,Mulya Winarsih,Teknik Informatika,Meulaboh,2000-05-04,L,1,3.93,SK-YUD/2026/0198,2026-05-20,unverified,DRAFT
+199,20210199,Makara Wibisono,Teknik Informatika,Batam,2003-12-03,L,1,3.24,SK-YUD/2026/0199,2026-05-20,unverified,DRAFT
+200,20210200,Oskar Wahyuni,Ilmu Komunikasi,Bogor,2002-07-06,L,1,3.73,SK-YUD/2026/0200,2026-05-20,unverified,DRAFT
+201,20210201,Puji Sirait,Ilmu Komunikasi,Tanjungpinang,2003-04-02,P,1,1.91,SK-YUD/2026/0201,2026-05-20,unverified,DRAFT
+202,20210202,Rosman Mansur,Manajemen,Kupang,2000-04-02,L,1,2.27,SK-YUD/2026/0202,2026-05-20,unverified,DRAFT
+203,20210203,Prima Pangestu,Teknik Elektro,Probolinggo,2003-07-17,L,1,1.99,SK-YUD/2026/0203,2026-05-20,unverified,DRAFT
+204,20210204,Ani Yuliarti,Teknik Informatika,Kota Administrasi Jakarta Timur,2000-10-06,P,1,2.01,SK-YUD/2026/0204,2026-05-20,unverified,DRAFT
+205,20210205,Maya Wacana,Manajemen,Denpasar,2002-12-21,P,1,2.34,SK-YUD/2026/0205,2026-05-20,unverified,DRAFT
+206,20210206,Kartika Maryati,Manajemen,Palangkaraya,2001-01-24,P,1,1.85,SK-YUD/2026/0206,2026-05-20,unverified,DRAFT
+207,20210207,Kenes Sihombing,Ilmu Komunikasi,Lhokseumawe,2001-04-13,L,1,1.85,SK-YUD/2026/0207,2026-05-20,unverified,DRAFT
+208,20210208,Eli Handayani,Teknik Elektro,Kota Administrasi Jakarta Utara,2001-05-28,P,1,1.83,SK-YUD/2026/0208,2026-05-20,unverified,DRAFT
+209,20210209,Bahuraksa Winarsih,Ilmu Komunikasi,Bandar Lampung,2002-07-19,L,1,2.02,SK-YUD/2026/0209,2026-05-20,unverified,DRAFT
+210,20210210,Ami Mahendra,Teknik Elektro,Meulaboh,2000-04-08,P,1,2.27,SK-YUD/2026/0210,2026-05-20,unverified,DRAFT
+211,20210211,Lukita Mangunsong,Teknik Elektro,Tual,2002-09-18,L,1,3.90,SK-YUD/2026/0211,2026-05-20,unverified,DRAFT
+212,20210212,Karta Utama,Sistem Informasi,Bandar Lampung,2001-08-04,L,1,3.62,SK-YUD/2026/0212,2026-05-20,unverified,DRAFT

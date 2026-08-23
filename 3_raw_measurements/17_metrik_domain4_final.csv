@@ -1,0 +1,35 @@
+domain,metric,value,unit,denominator,method
+verification,matrix_cases_passed,13,case,13,expected versus actual
+verification,matrix_conformance,100,percent,13,13 current-final cases
+verification,latency_n,30,observation,30,quantile type 7
+verification,latency_min,889,ms,30,quantile type 7
+verification,latency_q1,1028,ms,30,quantile type 7
+verification,latency_median,1159,ms,30,quantile type 7
+verification,latency_q3,1262,ms,30,quantile type 7
+verification,latency_p95,1832,ms,30,quantile type 7
+verification,latency_max,2165,ms,30,quantile type 7
+revoke,normal_first_attempt_scr,100,percent,5,strict consistency all layers
+revoke,all_first_attempt_scr_with_injected_outage,50,percent,10,five normal plus five SIVIL outage
+revoke,safety_denial,100,percent,10,verification invalid after on-chain revoke
+revoke,eventual_scr_revoke,100,percent,10,after explicit retry for injected outage
+revoke,normal_action_median,2664,ms,5,quantile type 7
+revoke,normal_action_p95,2801.4,ms,5,quantile type 7
+revoke,normal_action_min,2647,ms,5,quantile type 7
+revoke,normal_action_max,2822,ms,5,quantile type 7
+revoke,sync_failure_action_median,6979,ms,5,quantile type 7
+revoke,sync_failure_action_p95,7208.4,ms,5,quantile type 7
+revoke,sync_failure_action_min,5702,ms,5,quantile type 7
+revoke,sync_failure_action_max,7217,ms,5,quantile type 7
+revoke,sync_recovery_median,125,ms,5,quantile type 7
+revoke,sync_recovery_p95,130,ms,5,quantile type 7
+revoke,sync_recovery_min,113,ms,5,quantile type 7
+revoke,sync_recovery_max,130,ms,5,quantile type 7
+revoke,first_propagation_median,82,ms,10,quantile type 7
+revoke,first_propagation_p95,92.55,ms,10,quantile type 7
+revoke,first_propagation_min,80,ms,10,quantile type 7
+revoke,first_propagation_max,93,ms,10,quantile type 7
+revoke,rpc_receipt_timeout_auxiliary_cases,1,case,1,excluded from core n=10
+revoke,rpc_receipt_timeout_safety_denial,100,percent,1,on-chain committed while local state stale
+revoke,rpc_receipt_timeout_recovery_latency,2211,ms,1,explicit reconciliation; no second chain tx
+application,duplicate_nim_rejected,3,case,3,actual browser form
+application,duplicate_nim_rows_added,0,row,3,database count before and after
