@@ -1,6 +1,6 @@
 # Replication Package: Verifikasi Ijazah Dua Lapis (Dual-Layer) berbasis Blockchain dan Registri Nasional
 
-Repositori ini merupakan **Replication Package** resmi untuk penelitian skripsi yang mengusulkan arsitektur *dual-layer* (registri terpusat + *smart contract* blockchain) guna memitigasi celah *stale state* (kegagalan sinkronisasi) pada pencabutan ijazah elektronik di Indonesia.
+Repositori ini merupakan **Replication Package** resmi untuk penelitian skripsi yang mengusulkan arsitektur *dual-layer* (registri terpusat + *smart contract* blockchain) guna mengevaluasi kegagalan sinkronisasi stale state pada registri administratif tersimulasi dalam konteks verifikasi ijazah di Indonesia.
 
 ## 1. Kode Sumber Subsistem (Tautan Eksternal)
 Sesuai dengan arsitektur mikrolayanan yang disimulasikan, kode sumber untuk ketiga subsistem utama dipisahkan ke dalam repositori GitHub masing-masing. Silakan kloning (*clone*) repositori berikut untuk menjalankan subsistem:
@@ -22,9 +22,10 @@ Berisi proyek *Hardhat* dan kode sumber Solidity (`IjazahNFT.sol`) yang dide-dep
 
 ### 📁 `3_raw_measurements`
 Menyediakan bukti terukur (*empirical evidence*) dari pengujian yang dibahas dalam naskah:
-*   `latency_raw.csv`: Data mentah untuk waktu pemrosesan penerbitan (Tabel 5 & 6) dan pemrosesan verifikasi (Tabel 7).
+*   `latency_raw.csv`: Data mentah untuk sebaran latensi per tahap pemrosesan penerbitan dan verifikasi (mendukung Gambar 5).
+*   `matrix-latency-results.csv`: Metrik latensi tambahan dan hasil pengujian fungsional *Decision Matrix* (mendukung Tabel 5).
+*   `17_metrik_domain4_final.csv`: Data agregat dan ringkasan pengukuran termasuk konsumsi *gas* (Tabel 6).
 *   `14_cascading_revoke_final_10.csv`: Data hasil pengujian injeksi kegagalan (Tabel 8). Bukti empiris mengenai ancaman *stale state* pada pencabutan ijazah (`REV-SYNCFAIL`).
-*   `matrix-latency-results.csv`: Metrik latensi tambahan dan hasil dari *Decision Matrix*.
 *   `08_modifikasi_artefak_6_kasus.csv`: Bukti hasil deteksi modifikasi artefak (Bab 3.2), menguji integritas dekripsi dan *plaintext-hash mismatch*.
 
 ### 📁 `4_plotting_scripts`
