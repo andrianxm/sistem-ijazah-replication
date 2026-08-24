@@ -1,44 +1,648 @@
-# Replication Package: Verifikasi Ijazah Dua Lapis (Dual-Layer) berbasis Blockchain dan Registri Nasional
+# Replication Package: Dual-Layer Digital Diploma Verification with a Simulated Administrative Registry and Blockchain
 
-Repositori ini merupakan **Replication Package** resmi untuk penelitian skripsi yang mengusulkan arsitektur *dual-layer* (registri terpusat + *smart contract* blockchain) guna mengevaluasi kegagalan sinkronisasi stale state pada registri administratif tersimulasi dalam konteks verifikasi ijazah di Indonesia.
+This repository provides the **replication package** for a proof-of-concept study on digital diploma issuance, verification, and revocation using a simulated administrative workflow, encrypted off-chain storage, and blockchain-based credential evidence.
 
-## 1. Kode Sumber Subsistem (Tautan Eksternal)
-Sesuai dengan arsitektur mikrolayanan yang disimulasikan, kode sumber untuk ketiga subsistem utama dipisahkan ke dalam repositori GitHub masing-masing. Silakan kloning (*clone*) repositori berikut untuk menjalankan subsistem:
+The study evaluates a **dual-layer verification model** in which a simulated administrative registry is checked together with the credential status recorded in a smart contract. The main empirical focus is the behaviour of the verification process when the two layers temporarily disagree.
 
-1. **SIA Simulasi (Kampus)**: [https://github.com/andrianxm/sistem-ijazah-sia](https://github.com/andrianxm/sistem-ijazah-sia)
-2. **PDDikti / PISN Mock (Kementerian)**: [https://github.com/andrianxm/sistem-ijazah-pddikti-pisn](https://github.com/andrianxm/sistem-ijazah-pddikti-pisn)
-3. **SIVIL Simulasi (Verifikator Nasional)**: [https://github.com/andrianxm/sistem-ijazah-sivil](https://github.com/andrianxm/sistem-ijazah-sivil)
+Two predefined cross-layer conditions are particularly relevant:
 
-*(Catatan Reproduktibilitas: Pastikan Anda berada di commit hash yang tercantum pada Tabel 2 di naskah publikasi untuk menjamin hasil yang identik).*
+1. **Incomplete issuance / issuance mismatch** — the simulated administrative registry contains an active National Diploma Number (NINA), while the corresponding blockchain credential token is intentionally absent because the workflow is stopped before minting.
+2. **Revocation synchronisation failure** — the credential is already revoked on-chain, while the simulated administrative registry temporarily remains active because registry synchronisation is deliberately disrupted.
 
-## 2. Struktur Direktori Replication Package Ini
-Repositori ini difokuskan untuk menyediakan data mentah (*raw data*), generator, kontrak pintar, dan alat replikasi metrik pengukuran.
+The package also contains artefacts for functional testing, artefact-integrity testing, latency measurement, gas-consumption analysis, and smart-contract evaluation.
 
-### 📁 `1_dataset_generator`
-Berisi skrip `.sql` untuk membangkitkan data (*seeding*) dengan *seed* tetap (*fixed seed*). Ini menjamin bahwa setiap kali pengujian diulang, data mahasiswa dan Nomor Ijazah Nasional (NINA) yang digunakan selalu persis sama dengan yang ada di dalam naskah.
-
-### 📁 `2_smart_contract`
-Berisi proyek *Hardhat* dan kode sumber Solidity (`IjazahNFT.sol`) yang dide-deploy ke jaringan Polygon Amoy. Termasuk skrip konfigurasi dan mekanisme akses *Role-Based Access Control* (RBAC) untuk otoritas penerbit (Rektor).
-
-### 📁 `3_raw_measurements`
-Menyediakan bukti terukur (*empirical evidence*) dari pengujian yang dibahas dalam naskah:
-*   `latency_raw.csv`: Data mentah untuk sebaran latensi per tahap pemrosesan penerbitan dan verifikasi (mendukung Gambar 5).
-*   `matrix-latency-results.csv`: Metrik latensi tambahan dan hasil pengujian fungsional *Decision Matrix* (mendukung Tabel 5).
-*   `17_metrik_domain4_final.csv`: Data agregat dan ringkasan pengukuran termasuk konsumsi *gas* (Tabel 6).
-*   `14_cascading_revoke_final_10.csv`: Data hasil pengujian injeksi kegagalan (Tabel 8). Bukti empiris mengenai ancaman *stale state* pada pencabutan ijazah (`REV-SYNCFAIL`).
-*   `08_modifikasi_artefak_6_kasus.csv`: Bukti hasil deteksi modifikasi artefak (Bab 3.2), menguji integritas dekripsi dan *plaintext-hash mismatch*.
-
-### 📁 `4_plotting_scripts`
-Berisi skrip Python (menggunakan `matplotlib` dan `pandas`) yang digunakan untuk mengonversi data dari folder `3_raw_measurements` menjadi grafik yang dipublikasikan di dalam naskah (misalnya `plot_figure5_latency.py`).
-
-### 📁 `5_test_scripts`
-Berisi *script* Node.js (seperti `uji-matriks.cjs`, `uji-cascading-revoke.cjs`, dll.) yang menjadi mesin utama penggerak pengujian. Skrip inilah yang membuktikan bahwa seluruh logika pengujian (seperti manipulasi *stale state* atau skenario *issuance-mismatch*) dilakukan secara otomatis, deterministik, dan sengaja dirancang sedemikian rupa sejak awal eksekusi, bukan ditafsirkan setelah hasil keluar.
+> **Scope note**
+>
+> The `Mock PDDikti-PISN` and `SIVIL Simulasi` components are experimental subsystems created for this proof of concept. They reproduce only the principal business functions required by the experiments. They are **not implementations or replicas of official Indonesian government systems**, and the study does not claim knowledge of production APIs, schemas, authentication mechanisms, internal architecture, synchronisation guarantees, or operational policies.
 
 ---
 
-## 🚀 Cara Menjalankan Ulang Pengujian
+## 1. Subsystem Source Code
 
-1. **Deploy Smart Contract**: Masuk ke folder `2_smart_contract`, lakukan instalasi dependensi (`npm install`), isi `.env` dengan *private key*, dan jalankan skrip *deploy* Hardhat ke jaringan Polygon Amoy.
-2. **Setup Database & Seed**: Jalankan MySQL/PostgreSQL dan impor berkas SQL dari `1_dataset_generator` ke *database* masing-masing subsistem.
-3. **Jalankan Subsistem**: *Clone* ketiga repositori subsistem dari tautan di atas. Jalankan `sia-simulasi` (Port 3000), `mock-pddikti-pisn` (Port 8000), dan `sivil-simulasi` (Port 8001).
-4. **Validasi Metrik**: Jalankan skrip Python di folder `4_plotting_scripts` dengan merujuk ke data di folder `3_raw_measurements` untuk menghasilkan grafik latensi secara mandiri.
+The prototype consists of three independently implemented subsystems. Their source code is maintained in separate repositories.
+
+1. **SIA Simulasi — Institutional Academic System**  
+   https://github.com/andrianxm/sistem-ijazah-sia
+
+2. **Mock PDDikti-PISN — Simulated Administrative Subsystem**  
+   https://github.com/andrianxm/sistem-ijazah-pddikti-pisn
+
+3. **SIVIL Simulasi — Simulated Public Verification Registry**  
+   https://github.com/andrianxm/sistem-ijazah-sivil
+
+For reproduction of the reported experiments, use the application revisions reported in Table 2 of the manuscript:
+
+| Subsystem | Commit |
+|---|---|
+| SIA Simulasi | `9dd181ea` |
+| Mock PDDikti-PISN | `4945adc1` |
+| SIVIL Simulasi | `2adf9af5` |
+
+These commit identifiers reproduce the **software versions used in the study**. They do not guarantee numerically identical latency results because public RPC endpoints, IPFS services, network conditions, and local execution environments can vary between runs.
+
+---
+
+## 2. Repository Structure
+
+```text
+.
+├── 1_dataset_generator/
+├── 2_smart_contract/
+├── 3_raw_measurements/
+├── 4_plotting_scripts/
+├── 5_test_scripts/
+└── README.md
+```
+
+### `1_dataset_generator`
+
+Contains SQL-based dataset-generation and seeding artefacts used to prepare the synthetic student records for the experiments.
+
+A fixed seed is used to support reproducibility of the synthetic input data. The generated records are intended for testing only and do not represent real students.
+
+The study used synthetic records for:
+
+- student data,
+- graduation data,
+- study programmes,
+- student identification numbers (NIM),
+- National Diploma Numbers (NINA),
+- diploma PDF artefacts, and
+- JSON metadata.
+
+The fixed seed reproduces the synthetic inputs generated by the dataset scripts. Workflow-generated states, identifiers, and transaction outputs still depend on the behaviour of the running subsystems and external services.
+
+---
+
+### `2_smart_contract`
+
+Contains the Solidity smart contract project used for blockchain credential issuance and revocation.
+
+The main contract is:
+
+```text
+IjazahNFT.sol
+```
+
+The experimental contract was compiled with:
+
+- Solidity `0.8.34+commit.80d5c536`
+- optimizer enabled,
+- 200 optimizer runs,
+- OpenZeppelin Contracts `v5.6.0`.
+
+The reported deployment used the **Polygon Amoy Testnet**:
+
+- Chain ID: `80002`
+- Contract address: `0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54`
+
+The contract implements role-based access control for authorised credential operations and disables token transfer for the issued diploma credentials.
+
+> A fresh deployment will produce a different contract address, transaction history, token history, and transaction hashes. The address above identifies the deployment used for the reported experiments.
+
+Never commit private keys, API secrets, or wallet recovery phrases to the repository.
+
+---
+
+### `3_raw_measurements`
+
+Contains the raw experimental measurements and execution logs used to support the results reported in the manuscript.
+
+Important files include:
+
+#### `latency_raw.csv`
+
+Contains raw per-stage latency observations used to produce the issuance-stage latency distribution reported in **Figure 5**.
+
+The measured stages include:
+
+- data reporting,
+- eligibility checking,
+- NINA generation,
+- PDF generation,
+- encryption and IPFS upload,
+- blockchain minting, and
+- dual-layer verification.
+
+#### `matrix-latency-results.csv`
+
+Contains the dual-layer verification decision-matrix executions and related verification-latency observations.
+
+This file supports the results reported in **Table 7** and the verification-latency statistics discussed in Section 3.3.
+
+The matrix includes the following status combinations:
+
+| Administrative registry | Blockchain | Expected result |
+|---|---|---|
+| Active | Active | Valid |
+| Active | Revoked | Invalid |
+| Revoked | Active | Invalid |
+| Not found | Active | Invalid |
+| Active | Not found | Invalid |
+
+The `Active + Not found` case represents the predefined **issuance-mismatch** scenario. The workflow is intentionally stopped after NINA issuance and registry synchronisation but before PDF processing, IPFS upload, and blockchain minting.
+
+#### `14_cascading_revoke_final_10.csv`
+
+Contains the ten cascading-revocation executions reported in **Table 8**:
+
+- five normal revocation executions, and
+- five deliberately fault-injected synchronisation-failure executions.
+
+In the fault-injected cases, the simulated administrative registry is intentionally left temporarily stale after the revocation has already been recorded on-chain.
+
+This dataset is used to evaluate whether dual-layer verification continues to reject a revoked credential while the two layers temporarily disagree.
+
+#### `08_modifikasi_artefak_6_kasus.csv`
+
+Contains the six modified-artefact test cases reported in Section 3.2.
+
+The tests evaluate whether altered PDF or JSON artefacts can be detected through one or more of the following:
+
+- decryption failure,
+- parsing failure,
+- plaintext-hash mismatch, and
+- CID mismatch relative to the legitimate on-chain reference.
+
+#### Other measurement files
+
+Additional CSV and JSON artefacts in this directory support the functional, gas-consumption, revocation, and verification results reported in Tables 5–9.
+
+The manuscript should be treated as the authoritative mapping between individual result tables and the experimental metrics.
+
+---
+
+### `4_plotting_scripts`
+
+Contains Python scripts used to transform the raw measurements into the figures and summary statistics reported in the manuscript.
+
+The scripts use libraries such as:
+
+- `pandas`
+- `matplotlib`
+
+Example:
+
+```text
+plot_figure5_latency.py
+```
+
+The plotting scripts are intended to make the reported figures independently reproducible from the raw measurements.
+
+---
+
+### `5_test_scripts`
+
+Contains Node.js scripts used to execute the predefined experimental scenarios.
+
+Examples include scripts for:
+
+- the dual-layer decision matrix,
+- cascading revocation,
+- synchronisation-failure fault injection,
+- issuance mismatch,
+- negative smart-contract scenarios, and
+- end-to-end workflow testing.
+
+Representative scripts include:
+
+```text
+uji-matriks.cjs
+uji-cascading-revoke.cjs
+```
+
+These scripts implement the experimental conditions described in the manuscript and provide an inspectable execution procedure for the reported tests.
+
+They should not be interpreted as evidence that the simulated failure conditions exist in production government systems. Their purpose is to reproduce controlled proof-of-concept experiments.
+
+---
+
+## 3. Experimental Architecture
+
+The proof of concept uses the following high-level flow:
+
+```text
+SIA Simulasi
+    |
+    |  report student and graduation data
+    v
+Mock PDDikti-PISN
+    |
+    |  validate eligibility
+    |  generate NINA
+    v
+SIA Simulasi
+    |
+    |  generate diploma artefacts
+    |  encrypt PDF and JSON metadata
+    v
+IPFS / Pinata
+    |
+    |  return CID
+    v
+Polygon Amoy Smart Contract
+    |
+    |  mint / revoke credential token
+    v
+SIVIL Simulasi
+    |
+    |  combine administrative registry status
+    |  with on-chain token status
+    v
+Dual-Layer Verification Decision
+```
+
+The current manuscript uses the functional terminology **NINA generation after eligibility validation**. The prototype does not model advance PIN-style number booking as an official current PISN process.
+
+---
+
+## 4. Main Experimental Conditions
+
+### 4.1 Normal issuance
+
+Expected state:
+
+```text
+Administrative registry: Active
+Blockchain token:        Active
+Final decision:          Valid
+```
+
+### 4.2 Issuance mismatch
+
+The administrative workflow reaches NINA issuance, but credential processing is deliberately stopped before blockchain minting.
+
+Expected state:
+
+```text
+Administrative registry: Active
+Blockchain token:        Not found
+Final decision:          Invalid
+```
+
+This experiment evaluates whether a positive administrative record alone is sufficient to pass dual-layer verification.
+
+---
+
+### 4.3 Normal revocation
+
+Expected state after successful synchronisation:
+
+```text
+Administrative registry: Revoked
+Blockchain token:        Revoked
+Final decision:          Invalid
+```
+
+---
+
+### 4.4 Revocation synchronisation failure
+
+The on-chain revocation succeeds, while administrative-registry synchronisation is deliberately disrupted.
+
+Temporary experimental state:
+
+```text
+Administrative registry: Active (stale)
+Blockchain token:        Revoked
+Final decision:          Invalid
+```
+
+This condition evaluates the behaviour of the **simulated dual-layer verifier under cross-layer state divergence**. It does not claim that the same failure exists in the production PISN, PDDikti, or government verification infrastructure.
+
+---
+
+## 5. Experimental Environment
+
+The reported prototype used:
+
+| Component | Configuration |
+|---|---|
+| SIA Simulasi | Node.js 20.20.2, Next.js 16.2.6, React 19.2.4 |
+| Web3 library | Ethers.js 6.16.0 |
+| ORM | Prisma Client 5.20.0 |
+| Mock PDDikti-PISN | PHP 8.2.33, Laravel 12.0 |
+| SIVIL Simulasi | PHP 8.2.33, Laravel 12.0 |
+| Database | MySQL 8.0.46 |
+| Orchestration | Docker Compose on WSL2 |
+| Blockchain | Polygon Amoy Testnet |
+| Solidity | 0.8.34 |
+| Contract library | OpenZeppelin Contracts 5.6.0 |
+| Off-chain storage | IPFS through Pinata |
+| Static analysis | Slither 0.11.6 |
+
+Public RPC, IPFS, and network conditions are external dependencies and may cause timing results to differ from the values reported in the manuscript.
+
+---
+
+## 6. Reproducing the Experiments
+
+### Step 1 — Clone this replication package
+
+```bash
+git clone <REPLICATION_PACKAGE_URL>
+cd sistem-ijazah-replication
+```
+
+If this repository is already the replication-package repository, simply use its current clone.
+
+---
+
+### Step 2 — Clone the three subsystem repositories
+
+```bash
+git clone https://github.com/andrianxm/sistem-ijazah-sia
+git clone https://github.com/andrianxm/sistem-ijazah-pddikti-pisn
+git clone https://github.com/andrianxm/sistem-ijazah-sivil
+```
+
+Check out the exact revisions reported in the manuscript:
+
+```bash
+# SIA Simulasi
+cd sistem-ijazah-sia
+git checkout 9dd181ea
+cd ..
+
+# Mock PDDikti-PISN
+cd sistem-ijazah-pddikti-pisn
+git checkout 4945adc1
+cd ..
+
+# SIVIL Simulasi
+cd sistem-ijazah-sivil
+git checkout 2adf9af5
+cd ..
+```
+
+---
+
+### Step 3 — Configure the databases
+
+Use **MySQL 8.0.x**.
+
+Create the logically separated databases required by the three subsystems and import the relevant SQL/seeding files from:
+
+```text
+1_dataset_generator/
+```
+
+Database names, credentials, and application-specific environment variables must match the configuration used by each subsystem.
+
+---
+
+### Step 4 — Configure environment variables
+
+Configure the required `.env` files for the subsystems and smart-contract tools.
+
+Depending on the component, the configuration may include:
+
+- MySQL connection settings,
+- Polygon Amoy RPC endpoint,
+- deployed smart-contract address,
+- authorised test-wallet credentials,
+- Pinata/IPFS configuration,
+- inter-subsystem service URLs, and
+- application ports.
+
+Use only **test credentials** for reproduction.
+
+Do not commit:
+
+- private keys,
+- wallet seed phrases,
+- API secrets,
+- database passwords, or
+- Pinata credentials.
+
+---
+
+### Step 5 — Use the reported contract or deploy a fresh contract
+
+For comparison with the manuscript, the reported deployment is:
+
+```text
+Network: Polygon Amoy
+Chain ID: 80002
+Contract: 0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54
+```
+
+Alternatively, deploy a fresh contract from:
+
+```text
+2_smart_contract/
+```
+
+Install the required dependencies and use a test/deployer wallet configured for Polygon Amoy.
+
+A fresh deployment is suitable for reproducing the workflow, but it will not reproduce the original transaction hashes or token history.
+
+---
+
+### Step 6 — Start the three subsystems
+
+Run:
+
+```text
+SIA Simulasi             -> port 3000
+Mock PDDikti-PISN        -> port 8000
+SIVIL Simulasi           -> port 8001
+```
+
+Use the application-specific startup instructions provided in each subsystem repository.
+
+Verify that:
+
+- all databases are reachable,
+- the subsystem URLs are mutually reachable,
+- the blockchain RPC connection works,
+- the contract address is configured correctly, and
+- the IPFS/Pinata connection is available.
+
+---
+
+### Step 7 — Execute the predefined test scripts
+
+Run the scripts in:
+
+```text
+5_test_scripts/
+```
+
+The scripts reproduce the experimental scenarios used in the study, including:
+
+- end-to-end issuance,
+- eligibility rejection,
+- duplicate-identifier rejection,
+- unauthorised smart-contract access,
+- non-transferability,
+- decision-matrix evaluation,
+- issuance mismatch,
+- cascading revocation, and
+- deliberately injected registry-synchronisation failure.
+
+Example:
+
+```bash
+node uji-matriks.cjs
+node uji-cascading-revoke.cjs
+```
+
+Exact prerequisites and arguments depend on the script configuration.
+
+---
+
+### Step 8 — Inspect or regenerate raw measurements
+
+Compare newly generated outputs against the files in:
+
+```text
+3_raw_measurements/
+```
+
+Functional outcomes should be reproducible when the same code and scenario configuration are used.
+
+Latency values may differ because of:
+
+- public RPC variability,
+- IPFS gateway latency,
+- local hardware,
+- network conditions, and
+- external service availability.
+
+---
+
+### Step 9 — Regenerate plots and summary statistics
+
+Install the Python dependencies required by the plotting scripts, then execute the scripts under:
+
+```text
+4_plotting_scripts/
+```
+
+For example:
+
+```bash
+python plot_figure5_latency.py
+```
+
+The scripts read the raw measurement files and regenerate the corresponding figures or summary metrics used in the manuscript.
+
+---
+
+## 7. Reproducibility Notes
+
+The study was designed as a **proof of concept**, not as a production benchmark.
+
+When reproducing the results, distinguish between:
+
+### Deterministic or functional outcomes
+
+Examples:
+
+- expected dual-layer decision,
+- rejection of unauthorised issuance,
+- rejection of token transfer,
+- duplicate-identifier handling,
+- token active/revoked state,
+- artefact-modification detection.
+
+These outcomes should remain reproducible when the same software revision and test condition are used.
+
+### Environment-dependent measurements
+
+Examples:
+
+- IPFS upload latency,
+- RPC latency,
+- blockchain confirmation time,
+- browser/PDF-generation latency.
+
+These measurements may vary between repetitions and environments.
+
+Gas usage should remain effectively deterministic for equivalent EVM operations, contract code, input structure, and network execution rules.
+
+---
+
+## 8. Security and Privacy Notes
+
+All student records used in the study are **synthetic**.
+
+No real student identities or personal academic records are required to reproduce the experiments.
+
+The prototype uses:
+
+- encrypted PDF and JSON artefacts for IPFS storage,
+- hashed NIM and NINA values on-chain,
+- role-based smart-contract access control, and
+- non-transferable credential tokens.
+
+The reported prototype used AES-256-CBC for artefact confidentiality. The manuscript explicitly treats authenticated encryption and key-governance improvements as future work.
+
+The replication package is not a security-certified production system and should not be used for real credential issuance without additional security, governance, legal, operational, and privacy review.
+
+---
+
+## 9. Interpretation Boundary
+
+The experimental results apply to the **simulated architecture implemented in this research**.
+
+In particular:
+
+- the study does not test the production PDDikti infrastructure;
+- the study does not test the production PISN infrastructure;
+- the study does not test or reproduce the current production topology of government verification services;
+- the injected stale-state condition is an experimental distributed-state failure scenario;
+- blockchain is not presented as the only possible mechanism for improving cross-system consistency.
+
+Conventional approaches such as durable messaging, transactional outbox patterns, retries, reconciliation, and other event-driven integration techniques may also reduce synchronisation failures.
+
+In this study, blockchain is evaluated specifically as an **independently queryable and tamper-evident credential-status layer** that complements the simulated administrative registry when the two states temporarily diverge.
+
+---
+
+## 10. Data Availability
+
+The replication package includes or links to the artefacts required to inspect the reported experiments:
+
+- synthetic dataset generation,
+- smart-contract source,
+- raw experimental measurements,
+- plotting scripts,
+- test scripts, and
+- exact source-code revisions for the three simulated subsystems.
+
+The smart contract used in the reported experiments was deployed on Polygon Amoy and can be inspected independently through a compatible blockchain explorer.
+
+---
+
+## 11. Recommended Citation
+
+When using this replication package, cite the associated manuscript.
+
+```text
+Andrian Maulana, Setyoningsih Wibowo, and Nur Latifa Dwi Mutiasari,
+"Blockchain-Based Digital Diploma Prototype with Dual-Layer Off-Chain and On-Chain Verification,"
+International Journal of Advances in Data and Information Systems.
+```
+
+Update the volume, issue, pages, DOI, and publication status after the article receives its final bibliographic metadata.
+
+---
+
+## 12. Contact
+
+For questions regarding the replication package or experimental artefacts:
+
+**Andrian Maulana**  
+Department of Engineering and Informatics  
+PGRI University, Indonesia  
+Email: `andrianmaulana5612@gmail.com`
+
+---
+
+## Disclaimer
+
+This repository is an academic proof-of-concept replication package.
+
+The names `PDDikti`, `PISN`, and `SIVIL` are used only to describe the Indonesian higher-education administrative context modelled by the study. The mock and simulation components in this project are independently developed research software and are not official government services.
