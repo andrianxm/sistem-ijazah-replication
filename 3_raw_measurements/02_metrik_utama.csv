@@ -1,0 +1,15 @@
+domain,metric,value,unit
+final_state,students,212,record
+final_state,diplomas,200,record
+final_state,legitimate_distinct_cids,400,cid
+final_state,pinata_pinned_objects,406,object
+final_state,next_token_id,1201,token_id
+functional,eventual_credential_scr,100,percent
+functional,automated_first_pass_scr,96.5517,percent
+functional,automated_step_scr,99.5169,percent
+functional,positive_latency_p50,880,ms
+functional,positive_latency_p95,7537,ms
+batch,total_gas_used,49754158,gas
+batch,weighted_gas_per_credential,292671.5176,gas_per_credential
+tamper,pins_added,6,object
+tamper,cases_detected,6,artifact
