@@ -232,7 +232,7 @@ Contents include:
 - `checksums.sha256` — SHA-256 checksums for all files in the package; run `sha256sum -c checksums.sha256` from within this directory to verify integrity.
 - `README.md` — analysis instructions and calculation rules for the twenty CSV files.
 - `raw/` — 43 raw experiment log files organised in ten subdirectories (baseline, functional, batch, F06, duplicate-NINA, tamper, domain-4, duplicate-NIM-UI, negative-audit, smart-contract-negative).
-- `visual/` — 33 screenshot and HTML evidence files including domain-4 results.
+- `EXCLUDED.md` — documents evidence or files intentionally excluded from the public release package.
 - `scripts/` — the same sixteen test and builder scripts also present in `5_test_scripts/`; duplicated here so that `checksums.sha256` verifies cleanly.
 - `security-static/` — Solidity source, Slither report, compiler settings, and toolchain versions.
 

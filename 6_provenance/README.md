@@ -1,7 +1,7 @@
 # Petunjuk Analisis Inti
 
 Folder ini adalah paket mandiri final. Dua puluh CSV pada akar folder digunakan
-untuk perhitungan; bukti mentah, checkpoint, visual, skrip reproduksi, dan
+untuk perhitungan; bukti mentah, checkpoint, skrip reproduksi, dan
 artefak keamanan ditempatkan pada subdirektori terpisah.
 
 ## Urutan yang disarankan
@@ -49,14 +49,8 @@ analisis dan audit pengujian final:
 - `01_...csv` sampai `20_...csv`: tabel siap hitung dan siap impor.
 - `raw/`: 43 file sumber mentah current-final yang disalin byte-for-byte.
 - `RAW_MANIFEST.csv`: pemetaan sumber → salinan beserta dua SHA-256.
-- `visual/`: lampiran UI dan visualisasi hasil final.
-- `visual/07-jejak-end-to-end-token-1002.{png,html}`: jejak otomatis faktual
-  dari F01 sampai F08 berdasarkan CSV analisis dan log mentah current-final.
-- `visual/08-jejak-token-1002-paper-minimal.{png,html}`: versi hemat ruang
-  dengan rasio lebar untuk penempatan pada paper KTI.
-- `visual/09-arsitektur-sistem-final.{svg,png,html}`: diagram arsitektur final
-  yang membedakan aliran data aktual dari referensi logis CID–IPFS.
-- `scripts/`: skrip pengujian, recovery, builder, dan reproduksi visual.
+- `EXCLUDED.md`: mendokumentasikan lampiran UI, visualisasi hasil, jejak token, dan diagram arsitektur yang sengaja dikeluarkan dari paket rilis publik.
+- `scripts/`: skrip pengujian, recovery, dan builder.
 - `security-static/`: sumber kontrak, settings compiler, laporan mentah Slither,
   dan rekaman versi toolchain final.
 - `CODE_VERSION.txt`: hash commit dan tree Git final untuk SIA, SIVIL, dan
@@ -76,15 +70,3 @@ Paket historis `paket-analisis-final-20260809/`, log global
 `experiment_logs.csv`, dan run pengembangan `fullflow-auto29-r1` tidak ada
 di dalam folder ini.
 
-### Menampilkan jejak token #1002 di terminal
-
-Jalankan dari akar repositori:
-
-```bash
-node pengujian/buat-visual-jejak-token-1002.cjs --terminal
-```
-
-Mode `--terminal` hanya mencetak dua blok ringkas yang cocok untuk screenshot.
-Gunakan `--terminal-detail` jika seluruh tahap, expected/actual, dan checksum
-ingin ditampilkan; tambahkan `--no-color` bila keluaran dialihkan ke file.
-Kedua mode hanya membaca CSV final dan tidak mengubah state sistem.
