@@ -1,0 +1,20 @@
+filename,scope,rows,columns,purpose
+01_ringkasan_hasil.csv,final,17,8,ringkasan seluruh domain final untuk SCR dan status akhir
+02_metrik_utama.csv,final,14,4,metrik utama format panjang
+03_alur_fungsional_207_attempt.csv,final,207,34,207 attempt langkah first pass dan recovery
+04_batch_detail_10_run.csv,final,10,37,"10 transaksi batch ukuran 5, 10, 25, dan 50"
+05_batch_agregat_per_ukuran.csv,final,4,11,agregat gas dan latensi per ukuran batch
+06_tidak_eligible_f06_10_kasus.csv,final,10,32,10 penolakan HTTP 422 tanpa reservasi lokal
+07_duplikat_nina_2_kasus.csv,final,2,16,dua transaksi duplikat NINA yang direvert
+08_modifikasi_artefak_6_kasus.csv,final,6,18,enam modifikasi PDF dan metadata
+09_transaksi_42_unik.csv,final,42,12,"transaksi unik alur tunggal, otomatis, batch, dan duplikat"
+10_snapshot_212_mahasiswa.csv,final,212,17,"snapshot lintas SIAKAD, PDDikti/PISN, dan SIVIL"
+11_latensi_verifikasi_final_30.csv,final,30,32,30 verifikasi live sebelum mutasi matriks
+12_matriks_keputusan_final_13.csv,final,13,32,13 keputusan B1-B5 pada detektor final
+13_setup_matriks_final_10.csv,final,10,32,10 pembentukan state B2-B5 tanpa pin baru
+14_cascading_revoke_final_10.csv,final,10,31,5 revoke normal dan 5 gangguan sinkronisasi SIVIL
+15_recovery_timeout_rpc_final_1.csv,final_auxiliary,1,16,commit on-chain sukses saat pembacaan receipt timeout; recovery dipisahkan
+16_duplikat_nim_ui_final_3.csv,final,3,21,tiga penolakan NIM duplikat lewat form aktual
+17_metrik_domain4_final.csv,final,34,6,"statistik matriks, latensi, cascading revoke, dan recovery"
+18_snapshot_pasca_domain4_final_212.csv,final,212,17,snapshot lintas sistem setelah mutasi Domain 4
+19_transaksi_revoke_final_14.csv,final,14,11,"14 receipt revoke unik dari matriks, cascade inti, dan kasus auxiliary"

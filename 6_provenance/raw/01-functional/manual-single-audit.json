@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "execution_id": "single-manual-20260809",
+  "recorded_at": "2026-08-08T20:48:24Z",
+  "execution_mode": "manual_ui_with_automated_read_only_audit",
+  "status": "pass",
+  "latency_ms": null,
+  "latency_note": "No latency was fabricated because the manual execution start time was not instrumented.",
+  "credential": {
+    "nim": "20210001",
+    "name": "Ajiono Saefullah",
+    "nina": "040410582605000",
+    "verification_date_display": "8 Agustus 2026"
+  },
+  "functional_state": {
+    "siakad_pddikti_status": "eligible",
+    "siakad_machine_status": "SIAP_DITERBITKAN",
+    "siakad_blockchain_status": "verified",
+    "pddikti_status": "lulus",
+    "pddikti_eligibility": "eligible",
+    "pisn_status": "aktif",
+    "sivil_status": "aktif"
+  },
+  "institution_consistency": {
+    "status": "pass_case_insensitive",
+    "exact_case_match": false,
+    "siakad": "UNIVERSITAS SIMULASI",
+    "pddikti": "UNIVERSITAS SIMULASI",
+    "pisn": "Universitas Simulasi",
+    "sivil": "Universitas Simulasi",
+    "normalized_value": "universitas simulasi"
+  },
+  "ipfs": {
+    "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+    "encrypted_pdf": {
+      "cid": "bafybeib63t4cgtyjbrefljkm5flg62hujqc3m6eskrcbc4zdrh647kjqnq",
+      "cid_length": 59,
+      "gateway_http_status": 200,
+      "content_bytes": 448280,
+      "content_sha256": "bacf33bf3fdc345a9e8cd9bcdc8718301c9310243901b6e66561df45532a7a15"
+    },
+    "encrypted_metadata": {
+      "cid": "bafkreiexj23jwhqapalnjiyxzrr4myw2pdkjumtxm4rks52ksxsjw3zqba",
+      "cid_length": 59,
+      "gateway_http_status": 200,
+      "content_bytes": 792,
+      "content_sha256": "974eb69b1e007816d4a317cc63c662da78d49a32776722a9774a95e49b6f3008"
+    }
+  },
+  "blockchain": {
+    "chain_id": "80002",
+    "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+    "tx_hash": "0xe21524b4fb8e278253fd12eabb07555e9323967cc71c7c2989aa158594f604c2",
+    "receipt_status": 1,
+    "block_number": 44402847,
+    "gas_used": 366500,
+    "token_id": 1001,
+    "token_by_hashed_nim": 1001,
+    "token_by_hashed_nina": 1001,
+    "token_active": true,
+    "onchain_cid": "bafkreiexj23jwhqapalnjiyxzrr4myw2pdkjumtxm4rks52ksxsjw3zqba",
+    "next_token_id": 1002,
+    "total_minted": 1,
+    "events": [
+      "Transfer",
+      "IjazahDimint",
+      "BatchMintCompleted"
+    ]
+  },
+  "pdf_and_qr": {
+    "pdf_path": "generated-ijazah/ijazah-1-1786221134959.pdf",
+    "pdf_bytes": 252138,
+    "pdf_sha256": "89ef95fef5143ad456a1e1c17b938d0e6790fb97a6df1f172c383ce6da2b7444",
+    "expected_qr_url": "http://localhost:8001/verifikasi?nina=040410582605000&nama=Ajiono%20Saefullah",
+    "manual_scan_evidence": true,
+    "manual_scan_result": "SIVIL displayed Data Terverifikasi and token #1001",
+    "qr_target_http_status": 200,
+    "qr_target_contains_verified_text": true,
+    "qr_target_contains_token_1001": true,
+    "qr_target_contains_nim": true,
+    "qr_target_contains_name": true,
+    "qr_target_contains_institution": true
+  },
+  "criteria": {
+    "cid_v1_59_characters": "pass",
+    "cid_retrievable_from_new_gateway": "pass",
+    "first_token_is_1001": "pass",
+    "qr_points_to_sivil": "pass",
+    "institution_name_consistent": "pass_case_insensitive"
+  }
+}

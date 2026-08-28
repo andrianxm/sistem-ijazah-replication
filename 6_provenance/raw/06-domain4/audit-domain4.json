@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-08-09T08:39:31.958Z",
+  "scope": "current_final_only",
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "chain_id": 80002,
+  "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+  "dataset_students": 212,
+  "runs": [
+    "latensi-final",
+    "matriks-final",
+    "cascading-revoke-final-20260809",
+    "duplikat-nim-ui-final-20260809"
+  ],
+  "verification_latency": {
+    "n": 30,
+    "min": 889,
+    "q1": 1028,
+    "median": 1159,
+    "q3": 1262,
+    "p95": 1832,
+    "max": 2165
+  },
+  "matrix": {
+    "groups": {
+      "V-B1": 3,
+      "V-B2": 3,
+      "V-B3": 3,
+      "V-B4": 3,
+      "V-B5": 1
+    },
+    "passed": 13,
+    "total": 13,
+    "conformance_percent": 100
+  },
+  "revoke": {
+    "core_cases": 10,
+    "normal_cases": 5,
+    "injected_sync_failure_cases": 5,
+    "normal_first_attempt_scr_percent": 100,
+    "overall_first_attempt_strict_percent": 50,
+    "safety_denial_percent": 100,
+    "eventual_scr_revoke_percent": 100,
+    "pin_added": 0
+  },
+  "auxiliary_rpc_receipt_timeout": {
+    "cases": 1,
+    "included_in_core_denominator": false,
+    "status": "pass",
+    "safety_denial": true,
+    "eventual_consistency": true
+  },
+  "duplicate_nim_ui": {
+    "passed": 3,
+    "total": 3,
+    "rows_added": 0
+  },
+  "historical_data_present": false
+}

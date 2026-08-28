@@ -1,0 +1,115 @@
+{
+  "seed": 42,
+  "faker_locale": "id_ID",
+  "kode_pt": "041058",
+  "jenjang": "S1",
+  "tahun_lulus": 2026,
+  "format_nina": "[2 jenjang][6 kode PT][2 tahun][5 sequence]",
+  "contoh_nina": "040410582600004",
+  "komposisi": {
+    "alur_penuh": 30,
+    "sapuan_batch": 170,
+    "tidak_eligible": 10,
+    "duplikat_nina": 2,
+    "duplikat_nim_uji_kontrak": 3,
+    "total": 212
+  },
+  "rincian_batch": [
+    {
+      "ukuran": 5,
+      "pengulangan": 1,
+      "label": "batch5_rep1"
+    },
+    {
+      "ukuran": 5,
+      "pengulangan": 2,
+      "label": "batch5_rep2"
+    },
+    {
+      "ukuran": 5,
+      "pengulangan": 3,
+      "label": "batch5_rep3"
+    },
+    {
+      "ukuran": 10,
+      "pengulangan": 1,
+      "label": "batch10_rep1"
+    },
+    {
+      "ukuran": 10,
+      "pengulangan": 2,
+      "label": "batch10_rep2"
+    },
+    {
+      "ukuran": 10,
+      "pengulangan": 3,
+      "label": "batch10_rep3"
+    },
+    {
+      "ukuran": 25,
+      "pengulangan": 1,
+      "label": "batch25_rep1"
+    },
+    {
+      "ukuran": 25,
+      "pengulangan": 2,
+      "label": "batch25_rep2"
+    },
+    {
+      "ukuran": 25,
+      "pengulangan": 3,
+      "label": "batch25_rep3"
+    },
+    {
+      "ukuran": 50,
+      "pengulangan": 1,
+      "label": "batch50_rep1"
+    }
+  ],
+  "kasus_duplikat_nina": [
+    {
+      "diplomaNumber": "IJZ-2026-0211",
+      "jenis": "duplikat_nina",
+      "referensi": "IJZ-2026-0001"
+    },
+    {
+      "diplomaNumber": "IJZ-2026-0212",
+      "jenis": "duplikat_nina",
+      "referensi": "IJZ-2026-0002"
+    }
+  ],
+  "kasus_duplikat_nim": [
+    {
+      "id_uji": "F-DUP-NIM-SC-1",
+      "nim_target": "20210001",
+      "pemilik_sah": "Ajiono Saefullah",
+      "nina_baru": "040410582609500",
+      "ekspektasi_aplikasi": "ditolak (unique constraint / validasi aplikasi)",
+      "ekspektasi_kontrak": "diterima; token baru terbentuk (kontrak tidak memeriksa NIM)"
+    },
+    {
+      "id_uji": "F-DUP-NIM-SC-2",
+      "nim_target": "20210002",
+      "pemilik_sah": "Among Iswahyudi",
+      "nina_baru": "040410582609501",
+      "ekspektasi_aplikasi": "ditolak (unique constraint / validasi aplikasi)",
+      "ekspektasi_kontrak": "diterima; token baru terbentuk (kontrak tidak memeriksa NIM)"
+    },
+    {
+      "id_uji": "F-DUP-NIM-SC-3",
+      "nim_target": "20210003",
+      "pemilik_sah": "Gawati Hassanah",
+      "nina_baru": "040410582609502",
+      "ekspektasi_aplikasi": "ditolak (unique constraint / validasi aplikasi)",
+      "ekspektasi_kontrak": "diterima; token baru terbentuk (kontrak tidak memeriksa NIM)"
+    }
+  ],
+  "catatan": [
+    "Kelompok batch menempuh alur yang sama dengan alur penuh; hanya mint yang kolektif.",
+    "Ukuran batch 50 hanya satu pengulangan karena batas kapasitas penyematan IPFS.",
+    "Seluruh NINA dikosongkan; semua diperoleh dari Mock PISN melalui alur reservasi.",
+    "Kasus duplikat_nina memakai penanda placeholder; salin NINA aktual setelah reservasi.",
+    "Kasus duplikasi NIM TIDAK di-seed ke basis data; lihat kasus_duplikat_nim dan uji langsung ke kontrak.",
+    "Kolom _kelompok hanya penanda eksperimen, hapus sebelum impor ke basis data."
+  ]
+}

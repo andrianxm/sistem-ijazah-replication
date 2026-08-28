@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "audit_id": "audit-negatif-final-20260809",
+  "recorded_at": "2026-08-09T13:38:45+07:00",
+  "status": "pass",
+  "environment": {
+    "chain": "Polygon Amoy",
+    "chain_id": 80002,
+    "contract": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+    "gateway": "plum-eldest-tortoise-172.mypinata.cloud"
+  },
+  "cases": {
+    "ineligible_f06": {
+      "expected": 10,
+      "passed": 10,
+      "http_status": 422,
+      "reservations_added": 0,
+      "nina_added": 0,
+      "diplomas_added": 0,
+      "tokens_added": 0,
+      "pins_added": 0,
+      "log": "ineligible-final-10-20260809/results.csv"
+    },
+    "duplicate_nina": {
+      "expected": 2,
+      "passed": 2,
+      "receipt_status": 0,
+      "tokens_added": 0,
+      "pins_added": 0,
+      "next_token_before": 1201,
+      "next_token_after": 1201,
+      "transactions": [
+        "0x5b400c5f4fae284890b35b886628da91c26df590cc965bd14b01028887c84d77",
+        "0x5ccac529b10fb746b7a791c56681f88ff40e9060dc7cb3cdfd47619540b168fd"
+      ],
+      "log": "duplikat-nina-final-2-20260809/results.csv"
+    },
+    "artifact_modification": {
+      "expected": 6,
+      "passed": 6,
+      "pins_added": 6,
+      "legitimate_cids_updated": 0,
+      "tokens_added": 0,
+      "next_token_before": 1201,
+      "next_token_after": 1201,
+      "detections": {
+        "decryption_failed": 2,
+        "json_parse_failed": 3,
+        "plaintext_hash_mismatch": 1
+      },
+      "audit": "modifikasi-artefak-final-6-20260809/audit.json"
+    }
+  },
+  "final_state": {
+    "pinata_pinned_objects": 406,
+    "students": 212,
+    "students_eligible": 200,
+    "students_ineligible": 10,
+    "students_unverified": 2,
+    "diplomas": 200,
+    "diplomas_with_token": 200,
+    "legitimate_cids_nonnull": 400,
+    "legitimate_cids_distinct": 400,
+    "pddikti_records": 210,
+    "pisn_reservations": 200,
+    "nina_issued": 200,
+    "sivil_registry": 200,
+    "next_token_id": 1201
+  },
+  "invariants": {
+    "ineligible_has_no_reservation_or_credential": true,
+    "duplicate_candidates_have_no_reservation_or_credential": true,
+    "duplicate_nina_did_not_change_contract_state": true,
+    "tampered_cids_did_not_replace_legitimate_cids": true,
+    "all_legitimate_cids_are_distinct": true
+  },
+  "status_semantics": {
+    "student_status_mesin": "SIAP_DITERBITKAN",
+    "issued_filter_rule": "Mahasiswa masuk kelompok Lulus Terbit Ijazah apabila memiliki diploma dengan statusBlockchain=verified.",
+    "interpretation": "Status penerbitan final ditentukan dari relasi diploma terverifikasi. Nilai SIAP_DITERBITKAN pada mahasiswa bukan kegagalan penerbitan dan tidak menghalangi mahasiswa masuk filter Lulus Terbit Ijazah."
+  }
+}

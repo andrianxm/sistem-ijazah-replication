@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "execution_id": "batchmint-final-170-20260809",
+  "recorded_at": "2026-08-08T21:32:42Z",
+  "status": "pass",
+  "configuration": {
+    "chain_id": 80002,
+    "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+    "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+    "nim_range": "20210031-20210200",
+    "batch_design": { "5": 3, "10": 3, "25": 3, "50": 1 },
+    "batch_count": 10,
+    "credential_count": 170,
+    "expected_new_ipfs_objects": 340
+  },
+  "campaign_result": {
+    "verified_batches": 10,
+    "failed_batches": 0,
+    "blocked_batches": 0,
+    "pending_batches": 0,
+    "credentials_verified": 170,
+    "attempts_per_batch": 1,
+    "batch_scr_percent": 100.0,
+    "credential_scr_percent": 100.0,
+    "total_gas_used": 49754158,
+    "weighted_gas_per_credential": 292671.5176,
+    "start_token_id": 1031,
+    "end_token_id": 1200,
+    "next_token_id_after_campaign": 1201
+  },
+  "metrics_by_batch_size": {
+    "5": {
+      "repetitions": 3,
+      "credentials": 15,
+      "gas_used": [1505149, 1505161, 1505149],
+      "gas_used_mean": 1505153,
+      "gas_per_credential": [301030, 301033, 301030],
+      "gas_per_credential_mean": 301031,
+      "total_latency_ms": [30775, 27983, 28013],
+      "total_latency_median_ms": 28013,
+      "confirmation_latency_ms": [669, 1438, 676],
+      "confirmation_latency_median_ms": 676
+    },
+    "10": {
+      "repetitions": 3,
+      "credentials": 30,
+      "gas_used": [2951063, 2951063, 2951075],
+      "gas_used_mean": 2951067,
+      "gas_per_credential": [295107, 295107, 295108],
+      "gas_per_credential_mean": 295107.3333,
+      "total_latency_ms": [58273, 56130, 47832],
+      "total_latency_median_ms": 56130,
+      "confirmation_latency_ms": [1551, 1474, 943],
+      "confirmation_latency_median_ms": 1474
+    },
+    "25": {
+      "repetitions": 3,
+      "credentials": 75,
+      "gas_used": [7288752, 7288788, 7288800],
+      "gas_used_mean": 7288780,
+      "gas_per_credential": [291551, 291552, 291552],
+      "gas_per_credential_mean": 291551.6667,
+      "total_latency_ms": [116992, 111906, 115048],
+      "total_latency_median_ms": 115048,
+      "confirmation_latency_ms": [5623, 1977, 1634],
+      "confirmation_latency_median_ms": 1977
+    },
+    "50": {
+      "repetitions": 1,
+      "credentials": 50,
+      "gas_used": [14519158],
+      "gas_used_mean": 14519158,
+      "gas_per_credential": [290384],
+      "gas_per_credential_mean": 290384,
+      "total_latency_ms": [228256],
+      "total_latency_median_ms": 228256,
+      "confirmation_latency_ms": [5544],
+      "confirmation_latency_median_ms": 5544
+    }
+  },
+  "transactions": [
+    { "batch_id": "batch5_rep1", "tx_hash": "0x58300115586d63c2e8e2577d8ceeef212a169f6e35e7df8bae3c13778c04bd09", "block_number": 44405350, "token_range": "1031-1035" },
+    { "batch_id": "batch5_rep2", "tx_hash": "0xdfe1cae5ae34a5be8b519698d88858676ca8c3476237131be850e194559145f6", "block_number": 44405378, "token_range": "1036-1040" },
+    { "batch_id": "batch5_rep3", "tx_hash": "0x0cae20ec04de9836be27cffdff19c04c0c104e66d6a9e89e73b6b51a801c908b", "block_number": 44405406, "token_range": "1041-1045" },
+    { "batch_id": "batch10_rep1", "tx_hash": "0xbbaad23bef0912bfef120737de3608365487fad9d189df61abbba96ad35d24df", "block_number": 44405461, "token_range": "1046-1055" },
+    { "batch_id": "batch10_rep2", "tx_hash": "0xc6280c9b9248eba6120f9cde902e9950b2210f6d3e9b763d7380fb57357fb0c9", "block_number": 44405517, "token_range": "1056-1065" },
+    { "batch_id": "batch10_rep3", "tx_hash": "0x1f92569cc913af1838b9b640ea252c8442a354169445c023d9e1764e4f4da1f6", "block_number": 44405566, "token_range": "1066-1075" },
+    { "batch_id": "batch25_rep1", "tx_hash": "0x07f8d840c1b4df0a84a7322ea0fbea302e82f46ce436a00ce5d6ad6f00f05ab9", "block_number": 44405669, "token_range": "1076-1100" },
+    { "batch_id": "batch25_rep2", "tx_hash": "0xd958f81251ad4dff0a597322578187ba31dabc8c624b56f0f833404e63390bb8", "block_number": 44405781, "token_range": "1101-1125" },
+    { "batch_id": "batch25_rep3", "tx_hash": "0x7725e0568b386ba586881347f5736ea22c375c1a12a67dc01a070a7f8ba33083", "block_number": 44405897, "token_range": "1126-1150" },
+    { "batch_id": "batch50_rep1", "tx_hash": "0xb3e42314408291371af34b7b3cc713ab3282c9b2517a192159c44e5bce940bb9", "block_number": 44406105, "token_range": "1151-1200" }
+  ],
+  "database_audit": {
+    "students_total": 212,
+    "diplomas_total": 200,
+    "batch_students": 170,
+    "batch_students_eligible": 170,
+    "batch_diplomas_verified": 170,
+    "batch_unique_token_ids": 170,
+    "batch_pdf_cids_length_59": 170,
+    "batch_metadata_cids_length_59": 170,
+    "pddikti_total": 200,
+    "pisn_issued_total": 200,
+    "sivil_registry_total": 200,
+    "cross_system_nim_name_nina_mismatches": 0,
+    "untouched_ineligible_students": 10,
+    "untouched_duplicate_nina_students": 2
+  },
+  "ipfs_audit": {
+    "batch_referenced_objects": 340,
+    "batch_distinct_cids": 340,
+    "batch_http_200_nonempty": 340,
+    "batch_failed": 0,
+    "overall_referenced_objects": 400,
+    "overall_distinct_cids": 400
+  },
+  "blockchain_audit": {
+    "runner_verified_each_nina_mapping": true,
+    "runner_verified_each_token_active": true,
+    "runner_verified_each_onchain_cid": true,
+    "runner_verified_database_token_and_tx": true,
+    "token_1031_active": true,
+    "token_1200_active": true,
+    "next_token_id": 1201
+  },
+  "observations": {
+    "gas_per_credential_reduction_size_5_to_50_percent": 3.5368,
+    "gas_per_credential_trend": "decreases as batch size grows",
+    "status_consistency_finding": "All 170 batch diplomas are verified, but Student.statusMesin remains SIAP_DITERBITKAN because the mint finalization does not transition it to TERBIT."
+  },
+  "evidence": {
+    "run_metadata": "run.json",
+    "append_only_events": "events.ndjson",
+    "checkpoint": "checkpoint.json",
+    "results": "results.csv",
+    "checksums": "../checksums.sha256"
+  }
+}

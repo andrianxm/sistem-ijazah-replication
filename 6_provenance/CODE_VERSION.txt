@@ -1,0 +1,38 @@
+Final subsystem code provenance
+Captured: 2026-08-10 (Asia/Jakarta)
+
+SIA Simulasi
+  repository: sia-simulasi
+  branch: main
+  commit: 9dd181ea71926d1c6cf210a161fd3b05c9180d0a
+  tree: c851efc066d57d1413e707b4180008d89daee8c7
+  committed_at: 2026-08-10T05:14:11+07:00
+
+SIVIL Simulasi
+  repository: sivil-simulasi
+  branch: main
+  commit: 2adf9af582ccf02f45100f4179d55b3b7f88cdcd
+  tree: ee0f09604ca856744ba23649b06d7b340a58d26c
+  committed_at: 2026-08-10T05:14:12+07:00
+
+Mock PDDIKTI/PISN
+  repository: mock-pddikti-pisn
+  branch: main
+  commit: 4945adc181228e6fd95d969c57001b5832a1cc13
+  tree: fc5fcb4cbfb11db5305376d9357c77c91ac7b8ac
+  committed_at: 2026-08-10T05:14:12+07:00
+
+Commit subject: chore: snapshot final experimental system
+Commit state: all three tracked working trees clean immediately after commit.
+Publication state: pushed to matching GitHub origin/main references and verified
+against local HEAD at 2026-08-10T05:45:24+07:00.
+  SIA: https://github.com/andrianxm/sistem-ijazah-sia
+  SIVIL: https://github.com/andrianxm/sistem-ijazah-sivil
+  Mock PDDIKTI/PISN: https://github.com/andrianxm/sistem-ijazah-pddikti-pisn
+Secret policy: .env, private keys, JWTs, runtime logs, generated PDFs, databases,
+node_modules, vendor, and build/cache artifacts are excluded from the commits.
+
+Verification commands:
+  git -C sia-simulasi rev-parse HEAD
+  git -C sivil-simulasi rev-parse HEAD
+  git -C mock-pddikti-pisn rev-parse HEAD

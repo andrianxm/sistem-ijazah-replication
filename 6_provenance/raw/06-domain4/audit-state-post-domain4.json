@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-08-09T08:44:16.355Z",
+  "scope": "current_final_only",
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "chain_id": 80002,
+  "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+  "next_token_id": 1201,
+  "pinata_pinned_objects": 406,
+  "domain4_pins_added": 0,
+  "database": {
+    "students": 212,
+    "diplomas": {
+      "verified": 189,
+      "revoked": 11,
+      "total": 200
+    },
+    "pisn_issued": {
+      "aktif": 190,
+      "direvoke": 11,
+      "total": 201
+    },
+    "sivil_registry": {
+      "aktif": 184,
+      "revoked": 3,
+      "direvoke": 11,
+      "total": 198
+    },
+    "b5_unminted_reservations": 1
+  },
+  "services": {
+    "sivil": "running"
+  },
+  "checks": {
+    "contract_unchanged": true,
+    "gateway_unchanged": true,
+    "dataset_consistent": true,
+    "next_token_unchanged_by_domain4": true,
+    "pinata_unchanged_by_domain4": true
+  },
+  "historical_data_present": false
+}

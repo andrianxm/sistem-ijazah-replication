@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "run": "smart-contract-negative-final-20260810",
+  "audited_at": "2026-08-09T20:37:41.674Z",
+  "status": "pass",
+  "expected_cases": 2,
+  "passed_cases": 2,
+  "failed_cases": 0,
+  "transactions_expected": 2,
+  "transactions_recorded": 2,
+  "receipt_status_zero": 2,
+  "state_unchanged": 2,
+  "pin_added": 0,
+  "next_token_id": "1201",
+  "cases": {
+    "SC-RBAC-01": {
+      "phase": "verified",
+      "attempt": 1,
+      "tx_hash": "0x63d3b449a43e90eb4d397a0f1b51b5d09776875f079c266badc2e94d3866bec7",
+      "receipt_status": 0,
+      "gas_used": "30336",
+      "block_number": 44489417,
+      "revert_name": "AccessControlUnauthorizedAccount",
+      "revert_reason": "AccessControlUnauthorizedAccount",
+      "state_unchanged": true,
+      "verified_at": "2026-08-09T20:37:37.051Z"
+    },
+    "SC-TRANSFER-01": {
+      "phase": "verified",
+      "attempt": 1,
+      "tx_hash": "0x5d46f2b44dc95dade039a7b44adfd7d7da3670f131ed715a61b8f72a157212a3",
+      "receipt_status": 0,
+      "gas_used": "28262",
+      "block_number": 44489421,
+      "revert_name": "Error",
+      "revert_reason": "Transfer diblokir: ijazah tidak dapat dipindahtangankan",
+      "state_unchanged": true,
+      "verified_at": "2026-08-09T20:37:41.660Z"
+    }
+  }
+}

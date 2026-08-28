@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "scope": "final_only",
+  "chain_id": 80002,
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+  "code_commits": {
+    "captured_at": "2026-08-10",
+    "scope_note": "Final snapshots of the unchanged subsystem code used by the final experiment; local commits and matching GitHub origin/main references verified.",
+    "pushed_at": "2026-08-10T05:45:24+07:00",
+    "sia_simulasi": {
+      "repository": "sia-simulasi",
+      "remote": "https://github.com/andrianxm/sistem-ijazah-sia",
+      "branch": "main",
+      "commit": "9dd181ea71926d1c6cf210a161fd3b05c9180d0a",
+      "tree": "c851efc066d57d1413e707b4180008d89daee8c7",
+      "committed_at": "2026-08-10T05:14:11+07:00",
+      "working_tree_clean_after_commit": true
+    },
+    "sivil_simulasi": {
+      "repository": "sivil-simulasi",
+      "remote": "https://github.com/andrianxm/sistem-ijazah-sivil",
+      "branch": "main",
+      "commit": "2adf9af582ccf02f45100f4179d55b3b7f88cdcd",
+      "tree": "ee0f09604ca856744ba23649b06d7b340a58d26c",
+      "committed_at": "2026-08-10T05:14:12+07:00",
+      "working_tree_clean_after_commit": true
+    },
+    "mock_pddikti_pisn": {
+      "repository": "mock-pddikti-pisn",
+      "remote": "https://github.com/andrianxm/sistem-ijazah-pddikti-pisn",
+      "branch": "main",
+      "commit": "4945adc181228e6fd95d969c57001b5832a1cc13",
+      "tree": "fc5fcb4cbfb11db5305376d9357c77c91ac7b8ac",
+      "committed_at": "2026-08-10T05:14:12+07:00",
+      "working_tree_clean_after_commit": true
+    }
+  },
+  "dataset": {
+    "students": 212,
+    "issued_credentials": 200,
+    "token_range": "1001-1200",
+    "pinata_objects": 406,
+    "b5_unminted_nina": "040410582605200"
+  },
+  "included": [
+    "single-manual-20260809",
+    "fullflow-auto29-r2-20260809",
+    "fullflow-auto29-retry-nim05-20260809",
+    "batchmint-final-170-20260809",
+    "ineligible-final-10-20260809",
+    "duplikat-nina-final-2-20260809",
+    "modifikasi-artefak-final-6-20260809",
+    "latensi-final",
+    "matriks-final",
+    "cascading-revoke-final-20260809",
+    "duplikat-nim-ui-final-20260809",
+    "smart-contract-negative-final-20260810"
+  ],
+  "excluded_pre_reset": [
+    "experiment_logs.csv",
+    "pasca-perbaikan-sivil",
+    "historical F-DUP-NIM-APP",
+    "historical V01"
+  ],
+  "auxiliary_excluded_from_core_denominator": [
+    "rpc_receipt_timeout_recovery NIM 20210014"
+  ],
+  "historical_data_present": false,
+  "package_type": "self_contained_analysis_and_raw_evidence",
+  "package_generated_at": "2026-08-09T09:49:54.113Z",
+  "layout": {
+    "analysis_csv": "01-20 CSV at package root",
+    "raw_logs": "raw/",
+    "visual_evidence": "visual/",
+    "reproduction_scripts": "scripts/"
+  },
+  "raw_files": 43,
+  "raw_copy_policy": "explicit current-final whitelist; byte-identical copy; source and packaged SHA-256 recorded",
+  "raw_forbidden_markers_checked": [
+    "run=pasca-perbaikan-sivil",
+    "run=detektor-diperbaiki",
+    "historical_pre_reset",
+    "run=alur-penuh-auto29-r1-20260809",
+    "\"execution_id\":\"batchmint-final-20260809\"",
+    "blue-magic-swallow-569.mypinata.cloud"
+  ],
+  "secrets_check": "no .env copied; no JWT-shaped token detected",
+  "excluded_sources": [
+    "pengujian/experiment_logs.csv",
+    "pengujian/experiment_logs/fullflow-auto29-r1-20260809/",
+    "pengujian/pengujian-final/paket-analisis-final-20260809/",
+    "all pre-reset matrix, V01, and edited/development runs not present in explicit whitelist"
+  ],
+  "visual_token_1002": {
+    "generated_at": "2026-08-10",
+    "nim": "20210002",
+    "nina": "040410582605001",
+    "token_id": 1002,
+    "source_run": "fullflow_primary_r2",
+    "analysis_source": "03_alur_fungsional_207_attempt.csv",
+    "analysis_source_sha256": "5db0bffad3521ed3be747c751246a49fd7eef053bb115e3ff0c7121eca32fb46",
+    "raw_source": "raw/01-functional/automated-primary-results.csv",
+    "raw_source_sha256": "9a44d7599fb4ad43a12389a0ba6546e17d3ab488f9414988cddaca2885c051f9",
+    "outputs": [
+      "visual/07-jejak-end-to-end-token-1002.html",
+      "visual/07-jejak-end-to-end-token-1002.png",
+      "visual/08-jejak-token-1002-paper-minimal.html",
+      "visual/08-jejak-token-1002-paper-minimal.png"
+    ],
+    "analysis_and_raw_data_modified": false
+  },
+  "static_security": {
+    "directory": "security-static/",
+    "captured_at": "2026-08-10",
+    "slither_version": "0.11.6",
+    "solc_version": "0.8.34+commit.80d5c536.Linux.g++",
+    "solc_select_versions": [
+      "0.8.20",
+      "0.8.34"
+    ],
+    "solc_select_current": "0.8.34",
+    "openzeppelin_contracts_version": "5.6.0",
+    "optimizer_enabled": true,
+    "optimizer_runs": 200,
+    "slither_report_success": true,
+    "dynamic_rbac_and_transfer_included": true
+  },
+  "smart_contract_negative": {
+    "run": "smart-contract-negative-final-20260810",
+    "executed_at": "2026-08-09T20:37:33.471Z",
+    "analysis_file": "20_smart_contract_negatif_final_2.csv",
+    "raw_directory": "raw/09-smart-contract-negative/",
+    "cases": 2,
+    "passed": 2,
+    "receipt_status_zero": 2,
+    "state_unchanged": 2,
+    "pin_added": 0,
+    "next_token_id_before": 1201,
+    "next_token_id_after": 1201,
+    "rbac": {
+      "unauthorized_wallet": "0x2C9B3d6b80E463EEC0d0E5dFD4741A3B2C1B1503",
+      "rektor_role_granted": false,
+      "tx_hash": "0x63d3b449a43e90eb4d397a0f1b51b5d09776875f079c266badc2e94d3866bec7",
+      "gas_used": 30336,
+      "revert": "AccessControlUnauthorizedAccount"
+    },
+    "transfer": {
+      "token_id": 1002,
+      "tx_hash": "0x5d46f2b44dc95dade039a7b44adfd7d7da3670f131ed715a61b8f72a157212a3",
+      "gas_used": 28262,
+      "revert": "Transfer diblokir: ijazah tidak dapat dipindahtangankan"
+    }
+  }
+}

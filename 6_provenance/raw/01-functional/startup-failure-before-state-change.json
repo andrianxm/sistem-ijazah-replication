@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-08-08T20:52:35Z",
+  "requested_run": "alur-penuh-auto29-20260809",
+  "status": "failed_before_first_action",
+  "error_class": "ENOENT",
+  "error_message": "Logger lock directory did not exist before opening results.csv.lock.",
+  "attempted_nims": ["20210002", "20210003", "20210004"],
+  "application_actions_started": false,
+  "database_state_changed": false,
+  "post_failure_verification": {
+    "students_remain_unverified_draft": true,
+    "diploma_count": 0,
+    "pddikti_rows": 0
+  },
+  "fix": "experiment-logger.cjs now creates the parent log directory before acquiring the lock.",
+  "safe_to_restart_from_nim": "20210002"
+}

@@ -12,12 +12,15 @@ STAGE_MAP = {
 
 F08_LABEL = "F08 Dual-layer verification (SIVIL)"
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_DIR = os.path.dirname(BASE_DIR)
+
 primary_files = [
-    "/home/andrian/sistem-ijazah/pengujian/pengujian-final/analisis-inti-final/raw/01-functional/automated-primary-results.csv",
-    "/home/andrian/sistem-ijazah/pengujian/pengujian-final/analisis-inti-final/raw/01-functional/automated-retry-nim05-results.csv"
+    os.path.join(REPO_DIR, "6_provenance", "raw", "01-functional", "automated-primary-results.csv"),
+    os.path.join(REPO_DIR, "6_provenance", "raw", "01-functional", "automated-retry-nim05-results.csv")
 ]
 
-verif_file = "/home/andrian/sistem-ijazah/pengujian/pengujian-final/analisis-inti-final/11_latensi_verifikasi_final_30.csv"
+verif_file = os.path.join(REPO_DIR, "3_raw_measurements", "11_latensi_verifikasi_final_30.csv")
 
 all_data = []
 
@@ -58,7 +61,7 @@ if os.path.exists(verif_file):
                     "latency_ms": latency_ms
                 })
 
-out_path = "/home/andrian/sistem-ijazah/pengujian/pengujian-final/latency_raw.csv"
+out_path = os.path.join(REPO_DIR, "3_raw_measurements", "latency_raw.csv")
 with open(out_path, mode='w', encoding='utf-8', newline='') as outfile:
     writer = csv.DictWriter(outfile, fieldnames=["stage", "latency_ms"])
     writer.writeheader()

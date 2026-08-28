@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "analysis_role": "auxiliary_recovery_after_rpc_receipt_timeout",
+  "include_in_core_normal_scr_denominator": false,
+  "status": "pass",
+  "recorded_at": "2026-08-09T08:30:22.686Z",
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "nim": "20210014",
+  "token_id": 1013,
+  "tx_hash": "0x118752ceeb42d339ecda6f2b0147e2d80f18a1aae0154d37ee994a67b364a3e9",
+  "receipt": {
+    "status": 1,
+    "block_number": 44445576,
+    "gas_used": "133700"
+  },
+  "first_attempt": {
+    "application_reported_error": true,
+    "onchain_committed": true,
+    "local_cascade_complete": false,
+    "safety_denial": true,
+    "state": {
+      "diploma_id": 14,
+      "nim": "20210014",
+      "name": "Candra Utami",
+      "diploma_number": "IJZ-2026-4114",
+      "cid": "bafybeifxlvf6i4pgrmbsd7wnhbamd7m6i7cjxnuboxxvfpy5ndpi6nku34",
+      "nina": "040410582605013",
+      "token_id": 1013,
+      "sia_diploma": "verified",
+      "sia_pisn": "selesai",
+      "pddikti_status": "lulus",
+      "pddikti_eligibility": "eligible",
+      "pisn_issued": "aktif",
+      "sivil_status": "aktif"
+    },
+    "verification": {
+      "http_status": 200,
+      "is_valid": false,
+      "sivil_status": "found"
+    }
+  },
+  "recovery": {
+    "method": "explicit local reconciliation without a second blockchain transaction",
+    "latency_ms": 2211,
+    "state": {
+      "diploma_id": 14,
+      "nim": "20210014",
+      "name": "Candra Utami",
+      "diploma_number": "IJZ-2026-4114",
+      "cid": "bafybeifxlvf6i4pgrmbsd7wnhbamd7m6i7cjxnuboxxvfpy5ndpi6nku34",
+      "nina": "040410582605013",
+      "token_id": 1013,
+      "sia_diploma": "revoked",
+      "sia_pisn": "direvoke",
+      "pddikti_status": "aktif",
+      "pddikti_eligibility": "tidak_eligible",
+      "pisn_issued": "direvoke",
+      "sivil_status": "direvoke"
+    },
+    "blockchain_active": false,
+    "verification": {
+      "http_status": 200,
+      "is_valid": false,
+      "sivil_status": "revoked"
+    },
+    "eventual_consistency": true
+  }
+}

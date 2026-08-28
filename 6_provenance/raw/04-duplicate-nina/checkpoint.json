@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "run": "duplikat-nina-final-2-20260809",
+  "created_at": "2026-08-09T06:27:08.765Z",
+  "cases": {
+    "DUP-NINA-1": {
+      "phase": "verified",
+      "tx_hash": "0x5b400c5f4fae284890b35b886628da91c26df590cc965bd14b01028887c84d77",
+      "receipt_status": 0,
+      "gas_used": "55160",
+      "block_number": 44438392,
+      "revert_reason": "NINA ini sudah memiliki ijazah aktif",
+      "verified_at": "2026-08-09T06:27:13.525Z"
+    },
+    "DUP-NINA-2": {
+      "phase": "verified",
+      "tx_hash": "0x5ccac529b10fb746b7a791c56681f88ff40e9060dc7cb3cdfd47619540b168fd",
+      "receipt_status": 0,
+      "gas_used": "55148",
+      "block_number": 44438397,
+      "revert_reason": "NINA ini sudah memiliki ijazah aktif",
+      "verified_at": "2026-08-09T06:27:22.282Z"
+    }
+  }
+}

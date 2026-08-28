@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "execution_id": "baseline-final-20260809",
+  "recorded_at": "2026-08-08T20:16:09Z",
+  "status": "pass",
+  "mint_executed": false,
+  "baseline": {
+    "import_executed": true,
+    "synchronization_check": "all_ok",
+    "candidate_nim": "20210001"
+  },
+  "pinata": {
+    "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+    "jwt_fingerprint_sha256_prefix": "ff3ab4692591",
+    "gateway_listed_for_jwt": true,
+    "initial_pin_count": 0,
+    "initial_pin_bytes": 0,
+    "reversible_probe_upload": "pass",
+    "reversible_probe_gateway_http_status": 200,
+    "reversible_probe_body_match": true,
+    "reversible_probe_unpin_http_status": 200,
+    "pin_count_after_cleanup": 0,
+    "sentinel_rows_after_cleanup": 0
+  },
+  "blockchain": {
+    "chain_id": "80002",
+    "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+    "compiler_confirmed_by_owner": "0.8.34",
+    "runtime_code_hash": "0x5c8afad3d60565170343c7c5743356a48f4b579ff536c2bd0f429db0cab86d58",
+    "wallet_has_rektor_role": true,
+    "wallet_has_positive_balance": true,
+    "next_token_id": 1001,
+    "total_minted": 0
+  },
+  "database": {
+    "siakad_students": 212,
+    "siakad_diplomas": 0,
+    "siakad_unverified": 212,
+    "siakad_draft": 212,
+    "kementerian_pddikti_mahasiswa": 0,
+    "kementerian_pisn_nina_issued": 0,
+    "kementerian_pisn_reservations": 0,
+    "sivil_registry": 0,
+    "sivil_verifikasi_logs": 0,
+    "duplicate_nim_groups": 0,
+    "nim_min": "20210001",
+    "nim_max": "20210212",
+    "institution_name": "UNIVERSITAS SIMULASI"
+  },
+  "checksums_sha256": {
+    "students_csv": "d202d9402bde2dda00eb80a7f9fdedfd4a6039188443ae6c923a87ff81401965",
+    "import_sql": "b37863885efe11613867341dcbfff75027c53447245656f5d8b772edfbef8508",
+    "cek_sinkronisasi_sql": "c33709a82a5a486762cfb049824015ab35cb43aba1e325b2c40c20a147bdd302",
+    "dataset_manifest_json": "6a52738488bbad45711a5885b60ddf7d6d3bdd41ef16a10c6937f718011609c0",
+    "diploma_plan_csv": "a6cff1daf87f402bd16a8295f4f2b1b86f940d054fb5a970dde0ad97e3d65a40"
+  },
+  "runtime_images": {
+    "siakad": "sha256:8ed0eab4743403589c38367a5fa072a82ba65c19b91786e1684f5d55b5b0ace2",
+    "sivil": "sha256:c091c2e8895abce76bcfc74e0cb0067867722fb31e5d466765974703f6a55ce5",
+    "mysql": "sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b",
+    "kementerian": "sha256:440574ced9639ac7878cc4aed3387bbb77dcd3fc8f8c3e050a5531d35ba2159c"
+  }
+}

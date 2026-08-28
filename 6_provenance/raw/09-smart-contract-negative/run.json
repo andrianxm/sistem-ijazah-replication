@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "run": "smart-contract-negative-final-20260810",
+  "created_at": "2026-08-09T20:37:33.460Z",
+  "chain_id": "80002",
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "rektor_wallet": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566",
+  "unauthorized_wallet": "0x2C9B3d6b80E463EEC0d0E5dFD4741A3B2C1B1503",
+  "required_role": "0xbcce9c54d98f81812f5cc47e5760a64da361e6400aea9ea517c6e9c4af93512a",
+  "transfer_token_id": 1002,
+  "expected_transactions": 2,
+  "pinata_operations": 0,
+  "logging_policy": "append-only events/results; atomic checkpoint/audit; no private keys"
+}

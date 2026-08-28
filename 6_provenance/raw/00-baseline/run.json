@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "execution_id": "baseline-final-20260809",
+  "created_at": "2026-08-08T20:15:55.662Z",
+  "plan_file": "/home/andrian/sistem-ijazah/pengujian/diploma_plan.csv",
+  "manifest_file": "/home/andrian/sistem-ijazah/pengujian/dataset_manifest.json",
+  "selected_batches": [
+    "batch5_rep1",
+    "batch5_rep2",
+    "batch5_rep3",
+    "batch10_rep1",
+    "batch10_rep2",
+    "batch10_rep3",
+    "batch25_rep1",
+    "batch25_rep2",
+    "batch25_rep3",
+    "batch50_rep1"
+  ],
+  "dry_run": false,
+  "validate_only": false,
+  "preflight_only": true,
+  "prepare_only": false,
+  "confirmations": 1
+}

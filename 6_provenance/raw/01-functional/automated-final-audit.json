@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "execution_id": "fullflow-auto29-final-20260809",
+  "recorded_at": "2026-08-08T21:08:57Z",
+  "status": "pass_with_documented_retry_and_status_finding",
+  "scope": {
+    "dataset_students": 212,
+    "credentials_expected": 30,
+    "manual_credentials": 1,
+    "automated_credentials": 29,
+    "nim_range": "20210001-20210030",
+    "nina_range": "040410582605000-040410582605029",
+    "token_range": "1001-1030"
+  },
+  "outcome": {
+    "credentials_eventually_completed": 30,
+    "credentials_failed_final": 0,
+    "eventual_credential_scr_percent": 100.0,
+    "automated_first_pass_completed": 28,
+    "automated_first_pass_total": 29,
+    "automated_first_pass_scr_percent": 96.5517,
+    "automated_step_attempts_r2_plus_retry": 207,
+    "automated_step_passes_r2_plus_retry": 206,
+    "automated_step_failures_r2_plus_retry": 1,
+    "automated_step_scr_percent": 99.5169
+  },
+  "manual_credential": {
+    "nim": "20210001",
+    "nina": "040410582605000",
+    "token_id": 1001,
+    "status": "pass",
+    "evidence": "../single-manual-20260809/audit.json"
+  },
+  "automated_campaign": {
+    "primary_run": {
+      "run": "alur-penuh-auto29-r2-20260809",
+      "credentials_passed": 28,
+      "credentials_failed": 1,
+      "log_rows": 200,
+      "step_passes": 199,
+      "step_failures": 1,
+      "log": "../fullflow-auto29-r2-20260809/results.csv"
+    },
+    "recovery_run": {
+      "run": "alur-penuh-auto29-retry-nim05-20260809",
+      "nim": "20210005",
+      "nina": "040410582605004",
+      "token_id": 1030,
+      "cid": "bafkreic7t446vokusyos5d3xrsrorpm5d7x3n7luremuqtlrcbgnumgvg4",
+      "tx_hash": "0x2c3d8c2c77440a496529cb75e1b8766306da392373f3506357b6007f2167cb45",
+      "log_rows": 7,
+      "step_passes": 7,
+      "step_failures": 0,
+      "log": "../fullflow-auto29-retry-nim05-20260809/results.csv"
+    },
+    "recovered_failure": {
+      "nim": "20210005",
+      "scenario_id": "F04",
+      "stage": "PDF generation",
+      "cause": "Puppeteer browser process failed to launch in the container",
+      "failure_was_before_ipfs": true,
+      "failure_was_before_mint": true,
+      "state_reconciliation_required": false,
+      "recovery": "Idempotent single-credential retry completed F04-F08 and minted token 1030",
+      "original_failure_preserved": true
+    }
+  },
+  "database_audit": {
+    "siakad": {
+      "students_total": 212,
+      "target_students": 30,
+      "target_eligible": 30,
+      "diplomas_total": 30,
+      "diplomas_verified": 30,
+      "unique_token_ids": 30,
+      "pdf_cids_length_59": 30,
+      "metadata_cids_length_59": 30,
+      "student_machine_status": {
+        "SIAP_DITERBITKAN": 30,
+        "TERBIT": 0
+      }
+    },
+    "kementerian": {
+      "pddikti_rows": 30,
+      "pddikti_eligible": 30,
+      "pisn_reservations": 30,
+      "pisn_reservations_selesai": 30,
+      "nina_issued": 30,
+      "nina_active": 30
+    },
+    "sivil": {
+      "registry_rows": 30,
+      "registry_active": 30
+    },
+    "cross_system_nim_name_nina_mismatches": 0,
+    "normalized_institution_name_mismatches": 0,
+    "institution_values": {
+      "siakad": "UNIVERSITAS SIMULASI",
+      "pddikti": "UNIVERSITAS SIMULASI",
+      "pisn": "Universitas Simulasi",
+      "sivil": "Universitas Simulasi"
+    }
+  },
+  "blockchain_audit": {
+    "chain_id": 80002,
+    "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+    "next_token_id": 1031,
+    "nina_mappings_audited": 30,
+    "active_mappings": 30,
+    "unique_mapped_tokens": 30,
+    "missing_tokens_in_1001_1030": [],
+    "invalid_mappings": [],
+    "token_uri_1001_matches_onchain_cid": true,
+    "token_uri_1030_matches_onchain_cid": true,
+    "active_check_method": "getIjazahByHashedNina.exists",
+    "abi_note": "The new contract does not expose standalone isActive(uint256); application verification reads getIjazahData/getIjazahByHashedNina."
+  },
+  "ipfs_audit": {
+    "gateway": "plum-eldest-tortoise-172.mypinata.cloud",
+    "objects_expected": 60,
+    "objects_http_200_nonempty": 60,
+    "objects_failed": 0
+  },
+  "sivil_audit": {
+    "manual_verification_passed": 1,
+    "automated_live_verifications_passed": 29,
+    "automated_live_verifications_failed_final": 0
+  },
+  "findings": [
+    {
+      "id": "F-STATUS-MACHINE-NOT-TERBIT",
+      "severity": "functional_consistency",
+      "status": "open_documented",
+      "evidence": "All 30 diplomas are verified and have token IDs, but all 30 students remain SIAP_DITERBITKAN and none transition to TERBIT.",
+      "code_evidence": "mintDiplomaToBlockchain updates Diploma.statusBlockchain/tokenId/txHash but does not update Student.statusMesin.",
+      "impact": "The credential is valid across registry, blockchain, IPFS, and SIVIL, but the SIAKAD workflow state is stale. This must be disclosed for the status-consistency metric."
+    },
+    {
+      "id": "F-PUPPETEER-TRANSIENT-NIM05",
+      "severity": "transient_execution",
+      "status": "recovered",
+      "evidence": "F04 failed once before IPFS/mint; a separate idempotent retry passed all seven stages and minted token 1030.",
+      "impact": "First-pass automated credential SCR was 28/29; eventual completion was 29/29."
+    }
+  ],
+  "excluded_debug_runs": [
+    {
+      "run": "startup failure",
+      "reason": "Logger directory ENOENT before the first application action; no state changed.",
+      "evidence": "../fullflow-auto29-startup-failure-20260809.json"
+    },
+    {
+      "run": "fullflow-auto29-r1-20260809",
+      "reason": "Runner omitted required diplomaNumber, so all three attempted credentials stopped at F04 before IPFS/mint. Preserved as development evidence, excluded from final experiment SCR.",
+      "log_rows": 12,
+      "step_passes": 9,
+      "step_failures": 3,
+      "evidence": "../fullflow-auto29-r1-20260809/results.csv"
+    }
+  ],
+  "latency_note": "Manual credential latency is intentionally null. Automated latency values remain in immutable per-step CSV logs and were not reconstructed or fabricated in this audit."
+}

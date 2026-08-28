@@ -51,12 +51,13 @@ These commit identifiers reproduce the **software versions used in the study**. 
 ├── 3_raw_measurements/
 ├── 4_plotting_scripts/
 ├── 5_test_scripts/
+├── 6_provenance/
 └── README.md
 ```
 
 ### `1_dataset_generator`
 
-Contains SQL-based dataset-generation and seeding artefacts used to prepare the synthetic student records for the experiments.
+Contains the Python-based dataset-generation script (`generate_dataset.py`) and seeding artefacts used to prepare the synthetic student records for the experiments.
 
 A fixed seed is used to support reproducibility of the synthetic input data. The generated records are intended for testing only and do not represent real students.
 
@@ -112,7 +113,7 @@ Important files include:
 
 #### `latency_raw.csv`
 
-Contains raw per-stage latency observations used to produce the issuance-stage latency distribution reported in **Figure 5**.
+Contains raw per-stage latency observations used to produce the issuance-stage latency distribution reported in **Figure 5**. This file can be deterministically reproduced from the raw logs in `6_provenance/raw/01-functional/` using the provided Python scripts, yielding a byte-identical output.
 
 The measured stages include:
 
@@ -214,6 +215,28 @@ uji-cascading-revoke.cjs
 These scripts implement the experimental conditions described in the manuscript and provide an inspectable execution procedure for the reported tests.
 
 They should not be interpreted as evidence that the simulated failure conditions exist in production government systems. Their purpose is to reproduce controlled proof-of-concept experiments.
+
+---
+
+### `6_provenance`
+
+Contains the self-contained provenance and integrity package for the final experimental campaign. This directory is a byte-for-byte copy of the internal analysis package and preserves the checksum file that allows independent integrity verification.
+
+Contents include:
+
+- `PROVENANCE_FINAL.json` — machine-readable provenance metadata including contract address, commit hashes, dataset composition, and run whitelist.
+- `CODE_VERSION.txt` — final Git commit and tree hashes for the three subsystems.
+- `MANIFEST.csv` — catalogue of the twenty analysis CSV files with row counts and purpose descriptions.
+- `FILE_MANIFEST.csv` — full inventory of every file in the package with byte sizes and SHA-256 checksums.
+- `RAW_MANIFEST.csv` — mapping from original experiment-log paths to `raw/` copies with dual SHA-256 verification.
+- `checksums.sha256` — SHA-256 checksums for all files in the package; run `sha256sum -c checksums.sha256` from within this directory to verify integrity.
+- `README.md` — analysis instructions and calculation rules for the twenty CSV files.
+- `raw/` — 43 raw experiment log files organised in ten subdirectories (baseline, functional, batch, F06, duplicate-NINA, tamper, domain-4, duplicate-NIM-UI, negative-audit, smart-contract-negative).
+- `visual/` — 33 screenshot and HTML evidence files including domain-4 results.
+- `scripts/` — the same sixteen test and builder scripts also present in `5_test_scripts/`; duplicated here so that `checksums.sha256` verifies cleanly.
+- `security-static/` — Solidity source, Slither report, compiler settings, and toolchain versions.
+
+> **Note on duplication.** The `scripts/` directory in `6_provenance/` duplicates `5_test_scripts/`, and several CSV files duplicate those in `3_raw_measurements/`. This is intentional: `checksums.sha256` was generated over the complete package, and removing files would cause checksum verification to fail.
 
 ---
 
@@ -609,8 +632,9 @@ The replication package includes or links to the artefacts required to inspect t
 - smart-contract source,
 - raw experimental measurements,
 - plotting scripts,
-- test scripts, and
-- exact source-code revisions for the three simulated subsystems.
+- test scripts,
+- exact source-code revisions for the three simulated subsystems, and
+- provenance manifests with SHA-256 checksums for independent integrity verification (`6_provenance/`).
 
 The smart contract used in the reported experiments was deployed on Polygon Amoy and can be inspected independently through a compatible blockchain explorer.
 
@@ -621,8 +645,9 @@ The smart contract used in the reported experiments was deployed on Polygon Amoy
 When using this replication package, cite the associated manuscript.
 
 ```text
-Andrian Maulana, Setyoningsih Wibowo, and Nur Latifa Dwi Mutiasari,
-"Blockchain-Based Digital Diploma Prototype with Dual-Layer Off-Chain and On-Chain Verification,"
+Andrian Maulana, Setyoningsih Wibowo, and Nur Latifa Dwi Mutia Sari,
+"Blockchain-Based Digital Diploma Prototype: Administrative-Blockchain
+Divergence and Recovery in Dual-Layer Verification,"
 International Journal of Advances in Data and Information Systems.
 ```
 
@@ -636,7 +661,7 @@ For questions regarding the replication package or experimental artefacts:
 
 **Andrian Maulana**  
 Department of Engineering and Informatics  
-PGRI University, Indonesia  
+University of PGRI Semarang, Indonesia  
 Email: `andrianmaulana5612@gmail.com`
 
 ---

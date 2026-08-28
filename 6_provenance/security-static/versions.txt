@@ -1,0 +1,25 @@
+Static-security toolchain provenance
+Captured: 2026-08-10 (Asia/Jakarta)
+Working directory: C:\Users\andri\Desktop\PROJECT SKRIPsi\PENGUJIAN
+Capture source: terminal transcript from the analysis environment (slither-env)
+
+$ slither --version
+0.11.6
+
+$ solc --version
+solc, the solidity compiler commandline interface
+Version: 0.8.34+commit.80d5c536.Linux.g++
+
+$ solc-select versions
+0.8.20
+0.8.34 (current, set by /mnt/c/Users/andri/Desktop/PROJECT SKRIPsi/PENGUJIAN/slither-env/.solc-select/global-version)
+
+OpenZeppelin Contracts: 5.6.0
+Evidence: the vendored ERC721.sol and AccessControl.sol headers both identify
+"OpenZeppelin Contracts (last updated v5.6.0)".
+ERC721.sol SHA-256: ef8e2398c78851bd2ec12bc48d923058c557889d5a3d5ee4919c17ff0fb3517e
+AccessControl.sol SHA-256: 97abba9ae4ee97f16f17b7b688d90f6f1195b79edfba344eacc58406e088b51e
+
+Compiler settings: optimizer enabled, 200 runs.
+Deployment network: Polygon Amoy, chain ID 80002.
+Deployment contract: 0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54
