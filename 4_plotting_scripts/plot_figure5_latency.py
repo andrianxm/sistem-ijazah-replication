@@ -67,7 +67,7 @@ def main(csv_path: str, out_path: str) -> None:
     ax.boxplot(
         data,
         vert=False,
-        labels=ordered,
+        labels=[f"{lab} (n={len(v)})" for lab, v in zip(ordered, data)],
         widths=0.6,
         showfliers=True,
         flierprops=dict(marker=".", markersize=3, markerfacecolor="0.3",
