@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "run": "reverse-chainfail-final",
+  "started_at": "2026-09-20T17:41:15.325Z",
+  "node_version": "v20.20.2",
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "chain_id": 80002,
+  "rpc_host": "polygon-amoy.drpc.org",
+  "read_rpc_hosts": [
+    "polygon-amoy.drpc.org",
+    "80002.rpc.thirdweb.com"
+  ],
+  "injection_method": "b_local_rpc_stub_reject_eth_sendRawTransaction",
+  "stub_url": "http://127.0.0.1:42517",
+  "target_cases": 5,
+  "candidate_pool": [
+    "20210025",
+    "20210026",
+    "20210027",
+    "20210028",
+    "20210029",
+    "20210024",
+    "20210030"
+  ],
+  "bookkeeping_before": {
+    "students": 212,
+    "diplomas": 200,
+    "tokens_1001_1200": 200
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-20T17:43:27.711Z",
+  "purpose": "Pengukuran ulang read-only untuk langkah 9: apakah panggilan revoke berikutnya di-revert kontrak. Pengukuran pertama pada REV-CHAINFAIL-3 dan REV-CHAINFAIL-5 mengembalikan galat transport RPC (missing revert data), bukan alasan revert kontrak.",
+  "method": "eth_call (staticCall) dari alamat REKTOR_ROLE; tidak ada transaksi yang dikirim",
+  "contract_address": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "read_rpc_hosts": [
+    "polygon-amoy.drpc.org",
+    "80002.rpc.thirdweb.com"
+  ],
+  "cases": {
+    "REV-CHAINFAIL-1": {
+      "token_id": 1025,
+      "onchain_is_active": false,
+      "reverted": true,
+      "reason": "Ijazah sudah direvoke",
+      "attempts": 1,
+      "rpc": "polygon-amoy.drpc.org"
+    },
+    "REV-CHAINFAIL-2": {
+      "token_id": 1026,
+      "onchain_is_active": false,
+      "reverted": true,
+      "reason": "Ijazah sudah direvoke",
+      "attempts": 1,
+      "rpc": "polygon-amoy.drpc.org"
+    },
+    "REV-CHAINFAIL-3": {
+      "token_id": 1027,
+      "onchain_is_active": false,
+      "reverted": true,
+      "reason": "Ijazah sudah direvoke",
+      "attempts": 1,
+      "rpc": "polygon-amoy.drpc.org"
+    },
+    "REV-CHAINFAIL-4": {
+      "token_id": 1028,
+      "onchain_is_active": false,
+      "reverted": true,
+      "reason": "Ijazah sudah direvoke",
+      "attempts": 1,
+      "rpc": "polygon-amoy.drpc.org"
+    },
+    "REV-CHAINFAIL-5": {
+      "token_id": 1023,
+      "onchain_is_active": false,
+      "reverted": true,
+      "reason": "Ijazah sudah direvoke",
+      "attempts": 1,
+      "rpc": "polygon-amoy.drpc.org"
+    }
+  }
+}
