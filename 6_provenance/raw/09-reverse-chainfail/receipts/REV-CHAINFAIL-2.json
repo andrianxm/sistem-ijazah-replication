@@ -1,0 +1,11 @@
+{
+  "case_id": "REV-CHAINFAIL-2",
+  "tx_hash": "0x02c61d3a17150af6969beb957d63281251ee21a7db6deda1aedf26057efa8750",
+  "status": 1,
+  "block_number": 48103861,
+  "gas_used": "133748",
+  "effective_gas_price": "144280609080",
+  "from": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566",
+  "to": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "signed_but_unsent_tx_hash": "0x144a362e6e9b0bcb5768b012390b1400626f2288578feb5d5107854eda953c97"
+}

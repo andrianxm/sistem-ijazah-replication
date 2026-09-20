@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-20T22:30:54.178372Z",
+  "subject": "3_raw_measurements/21_reverse_chainfail_final_5.csv",
+  "purpose": "Validasi pasca-run independen: setiap klaim CSV diuji ulang terhadap sumbernya (rantai Polygon Amoy lewat dua node, basis data hidup, portal SIVIL), bukan terhadap log run itu sendiri.",
+  "dataset_size": {
+    "recorded_rows": 5,
+    "columns": 34,
+    "file_bytes": 8305,
+    "credentials_consumed_total": 6,
+    "credentials_recorded": 5,
+    "credentials_aborted_unrecorded": 1,
+    "aborted_token": 1024,
+    "recovery_transactions_onchain": 5,
+    "signed_but_never_broadcast_transactions": 5,
+    "event_lines": 71,
+    "receipt_files": 5,
+    "provenance_files": 13,
+    "provenance_files_note": "termasuk validation-report.json ini sendiri"
+  },
+  "groups": {
+    "A": "struktur CSV",
+    "B": "konsistensi internal",
+    "C": "tidak tumpang tindih dengan eksperimen lain",
+    "D": "verifikasi ulang ke rantai (2 node independen)",
+    "E": "bukti pembeda dari berkas 15",
+    "F": "asal transaksi pemulihan",
+    "G": "cocok dengan basis data hidup",
+    "H": "jejak audit basis data",
+    "I": "verifikasi ulang langsung ke portal SIVIL",
+    "J": "log verifikasi tersimpan",
+    "K": "keadaan inkonsisten terekam di log portal",
+    "L": "pembukuan & populasi",
+    "M": "integritas log mentah",
+    "N": "statistik deskriptif"
+  },
+  "totals": {
+    "checks": 91,
+    "passed": 91,
+    "failed": 0,
+    "transient_resolved": 1
+  },
+  "checks": [
+    {
+      "id": "A1 jumlah baris data = 5",
+      "ok": true,
+      "detail": "n=5"
+    },
+    {
+      "id": "A2 31 kolom pertama identik berkas 14",
+      "ok": true,
+      "detail": "cocok=true"
+    },
+    {
+      "id": "A3 3 kolom tambahan di akhir",
+      "ok": true,
+      "detail": "blockchain_active_final,detection_method,detection_latency_ms"
+    },
+    {
+      "id": "A4 semua sel kolom terisi",
+      "ok": true,
+      "detail": "tidak ada sel kosong"
+    },
+    {
+      "id": "A5 case_id REV-CHAINFAIL-1..5 unik berurutan",
+      "ok": true,
+      "detail": "REV-CHAINFAIL-1,REV-CHAINFAIL-2,REV-CHAINFAIL-3,REV-CHAINFAIL-4,REV-CHAINFAIL-5"
+    },
+    {
+      "id": "A6 mode = chain_failure semua",
+      "ok": true,
+      "detail": "chain_failure"
+    },
+    {
+      "id": "A7 nim/nina/token_id/tx_hash unik",
+      "ok": true,
+      "detail": "nim=5 nina=5 token=5 tx=5"
+    },
+    {
+      "id": "A8 token dalam rentang #1001-#1030",
+      "ok": true,
+      "detail": "1025,1026,1027,1028,1023"
+    },
+    {
+      "id": "A9 format tx_hash 0x+64 hex",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "A10 nina 15 digit & nim 8 digit",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B1 REV-CHAINFAIL-1 action_latency_ms = end-start",
+      "ok": true,
+      "detail": "csv=12224 hitung=12224"
+    },
+    {
+      "id": "B1 REV-CHAINFAIL-2 action_latency_ms = end-start",
+      "ok": true,
+      "detail": "csv=10966 hitung=10966"
+    },
+    {
+      "id": "B1 REV-CHAINFAIL-3 action_latency_ms = end-start",
+      "ok": true,
+      "detail": "csv=13774 hitung=13774"
+    },
+    {
+      "id": "B1 REV-CHAINFAIL-4 action_latency_ms = end-start",
+      "ok": true,
+      "detail": "csv=10297 hitung=10297"
+    },
+    {
+      "id": "B1 REV-CHAINFAIL-5 action_latency_ms = end-start",
+      "ok": true,
+      "detail": "csv=11433 hitung=11433"
+    },
+    {
+      "id": "B2 recovery_latency >= detection_latency (keduanya dari pemicu sama)",
+      "ok": true,
+      "detail": "428<=3571 462<=4262 432<=3653 779<=4075 942<=4535"
+    },
+    {
+      "id": "B3 action_latency > recovery_latency (total mencakup pemulihan)",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B4 latensi positif & wajar (<60s)",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B5 timestamp urut & tidak tumpang tindih",
+      "ok": true,
+      "detail": "berurutan"
+    },
+    {
+      "id": "B6 blockchain_active_initial=true semua (inti mode terbalik)",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B7 sivil_initial_status=direvoke semua",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B8 verification_valid_initial=false semua",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B9 first_attempt_cascade=false semua (predikat berkas 14)",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B10 safety_denial=true semua",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B11 eventual_consistency=true semua",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B12 blockchain_active_final=false & verification_valid_final=false",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B13 detection_method seragam",
+      "ok": true,
+      "detail": "reconciliation_read_onchain_status"
+    },
+    {
+      "id": "B14 lapisan akhir = revoked/direvoke/aktif/tidak_eligible/direvoke/direvoke",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "B15 receipt_status=1 semua",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "id": "C1 tidak ada token yang sama dengan berkas 14",
+      "ok": true,
+      "detail": "berkas14=[1014,1016,1017,1018,1019,1020,1021,1012,1015,1022] irisan=[]"
+    },
+    {
+      "id": "C2 tx_hash belum pernah muncul di berkas 19",
+      "ok": true,
+      "detail": "5/5 baru"
+    },
+    {
+      "id": "D1 REV-CHAINFAIL-1 token 1025 isActive=false",
+      "ok": true,
+      "detail": "isActive=false alasan=\"Rekonsiliasi reverse-chainfail-final REV-CHAINFAIL-1\" via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "D1 REV-CHAINFAIL-2 token 1026 isActive=false",
+      "ok": true,
+      "detail": "isActive=false alasan=\"Rekonsiliasi reverse-chainfail-final REV-CHAINFAIL-2\" via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "D1 REV-CHAINFAIL-3 token 1027 isActive=false",
+      "ok": true,
+      "detail": "isActive=false alasan=\"Rekonsiliasi reverse-chainfail-final REV-CHAINFAIL-3\" via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "D1 REV-CHAINFAIL-4 token 1028 isActive=false",
+      "ok": true,
+      "detail": "isActive=false alasan=\"Rekonsiliasi reverse-chainfail-final REV-CHAINFAIL-4\" via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "D1 REV-CHAINFAIL-5 token 1023 isActive=false",
+      "ok": true,
+      "detail": "isActive=false alasan=\"Rekonsiliasi reverse-chainfail-final REV-CHAINFAIL-5\" via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "D2 REV-CHAINFAIL-1 receipt cocok CSV",
+      "ok": true,
+      "detail": "status=1 blok=48103848(csv 48103848) gas=133748(csv 133748) to=kontrak"
+    },
+    {
+      "id": "D2 REV-CHAINFAIL-2 receipt cocok CSV",
+      "ok": true,
+      "detail": "status=1 blok=48103861(csv 48103861) gas=133748(csv 133748) to=kontrak"
+    },
+    {
+      "id": "D2 REV-CHAINFAIL-3 receipt cocok CSV",
+      "ok": true,
+      "detail": "status=1 blok=48103873(csv 48103873) gas=133748(csv 133748) to=kontrak"
+    },
+    {
+      "id": "D2 REV-CHAINFAIL-4 receipt cocok CSV",
+      "ok": true,
+      "detail": "status=1 blok=48103886(csv 48103886) gas=133748(csv 133748) to=kontrak"
+    },
+    {
+      "id": "D2 REV-CHAINFAIL-5 receipt cocok CSV",
+      "ok": true,
+      "detail": "status=1 blok=48103898(csv 48103898) gas=133748(csv 133748) to=kontrak"
+    },
+    {
+      "id": "E1 REV-CHAINFAIL-1 raw-tx injeksi tidak ada di rantai",
+      "ok": true,
+      "detail": "hash=0x9e965e6e14711e53… lookup=null via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "E1 REV-CHAINFAIL-2 raw-tx injeksi tidak ada di rantai",
+      "ok": true,
+      "detail": "hash=0x144a362e6e9b0bcb… lookup=null via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "E1 REV-CHAINFAIL-3 raw-tx injeksi tidak ada di rantai",
+      "ok": true,
+      "detail": "hash=0x853d40270d30e660… lookup=null via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "E1 REV-CHAINFAIL-4 raw-tx injeksi tidak ada di rantai",
+      "ok": true,
+      "detail": "hash=0x6d824244b0a4338d… lookup=null via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "E1 REV-CHAINFAIL-5 raw-tx injeksi tidak ada di rantai",
+      "ok": true,
+      "detail": "hash=0x9e38b6fd5f38479e… lookup=null via polygon-amoy.drpc.org"
+    },
+    {
+      "id": "F1 block_number naik monoton",
+      "ok": true,
+      "detail": "48103848 < 48103861 < 48103873 < 48103886 < 48103898"
+    },
+    {
+      "id": "F2 REV-CHAINFAIL-1 pengirim = wallet rektor",
+      "ok": true,
+      "detail": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566"
+    },
+    {
+      "id": "F2 REV-CHAINFAIL-2 pengirim = wallet rektor",
+      "ok": true,
+      "detail": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566"
+    },
+    {
+      "id": "F2 REV-CHAINFAIL-3 pengirim = wallet rektor",
+      "ok": true,
+      "detail": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566"
+    },
+    {
+      "id": "F2 REV-CHAINFAIL-4 pengirim = wallet rektor",
+      "ok": true,
+      "detail": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566"
+    },
+    {
+      "id": "F2 REV-CHAINFAIL-5 pengirim = wallet rektor",
+      "ok": true,
+      "detail": "0x80EBA46e25Ed50c09a20E90f7C398bf5aeAe3566"
+    },
+    {
+      "id": "G1 REV-CHAINFAIL-1 8 kolom state cocok DB",
+      "ok": true,
+      "detail": "040410582605025/1025/revoked/direvoke/aktif/tidak_eligible/direvoke/direvoke"
+    },
+    {
+      "id": "G1 REV-CHAINFAIL-2 8 kolom state cocok DB",
+      "ok": true,
+      "detail": "040410582605026/1026/revoked/direvoke/aktif/tidak_eligible/direvoke/direvoke"
+    },
+    {
+      "id": "G1 REV-CHAINFAIL-3 8 kolom state cocok DB",
+      "ok": true,
+      "detail": "040410582605027/1027/revoked/direvoke/aktif/tidak_eligible/direvoke/direvoke"
+    },
+    {
+      "id": "G1 REV-CHAINFAIL-4 8 kolom state cocok DB",
+      "ok": true,
+      "detail": "040410582605028/1028/revoked/direvoke/aktif/tidak_eligible/direvoke/direvoke"
+    },
+    {
+      "id": "G1 REV-CHAINFAIL-5 8 kolom state cocok DB",
+      "ok": true,
+      "detail": "040410582605023/1023/revoked/direvoke/aktif/tidak_eligible/direvoke/direvoke"
+    },
+    {
+      "id": "H1 REV-CHAINFAIL-1 diploma_logs berisi tx revoke",
+      "ok": true,
+      "detail": "baris=1"
+    },
+    {
+      "id": "H1 REV-CHAINFAIL-2 diploma_logs berisi tx revoke",
+      "ok": true,
+      "detail": "baris=1"
+    },
+    {
+      "id": "H1 REV-CHAINFAIL-3 diploma_logs berisi tx revoke",
+      "ok": true,
+      "detail": "baris=1"
+    },
+    {
+      "id": "H1 REV-CHAINFAIL-4 diploma_logs berisi tx revoke",
+      "ok": true,
+      "detail": "baris=1"
+    },
+    {
+      "id": "H1 REV-CHAINFAIL-5 diploma_logs berisi tx revoke",
+      "ok": true,
+      "detail": "baris=1"
+    },
+    {
+      "id": "I1 REV-CHAINFAIL-1 portal menolak (dua lapis)",
+      "ok": true,
+      "detail": "isValid=false sivilStatus=revoked chain_is_active=false"
+    },
+    {
+      "id": "I1 REV-CHAINFAIL-2 portal menolak (dua lapis)",
+      "ok": true,
+      "detail": "isValid=false sivilStatus=revoked chain_is_active=null -> galat transport RPC sesaat pada branch fail-closed SIAKAD (/api/verify-nina mengembalikan is_active=null saat node Polygon tidak terjangkau). Diprobe ulang 6x berturut-turut: 6/6 is_active=false, isValid=false. Keputusan portal tetap false pada kedua kondisi, jadi tidak mengubah klaim baris mana pun.",
+      "resolved_as": "transient"
+    },
+    {
+      "id": "I1 REV-CHAINFAIL-3 portal menolak (dua lapis)",
+      "ok": true,
+      "detail": "isValid=false sivilStatus=revoked chain_is_active=false"
+    },
+    {
+      "id": "I1 REV-CHAINFAIL-4 portal menolak (dua lapis)",
+      "ok": true,
+      "detail": "isValid=false sivilStatus=revoked chain_is_active=false"
+    },
+    {
+      "id": "I1 REV-CHAINFAIL-5 portal menolak (dua lapis)",
+      "ok": true,
+      "detail": "isValid=false sivilStatus=revoked chain_is_active=false"
+    },
+    {
+      "id": "J1 REV-CHAINFAIL-1 ada log verifikasi",
+      "ok": true,
+      "detail": "jumlah_log=5 log_pertama[sivil_valid,bc_valid,dual,status]=1,1,1,found"
+    },
+    {
+      "id": "J1 REV-CHAINFAIL-2 ada log verifikasi",
+      "ok": true,
+      "detail": "jumlah_log=5 log_pertama[sivil_valid,bc_valid,dual,status]=1,1,1,found"
+    },
+    {
+      "id": "J1 REV-CHAINFAIL-3 ada log verifikasi",
+      "ok": true,
+      "detail": "jumlah_log=5 log_pertama[sivil_valid,bc_valid,dual,status]=1,1,1,found"
+    },
+    {
+      "id": "J1 REV-CHAINFAIL-4 ada log verifikasi",
+      "ok": true,
+      "detail": "jumlah_log=5 log_pertama[sivil_valid,bc_valid,dual,status]=1,1,1,found"
+    },
+    {
+      "id": "J1 REV-CHAINFAIL-5 ada log verifikasi",
+      "ok": true,
+      "detail": "jumlah_log=5 log_pertama[sivil_valid,bc_valid,dual,status]=1,1,1,found"
+    },
+    {
+      "id": "K1 REV-CHAINFAIL-1 ada log \"registri revoked + rantai masih valid\"",
+      "ok": true,
+      "detail": "jumlah=1"
+    },
+    {
+      "id": "K1 REV-CHAINFAIL-2 ada log \"registri revoked + rantai masih valid\"",
+      "ok": true,
+      "detail": "jumlah=1"
+    },
+    {
+      "id": "K1 REV-CHAINFAIL-3 ada log \"registri revoked + rantai masih valid\"",
+      "ok": true,
+      "detail": "jumlah=1"
+    },
+    {
+      "id": "K1 REV-CHAINFAIL-4 ada log \"registri revoked + rantai masih valid\"",
+      "ok": true,
+      "detail": "jumlah=1"
+    },
+    {
+      "id": "K1 REV-CHAINFAIL-5 ada log \"registri revoked + rantai masih valid\"",
+      "ok": true,
+      "detail": "jumlah=1"
+    },
+    {
+      "id": "L1 pembukuan 212/200/200 utuh",
+      "ok": true,
+      "detail": "212/200/200"
+    },
+    {
+      "id": "L2 komposisi registri SIVIL token #1001-#1030",
+      "ok": true,
+      "detail": "aktif=7  |  revoked=3  |  MISSING=3  |  direvoke=17"
+    },
+    {
+      "id": "L3 status_blockchain token #1001-#1030",
+      "ok": true,
+      "detail": "verified=13  |  revoked=17"
+    },
+    {
+      "id": "M1 events.ndjson semua baris JSON sah",
+      "ok": true,
+      "detail": "71 baris, rusak=0"
+    },
+    {
+      "id": "M2 komposisi peristiwa",
+      "ok": true,
+      "detail": "run_started=2 candidate_screened=7 case_started=6 sivil_registry_revoked=6 chain_injection=6 injection_verified=6 verification_initial=6 reconciliation_triggered=6 mismatch_detected=6 recovery_confirmed=6 second_tx_assessment=6 run_error=1 case_completed=5 rpc_retry=1 run_completed=1"
+    },
+    {
+      "id": "M3 audit.json: 5 kasus valid, 0 tidak valid",
+      "ok": true,
+      "detail": "valid=5 invalid=0 status=pass"
+    },
+    {
+      "id": "M4 checkpoint.json berisi 5 kasus",
+      "ok": true,
+      "detail": "REV-CHAINFAIL-1,REV-CHAINFAIL-2,REV-CHAINFAIL-3,REV-CHAINFAIL-4,REV-CHAINFAIL-5"
+    },
+    {
+      "id": "M5 5 berkas receipt tersimpan",
+      "ok": true,
+      "detail": "REV-CHAINFAIL-1.json,REV-CHAINFAIL-2.json,REV-CHAINFAIL-3.json,REV-CHAINFAIL-4.json,REV-CHAINFAIL-5.json"
+    },
+    {
+      "id": "M6 probe revert: 5/5 revert 'Ijazah sudah direvoke'",
+      "ok": true,
+      "detail": "REV-CHAINFAIL-1:Ijazah sudah direvoke | REV-CHAINFAIL-2:Ijazah sudah direvoke | REV-CHAINFAIL-3:Ijazah sudah direvoke | REV-CHAINFAIL-4:Ijazah sudah direvoke | REV-CHAINFAIL-5:Ijazah sudah direvoke"
+    },
+    {
+      "id": "M7 salinan provenance identik dengan CSV utama",
+      "ok": true,
+      "detail": "byte-identik"
+    },
+    {
+      "id": "N1 first_propagation_ms",
+      "ok": true,
+      "detail": "n=5 min=129 med=141 maks=165 rerata=144.0 sd=13.3"
+    },
+    {
+      "id": "N1 detection_latency_ms",
+      "ok": true,
+      "detail": "n=5 min=428 med=462 maks=942 rerata=608.6 sd=237.4"
+    },
+    {
+      "id": "N1 recovery_latency_ms",
+      "ok": true,
+      "detail": "n=5 min=3571 med=4075 maks=4535 rerata=4019.2 sd=407.2"
+    },
+    {
+      "id": "N1 action_latency_ms",
+      "ok": true,
+      "detail": "n=5 min=10297 med=11433 maks=13774 rerata=11738.8 sd=1336.7"
+    }
+  ]
+}
