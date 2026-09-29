@@ -1,0 +1,53 @@
+strict digraph {
+rankdir="LR"
+node [shape=box]
+subgraph cluster_5662_Bytes {
+label = "Bytes"
+"5662_clz(bytes)" [label="clz(bytes)"]
+"5662_lastIndexOf(bytes,bytes1,uint256)" [label="lastIndexOf(bytes,bytes1,uint256)"]
+"5662_splice(bytes,uint256)" [label="splice(bytes,uint256)"]
+"5662_replace(bytes,uint256,bytes)" [label="replace(bytes,uint256,bytes)"]
+"5662_equal(bytes,bytes)" [label="equal(bytes,bytes)"]
+"5662_indexOf(bytes,bytes1,uint256)" [label="indexOf(bytes,bytes1,uint256)"]
+"5662_reverseBytes2(bytes2)" [label="reverseBytes2(bytes2)"]
+"5662__unsafeReadBytesOffset(bytes,uint256)" [label="_unsafeReadBytesOffset(bytes,uint256)"]
+"5662_splice(bytes,uint256,uint256)" [label="splice(bytes,uint256,uint256)"]
+"5662_reverseBytes16(bytes16)" [label="reverseBytes16(bytes16)"]
+"5662_toNibbles(bytes)" [label="toNibbles(bytes)"]
+"5662_slice(bytes,uint256,uint256)" [label="slice(bytes,uint256,uint256)"]
+"5662_reverseBytes8(bytes8)" [label="reverseBytes8(bytes8)"]
+"5662_slice(bytes,uint256)" [label="slice(bytes,uint256)"]
+"5662_indexOf(bytes,bytes1)" [label="indexOf(bytes,bytes1)"]
+"5662_replace(bytes,uint256,bytes,uint256,uint256)" [label="replace(bytes,uint256,bytes,uint256,uint256)"]
+"5662_reverseBytes32(bytes32)" [label="reverseBytes32(bytes32)"]
+"5662_lastIndexOf(bytes,bytes1)" [label="lastIndexOf(bytes,bytes1)"]
+"5662_reverseBytes4(bytes4)" [label="reverseBytes4(bytes4)"]
+"5662_concat(bytes[])" [label="concat(bytes[])"]
+"5662_slice(bytes,uint256)" -> "5662_slice(bytes,uint256,uint256)"
+"5662_indexOf(bytes,bytes1)" -> "5662_indexOf(bytes,bytes1,uint256)"
+"5662_lastIndexOf(bytes,bytes1)" -> "5662_lastIndexOf(bytes,bytes1,uint256)"
+"5662_splice(bytes,uint256)" -> "5662_splice(bytes,uint256,uint256)"
+"5662_clz(bytes)" -> "5662__unsafeReadBytesOffset(bytes,uint256)"
+"5662_lastIndexOf(bytes,bytes1,uint256)" -> "5662__unsafeReadBytesOffset(bytes,uint256)"
+"5662_replace(bytes,uint256,bytes)" -> "5662_replace(bytes,uint256,bytes,uint256,uint256)"
+"5662_indexOf(bytes,bytes1,uint256)" -> "5662__unsafeReadBytesOffset(bytes,uint256)"
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"keccak256(bytes)" 
+"mload(uint256)" 
+"mcopy(uint256,uint256,uint256)" 
+"mstore(uint256,uint256)" 
+"5662_concat(bytes[])" -> "mcopy(uint256,uint256,uint256)"
+"5662__unsafeReadBytesOffset(bytes,uint256)" -> "mload(uint256)"
+"5662_toNibbles(bytes)" -> "mload(uint256)"
+"5662_equal(bytes,bytes)" -> "keccak256(bytes)"
+"5662_slice(bytes,uint256,uint256)" -> "mcopy(uint256,uint256,uint256)"
+"5662_concat(bytes[])" -> "mload(uint256)"
+"5662_replace(bytes,uint256,bytes,uint256,uint256)" -> "mcopy(uint256,uint256,uint256)"
+"5662_splice(bytes,uint256,uint256)" -> "mstore(uint256,uint256)"
+"5662_toNibbles(bytes)" -> "mstore(uint256,uint256)"
+"5662_splice(bytes,uint256,uint256)" -> "mcopy(uint256,uint256,uint256)"
+}subgraph cluster_toplevel {
+label = "[Top Level]"
+}
+}

@@ -1,0 +1,76 @@
+{
+  "run": "rpc-unavailable-final",
+  "injection_method": "a_unreachable_endpoint (SIAKAD /api/verify-nina POLYGON_RPC_URL=http://127.0.0.1:1)",
+  "siakad": {
+    "rpc_before": "https://polygon-amoy.drpc.org",
+    "rpc_injected": "http://127.0.0.1:1",
+    "config_hash": "3e2677b95ff68421d767fc595a52eb9a158e82c7b706a68955feb9d43ce6d9f1",
+    "restored_identical": true
+  },
+  "cases": 5,
+  "final_negative": 5,
+  "registry_aktif": 5,
+  "blockchain_tidak_terverifikasi": 5,
+  "log_contrast": 5,
+  "verification_mode_values": [
+    "live"
+  ],
+  "portal_offline_label": 0,
+  "latency_ms": {
+    "median": 48,
+    "min": 44,
+    "max": 128
+  },
+  "post_restore_valid": 4,
+  "bookkeeping_before": {
+    "students": 212,
+    "diplomas": 200,
+    "tokens_1001_1200": 200,
+    "sivil_registry_aktif": 178,
+    "verifikasi_logs_max_id": 142
+  },
+  "bookkeeping_after": {
+    "students": 212,
+    "diplomas": 200,
+    "tokens_1001_1200": 200,
+    "sivil_registry_aktif": 178,
+    "verifikasi_logs_max_id": 152
+  },
+  "issuer_nonce_before": {
+    "nonce": 151,
+    "via": "polygon-amoy.drpc.org"
+  },
+  "issuer_nonce_after": {
+    "nonce": 151,
+    "via": "polygon-amoy.drpc.org"
+  },
+  "no_transactions": true,
+  "chain_after": [
+    {
+      "token_id": 1040,
+      "is_active": true,
+      "via": "polygon-amoy.drpc.org"
+    },
+    {
+      "token_id": 1080,
+      "is_active": true,
+      "via": "polygon-amoy.drpc.org"
+    },
+    {
+      "token_id": 1120,
+      "is_active": true,
+      "via": "polygon-amoy.drpc.org"
+    },
+    {
+      "token_id": 1160,
+      "is_active": true,
+      "via": "polygon-amoy.drpc.org"
+    },
+    {
+      "token_id": 1200,
+      "is_active": true,
+      "via": "polygon-amoy.drpc.org"
+    }
+  ],
+  "pass": 5
+}

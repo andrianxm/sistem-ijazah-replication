@@ -1,0 +1,311 @@
+{
+  "contract": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54",
+  "chain_id": 80002,
+  "finding_functions": {
+    "Math.mulDiv(uint256,uint256,uint256)": {
+      "High": 1,
+      "Medium": 8
+    },
+    "Math.invMod(uint256,uint256)": {
+      "High": 0,
+      "Medium": 1
+    }
+  },
+  "slither_call_graph": {
+    "entry_points": {
+      "ERC721.approve(address,uint256)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "ERC721.balanceOf(address)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.batchMintIjazah(bytes32[],bytes32[],string[],string[])": {
+        "visibility": "external",
+        "library_functions_reached": [
+          "StorageSlot.getUint256Slot(bytes32)"
+        ]
+      },
+      "ReentrancyGuard.constructor()": {
+        "visibility": "constructor",
+        "library_functions_reached": [
+          "StorageSlot.getUint256Slot(bytes32)"
+        ]
+      },
+      "IjazahNFT.constructor(address)": {
+        "visibility": "constructor",
+        "library_functions_reached": []
+      },
+      "ERC721.constructor(string,string)": {
+        "visibility": "constructor",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.countTotalMintedByContract()": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.deactivateInstitution(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.fallback()": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.gantiRektor(address,address)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "ERC721.getApproved(uint256)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getIjazahByHashedNina(bytes32)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getIjazahData(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getInstitution(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getInstitutionId(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getNextTokenId()": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getRevokeReason(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "AccessControl.getRoleAdmin(bytes32)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getTokenIdByHashedNim(bytes32)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getTokenIdByHashedNina(bytes32)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getUpdateCount(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.getUpdateHistory(uint256)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "AccessControl.grantRole(bytes32,address)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "AccessControl.hasRole(bytes32,address)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "ERC721.isApprovedForAll(address,address)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.mintIjazah(bytes32,bytes32,string,string)": {
+        "visibility": "external",
+        "library_functions_reached": [
+          "StorageSlot.getUint256Slot(bytes32)"
+        ]
+      },
+      "IjazahNFT.mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)": {
+        "visibility": "external",
+        "library_functions_reached": [
+          "StorageSlot.getUint256Slot(bytes32)"
+        ]
+      },
+      "ERC721.name()": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "ERC721.ownerOf(uint256)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.pause()": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "Pausable.paused()": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.receive()": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.registerInstitution(string,address)": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "AccessControl.renounceRole(bytes32,address)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.revokeIjazah(uint256,string)": {
+        "visibility": "external",
+        "library_functions_reached": [
+          "StorageSlot.getUint256Slot(bytes32)"
+        ]
+      },
+      "AccessControl.revokeRole(bytes32,address)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "ERC721.safeTransferFrom(address,address,uint256)": {
+        "visibility": "public",
+        "library_functions_reached": [
+          "ERC721Utils.checkOnERC721Received(address,address,address,uint256,bytes)"
+        ]
+      },
+      "ERC721.safeTransferFrom(address,address,uint256,bytes)": {
+        "visibility": "public",
+        "library_functions_reached": [
+          "ERC721Utils.checkOnERC721Received(address,address,address,uint256,bytes)"
+        ]
+      },
+      "ERC721.setApprovalForAll(address,bool)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.supportsInterface(bytes4)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "ERC721.symbol()": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.tokenURI(uint256)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "ERC721.transferFrom(address,address,uint256)": {
+        "visibility": "public",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.unpause()": {
+        "visibility": "external",
+        "library_functions_reached": []
+      },
+      "IjazahNFT.updateIjazah(uint256,string)": {
+        "visibility": "external",
+        "library_functions_reached": [
+          "StorageSlot.getUint256Slot(bytes32)"
+        ]
+      }
+    },
+    "entry_point_count": 45,
+    "unresolvable_dynamic_calls": 0,
+    "finding_functions_reached_from_entry_points": {},
+    "all_callers_in_source_set": {
+      "Math.mulDiv(uint256,uint256,uint256)": [
+        "Math.mulDiv(uint256,uint256,uint256,Math.Rounding)"
+      ]
+    },
+    "positive_controls": {
+      "ERC721.tokenURI(uint256) [overridden in IjazahNFT, not an entry point]": [
+        "Math.log10(uint256)",
+        "Strings.toString(uint256)"
+      ],
+      "Math.mulDiv(uint256,uint256,uint256,Rounding)": [
+        "Math.mul512(uint256,uint256)",
+        "Math.mulDiv(uint256,uint256,uint256)",
+        "Math.mulDiv(uint256,uint256,uint256,Math.Rounding)",
+        "Math.ternary(bool,uint256,uint256)",
+        "Math.unsignedRoundsUp(Math.Rounding)"
+      ]
+    }
+  },
+  "deployed_bytecode": {
+    "solc": "0.8.34+commit.80d5c536",
+    "settings": {
+      "optimizer": {
+        "runs": 200,
+        "enabled": true
+      },
+      "remappings": []
+    },
+    "sourcify_match": {
+      "creation": "exact_match",
+      "runtime": "exact_match",
+      "match_id": "43422570"
+    },
+    "compiled_runtime_equals_onchain_runtime": true,
+    "math_sol_source_index": 17,
+    "source_files": 21,
+    "deployed_instructions_per_source_file": {
+      "<generated/none>": 3398,
+      "@openzeppelin/contracts/access/AccessControl.sol": 424,
+      "@openzeppelin/contracts/token/ERC721/ERC721.sol": 990,
+      "@openzeppelin/contracts/token/ERC721/utils/ERC721Utils.sol": 157,
+      "@openzeppelin/contracts/utils/Context.sol": 15,
+      "@openzeppelin/contracts/utils/Pausable.sol": 118,
+      "@openzeppelin/contracts/utils/ReentrancyGuard.sol": 66,
+      "@openzeppelin/contracts/utils/introspection/ERC165.sol": 4,
+      "contracts/IjazahNFT.sol": 3750
+    },
+    "deployed_instructions_mapped_to_math_function": {
+      "Math._zeroBytes(bytes)": 0,
+      "Math.add512(uint256,uint256)": 0,
+      "Math.average(uint256,uint256)": 0,
+      "Math.ceilDiv(uint256,uint256)": 0,
+      "Math.clz(uint256)": 0,
+      "Math.invMod(uint256,uint256)": 0,
+      "Math.invModPrime(uint256,uint256)": 0,
+      "Math.log10(uint256)": 0,
+      "Math.log10(uint256,Rounding)": 0,
+      "Math.log2(uint256)": 0,
+      "Math.log2(uint256,Rounding)": 0,
+      "Math.log256(uint256)": 0,
+      "Math.log256(uint256,Rounding)": 0,
+      "Math.max(uint256,uint256)": 0,
+      "Math.min(uint256,uint256)": 0,
+      "Math.modExp(bytes,bytes,bytes)": 0,
+      "Math.modExp(uint256,uint256,uint256)": 0,
+      "Math.mul512(uint256,uint256)": 0,
+      "Math.mulDiv(uint256,uint256,uint256)": 0,
+      "Math.mulDiv(uint256,uint256,uint256,Rounding)": 0,
+      "Math.mulShr(uint256,uint256,uint8)": 0,
+      "Math.mulShr(uint256,uint256,uint8,Rounding)": 0,
+      "Math.saturatingAdd(uint256,uint256)": 0,
+      "Math.saturatingMul(uint256,uint256)": 0,
+      "Math.saturatingSub(uint256,uint256)": 0,
+      "Math.sqrt(uint256)": 0,
+      "Math.sqrt(uint256,Rounding)": 0,
+      "Math.ternary(bool,uint256,uint256)": 0,
+      "Math.tryAdd(uint256,uint256)": 0,
+      "Math.tryDiv(uint256,uint256)": 0,
+      "Math.tryMod(uint256,uint256)": 0,
+      "Math.tryModExp(bytes,bytes,bytes)": 0,
+      "Math.tryModExp(uint256,uint256,uint256)": 0,
+      "Math.tryMul(uint256,uint256)": 0,
+      "Math.trySub(uint256,uint256)": 0,
+      "Math.unsignedRoundsUp(Rounding)": 0
+    },
+    "finding_functions_in_deployed_bytecode": {
+      "Math.mulDiv(uint256,uint256,uint256)": 0,
+      "Math.invMod(uint256,uint256)": 0
+    }
+  },
+  "conclusion": {
+    "reachable_from_any_entry_point": false,
+    "present_in_deployed_bytecode": false,
+    "closure_complete": true
+  }
+}

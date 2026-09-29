@@ -1,0 +1,20 @@
+strict digraph {
+rankdir="LR"
+node [shape=box]
+subgraph cluster_3197_ERC721Utils {
+label = "ERC721Utils"
+"3197_checkOnERC721Received(address,address,address,uint256,bytes)" [label="checkOnERC721Received(address,address,address,uint256,bytes)"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"revert(uint256,uint256)" 
+"revert ERC721InvalidReceiver(address)" 
+"mload(uint256)" 
+"code(address)" 
+"3197_checkOnERC721Received(address,address,address,uint256,bytes)" -> "code(address)"
+"3197_checkOnERC721Received(address,address,address,uint256,bytes)" -> "revert ERC721InvalidReceiver(address)"
+"3197_checkOnERC721Received(address,address,address,uint256,bytes)" -> "revert(uint256,uint256)"
+"3197_checkOnERC721Received(address,address,address,uint256,bytes)" -> "mload(uint256)"
+}subgraph cluster_toplevel {
+label = "[Top Level]"
+}
+}

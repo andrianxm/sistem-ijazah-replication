@@ -1,0 +1,65 @@
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/=@openzeppelin/ contracts/IjazahNFT.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --optimize --optimize-runs 200 --allow-paths .,<verified-source-dir>/contracts' running
+INFO:Printers:Call Graph: contracts/IjazahNFT.sol.all_contracts.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.IERC20Errors.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.IERC1155Errors.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.IERC721Receiver.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.ERC721Utils.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.Bytes.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.Panic.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.StorageSlot.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.Strings.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.Math.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.SafeCast.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.SignedMath.call-graph.dot
+Call Graph: contracts/IjazahNFT.sol.IjazahNFT.call-graph.dot
+
+INFO:Printers:
+
+Contract IjazahNFT is Pausable is ReentrancyGuard is AccessControl is ERC721 is ERC165 is Context (contracts/IjazahNFT.sol#22-440)
++----------------------+----------------------------------------------+----------------+
+| Variables            | Types                                        | Inherited From |
++----------------------+----------------------------------------------+----------------+
+| _name                | string                                       | ERC721         |
+| _symbol              | string                                       | ERC721         |
+| _owners              | mapping(uint256 => address)                  | ERC721         |
+| _balances            | mapping(address => uint256)                  | ERC721         |
+| _tokenApprovals      | mapping(uint256 => address)                  | ERC721         |
+| _operatorApprovals   | mapping(address => mapping(address => bool)) | ERC721         |
+| _roles               | mapping(bytes32 => AccessControl.RoleData)   | AccessControl  |
+| _paused              | bool                                         | Pausable       |
+| _dokumen             | mapping(uint256 => IjazahNFT.DokumenIjazah)  |                |
+| _hashedNinaToTokenId | mapping(bytes32 => uint256)                  |                |
+| _hashedNimToTokenId  | mapping(bytes32 => uint256)                  |                |
+| _updateHistory       | mapping(uint256 => IjazahNFT.UpdateLog[])    |                |
+| _institutions        | mapping(uint256 => IjazahNFT.Institution)    |                |
+| _nextTokenId         | uint256                                      |                |
+| _nextInstitutionId   | uint256                                      |                |
++----------------------+----------------------------------------------+----------------+
++-----------------------------------------------------------------+---------------------------------------------------+----------------+
+| Functions                                                       | Modifiers                                         | Inherited From |
++-----------------------------------------------------------------+---------------------------------------------------+----------------+
+| constructor(address)                                            |                                                   |                |
+| mintIjazah(bytes32,bytes32,string,string)                       | onlyRole, nonReentrant, whenNotPaused             |                |
+| mintIjazahForInstitution(bytes32,bytes32,string,string,uint256) | onlyRole, nonReentrant, whenNotPaused             |                |
+| batchMintIjazah(bytes32[],bytes32[],string[],string[])          | onlyRole, nonReentrant, whenNotPaused             |                |
+| updateIjazah(uint256,string)                                    | onlyRole, nonReentrant, whenNotPaused, tokenAktif |                |
+| revokeIjazah(uint256,string)                                    | onlyRole, nonReentrant, whenNotPaused, tokenAktif |                |
+| gantiRektor(address,address)                                    | onlyRole                                          |                |
+| pause()                                                         | onlyRole                                          |                |
+| unpause()                                                       | onlyRole                                          |                |
+| registerInstitution(string,address)                             | onlyRole                                          |                |
+| deactivateInstitution(uint256)                                  | onlyRole                                          |                |
+| receive()                                                       | payable                                           |                |
+| fallback()                                                      | payable                                           |                |
+| grantRole(bytes32,address)                                      | onlyRole                                          | AccessControl  |
+| revokeRole(bytes32,address)                                     | onlyRole                                          | AccessControl  |
+| renounceRole(bytes32,address)                                   |                                                   | AccessControl  |
+| approve(address,uint256)                                        |                                                   | ERC721         |
+| setApprovalForAll(address,bool)                                 |                                                   | ERC721         |
+| transferFrom(address,address,uint256)                           |                                                   | ERC721         |
+| safeTransferFrom(address,address,uint256)                       |                                                   | ERC721         |
+| safeTransferFrom(address,address,uint256,bytes)                 |                                                   | ERC721         |
++-----------------------------------------------------------------+---------------------------------------------------+----------------+
+INFO:Slither:contracts/IjazahNFT.sol analyzed (23 contracts)

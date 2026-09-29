@@ -1,0 +1,18 @@
+strict digraph {
+rankdir="LR"
+node [shape=box]
+subgraph cluster_9228_SignedMath {
+label = "SignedMath"
+"9228_ternary(bool,int256,int256)" [label="ternary(bool,int256,int256)"]
+"9228_average(int256,int256)" [label="average(int256,int256)"]
+"9228_abs(int256)" [label="abs(int256)"]
+"9228_max(int256,int256)" [label="max(int256,int256)"]
+"9228_min(int256,int256)" [label="min(int256,int256)"]
+"9228_max(int256,int256)" -> "9228_ternary(bool,int256,int256)"
+"9228_min(int256,int256)" -> "9228_ternary(bool,int256,int256)"
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}subgraph cluster_toplevel {
+label = "[Top Level]"
+}
+}

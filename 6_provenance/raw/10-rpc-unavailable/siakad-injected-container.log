@@ -1,0 +1,18 @@
+▲ Next.js 16.2.6
+- Local:         http://864f0156b4ec:3000
+- Network:       http://864f0156b4ec:3000
+✓ Ready in 0ms
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started)
+Blockchain verification error: connect ECONNREFUSED 127.0.0.1:1
+Blockchain verification error: connect ECONNREFUSED 127.0.0.1:1
+Blockchain verification error: connect ECONNREFUSED 127.0.0.1:1
+Blockchain verification error: connect ECONNREFUSED 127.0.0.1:1
+Blockchain verification error: connect ECONNREFUSED 127.0.0.1:1
+Blockchain verification error: connect ECONNREFUSED 127.0.0.1:1

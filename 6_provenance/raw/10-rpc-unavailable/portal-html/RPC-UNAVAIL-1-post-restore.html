@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="[REDACTED]">
+    <title>Verifikasi Ijazah Digital — Sistem Verifikasi Ijazah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-sidebar: #0f172a;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --success: #16a34a;
+            --warning: #ca8a04;
+            --danger: #dc2626;
+            --info: #2563eb;
+            --accent: #38bdf8;
+            --radius: 6px;
+            --sidebar-w: 260px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Public portal styles */
+        .portal-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: radial-gradient(ellipse at top, #f1f5f9 0%, var(--bg) 70%);
+        }
+
+        .portal-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .portal-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .portal-brand-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .portal-brand h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .portal-brand small {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .portal-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Admin layout */
+        .admin-layout { display: flex; }
+
+        .sidebar {
+            width: var(--sidebar-w);
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-brand {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-brand h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .sidebar-brand small {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .sidebar-nav { padding: 1rem 0.75rem; flex: 1; }
+        .sidebar-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.75rem;
+            border-radius: 8px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 2px;
+        }
+
+        .nav-link:hover { background: rgba(255,255,255,0.05); color: #ffffff; }
+        .nav-link.active { background: var(--primary); color: #ffffff; }
+
+        .sidebar-footer {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .admin-main {
+            margin-left: var(--sidebar-w);
+            flex: 1;
+            min-height: 100vh;
+        }
+
+        .topbar {
+            height: 60px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+
+        .topbar h1 { font-size: 1.1rem; font-weight: 700; }
+        .page-content { padding: 1.5rem 2rem; }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-title { font-size: 0.88rem; font-weight: 700; }
+        .card-body { padding: 1.25rem; }
+
+        /* Stat Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .stat-value { font-size: 1.5rem; font-weight: 800; line-height: 1; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+        /* Table */
+        table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        th {
+            text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-muted);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em;
+            border-bottom: 1px solid var(--border); white-space: nowrap;
+        }
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        tr:hover td { background: #f1f5f9; }
+
+        /* Badge */
+        .badge {
+            display: inline-flex; align-items: center; padding: 0.2rem 0.6rem;
+            border-radius: 50px; font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+        }
+        .badge-success { background: rgba(16,185,129,0.15); color: var(--success); }
+        .badge-warning { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .badge-danger { background: rgba(239,68,68,0.15); color: var(--danger); }
+        .badge-info { background: rgba(59,130,246,0.15); color: var(--info); }
+        .badge-secondary { background: rgba(100,116,139,0.15); color: var(--text-muted); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1rem;
+            border-radius: 8px; font-size: 0.8rem; font-weight: 600; border: none;
+            cursor: pointer; text-decoration: none; transition: all 0.2s;
+        }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-sm { padding: 0.35rem 0.7rem; font-size: 0.72rem; }
+
+        /* Forms */
+        .form-control {
+            width: 100%; padding: 0.6rem 0.85rem; background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text); font-size: 0.82rem; font-family: inherit;
+            outline: none; transition: border-color 0.2s;
+        }
+        .form-control:focus { border-color: var(--primary); }
+
+        /* Alert */
+        .alert {
+            padding: 0.85rem 1.15rem; border-radius: 8px; font-size: 0.82rem;
+            margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+        }
+        .alert-success { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); color: var(--success); }
+        .alert-danger { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: var(--danger); }
+
+        /* Verification specific */
+        .verify-card {
+            width: 100%;
+            max-width: 540px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .verify-card h1 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .verify-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .verify-input {
+            flex: 1;
+            padding: 0.85rem 1.15rem;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: 'Inter', monospace;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .verify-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(6,182,212,0.1);
+        }
+
+        .verify-btn {
+            padding: 0.85rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .verify-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(6,182,212,0.3);
+        }
+
+        /* Result styles */
+        .result-card {
+            width: 100%;
+            max-width: 680px;
+        }
+
+        .result-header {
+            padding: 2rem;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .result-header.valid {
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.1));
+            border: 1px solid rgba(16,185,129,0.2);
+        }
+
+        .result-header.invalid {
+            background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(245,158,11,0.1));
+            border: 1px solid rgba(239,68,68,0.2);
+        }
+
+        .result-icon {
+            font-size: 3.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .result-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .result-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .result-body {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+            padding: 1.5rem;
+        }
+
+        .result-section {
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .result-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.35rem 0;
+            font-size: 0.82rem;
+        }
+
+        .result-row-label { color: var(--text-muted); }
+        .result-row-value { font-weight: 600; }
+
+        .user-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 700; color: #fff;
+        }
+
+        .toolbar { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+
+        .pagination {
+            display: flex; align-items: center; justify-content: center; gap: 0.35rem; padding: 1rem;
+        }
+        .pagination a, .pagination span {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 32px; height: 32px; padding: 0 0.5rem; border-radius: 6px;
+            font-size: 0.75rem; text-decoration: none; color: var(--text-muted); transition: all 0.2s;
+        }
+        .pagination a:hover { background: rgba(6,182,212,0.1); color: var(--primary); }
+        .pagination .active span { background: var(--primary); color: #fff; }
+
+        .login-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .login-card {
+            width: 100%; max-width: 420px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem;
+        }
+        .login-card h1 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.25rem; }
+        .login-card .subtitle { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-label { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <style>
+    .portal-wrapper {
+        /* Menggunakan background default dari app.blade.php */
+    }
+    
+    .verify-container {
+        width: 100%;
+        max-width: 900px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 3rem;
+        margin-top: 2rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+
+    .tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 0.85rem 2rem;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+        color: #fff !important;
+        background: var(--primary);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    .search-btn {
+        width: 100%;
+        padding: 0.85rem;
+        background: var(--warning);
+        color: #000;
+        font-weight: 800;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1.5rem;
+        transition: transform 0.2s;
+    }
+
+    .search-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .form-group-flex {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background: transparent;
+    }
+    
+    .form-control-inline {
+        flex: 1;
+        border: 1px solid var(--border);
+        padding: 0.85rem 1.15rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .form-control-inline:focus {
+        border-color: var(--primary);
+    }
+
+    .captcha-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #333;
+        white-space: nowrap;
+    }
+
+    .captcha-input {
+        width: 80px;
+        border: 1px solid #e2e8f0;
+        padding: 0.75rem;
+        border-radius: 6px;
+        text-align: center;
+        outline: none;
+    }
+
+    .captcha-refresh {
+        background: none;
+        border: none;
+        color: var(--primary);
+        cursor: pointer;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-btn-inline {
+        background: #93c5fd;
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        padding: 0.85rem 2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+        white-space: nowrap;
+    }
+
+    .search-btn-inline:hover {
+        background: #60a5fa;
+    }
+
+    .alert {
+        padding: 1rem;
+        border-radius: 8px;
+        background: #fee2e2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .file-drop-area {
+        border: 2px dashed var(--border);
+        border-radius: 12px;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+        background: rgba(0,0,0,0.02);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .file-drop-area:hover {
+        border-color: var(--primary);
+    }
+
+    .modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center;
+        z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s;
+    }
+
+    .modal-overlay.show { opacity: 1; visibility: visible; }
+    
+    .modal-content {
+        background: #fff; color: #000; border-radius: 16px;
+        width: 100%; max-width: 500px; padding: 2rem; position: relative;
+        transform: translateY(20px); transition: all 0.3s;
+    }
+    .modal-overlay.show .modal-content { transform: translateY(0); }
+    
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666; }
+    .modal-icon { font-size: 4rem; text-align: center; color: var(--success); margin-bottom: 1rem; }
+    .modal-icon.error { color: var(--danger); }
+    .modal-title { text-align: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; }
+    
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .data-table td { padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { font-weight: 600; color: #555; width: 40%; }
+    
+    .badge-status {
+        display: inline-block; padding: 0.35rem 1rem; border-radius: 50px;
+        font-weight: 700; font-size: 0.8rem; color: #fff;
+    }
+    .badge-status.lulus { background: var(--success); }
+    .badge-status.aktif { background: var(--warning); }
+</style>
+
+<div class="portal-wrapper">
+    <header class="portal-header">
+        <div class="portal-brand">
+            <div class="portal-brand-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2s5 1 7 2a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+                <h1>SIVIL</h1>
+                <small>Sistem Verifikasi Ijazah & Sertifikat</small>
+            </div>
+        </div>
+        <a href="http://localhost:8001/login" class="btn btn-outline btn-sm">Admin Panel</a>
+    </header>
+
+    <main class="portal-main flex-column" style="flex-direction: column;">
+        <div style="text-align: center; margin-bottom: 1rem;">
+            <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">VERIFIKASI NOMOR IJAZAH & NIM</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                Pastikan keaslian Ijazah melalui SIVIL dan jaringan Blockchain. Anda dapat mencari menggunakan NIM/Nomor Ijazah.
+            </p>
+        </div>
+
+        <div class="verify-container">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('ijazah')">Nomor Ijazah</button>
+                <button class="tab-btn" onclick="switchTab('nim')">NIM / NISN</button>
+            </div>
+
+            <!-- Form Pencarian Nomor Ijazah -->
+            <div id="tab-ijazah" class="tab-content active">
+                <form id="form-ijazah" method="POST" action="http://localhost:8001/verifikasi" onsubmit="return validateCaptcha('ijazah')">
+                    <input type="hidden" name="_token" value="[REDACTED]" autocomplete="off">                    <input type="hidden" name="search_type" value="ijazah">
+                    <div class="form-group-flex">
+                        <input type="text" name="nama" class="form-control-inline" placeholder="Nama Pemilik Ijazah" required>
+                        <input type="text" name="nina" class="form-control-inline" placeholder="Nomor Ijazah Nasional" required>
+                        
+                        <div class="captcha-container">
+                            <span id="captcha-math-ijazah">6 + 6 =</span>
+                            <input type="number" id="captcha-ans-ijazah" class="captcha-input" placeholder="Jawab" required>
+                            <button type="button" class="captcha-refresh" onclick="generateCaptcha('ijazah')" title="Refresh Captcha">↻</button>
+                        </div>
+
+                        <button type="submit" class="search-btn-inline">Verifikasi</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Form Pencarian NIM -->
+            <div id="tab-nim" class="tab-content">
+                <form id="form-nim" method="POST" action="http://localhost:8001/verifikasi" onsubmit="return validateCaptcha('nim')">
+                    <input type="hidden" name="_token" value="[REDACTED]" autocomplete="off">                    <input type="hidden" name="search_type" value="nim">
+                    <div class="form-group-flex">
+                        <input type="text" name="nim" class="form-control-inline" placeholder="NISN / NIM" required>
+                        <input type="date" name="tanggal_lahir" class="form-control-inline" placeholder="Tanggal Lahir" required>
+                        
+                        <div class="captcha-container">
+                            <span id="captcha-math-nim">14 + 1 =</span>
+                            <input type="number" id="captcha-ans-nim" class="captcha-input" placeholder="Jawab" required>
+                            <button type="button" class="captcha-refresh" onclick="generateCaptcha('nim')" title="Refresh Captcha">↻</button>
+                        </div>
+
+                        <button type="submit" class="search-btn-inline">Cari</button>
+                    </div>
+                </form>
+            </div>
+            
+                    </div>
+    </main>
+</div>
+
+<!-- Modal Hasil Verifikasi -->
+<div class="modal-overlay" id="resultModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div id="modalIcon" class="modal-icon"></div>
+        <div id="modalTitle" class="modal-title">Data Ditemukan</div>
+        
+        <table class="data-table" id="dataTable" style="display:none;">
+            <tbody>
+                <tr><td>Token ID</td><td id="resTokenId" style="font-weight: bold; color: #555;"></td></tr>
+                <tr><td>NIM</td><td id="resNim"></td></tr>
+                <tr><td>Nama</td><td id="resNama"></td></tr>
+                <tr><td>Perguruan Tinggi</td><td id="resPt"></td></tr>
+                <tr><td>Program Studi</td><td id="resProdi"></td></tr>
+                <tr><td>Nomor Ijazah</td><td id="resNomor"></td></tr>
+                <tr><td>Status Ijazah</td><td><span class="badge-status" id="resStatus"></span></td></tr>
+                <tr id="rowRevokeReason" style="display:none;"><td style="color: var(--danger);">Alasan Revoke</td><td id="resRevokeReason" style="color: var(--danger); font-style: italic;"></td></tr>
+                <tr><td>TxHash Mint</td><td id="resHash" style="font-family:monospace; font-size:0.75rem;"></td></tr>
+                <tr id="rowRevokeHash" style="display:none;"><td style="color: var(--danger);">TxHash Revoke</td><td id="resRevokeHash" style="font-family:monospace; font-size:0.75rem;"></td></tr>
+                <tr id="rowRevokeDate" style="display:none;"><td style="color: var(--danger);">Direvoke pada</td><td id="resRevokeDate"></td></tr>
+            </tbody>
+        </table>
+
+        <div id="errorMsg" style="display:none; text-align:center; color: var(--danger); margin-top:1rem;"></div>
+    </div>
+</div>
+
+<script>
+    let captchas = { ijazah: 0, nim: 0 };
+
+    function generateCaptcha(tab) {
+        const a = Math.floor(Math.random() * 20) + 1;
+        const b = Math.floor(Math.random() * 20) + 1;
+        captchas[tab] = a + b;
+        document.getElementById(`captcha-math-${tab}`).innerText = `${a} + ${b} =`;
+        document.getElementById(`captcha-ans-${tab}`).value = '';
+    }
+
+    function validateCaptcha(tab) {
+        const ans = parseInt(document.getElementById(`captcha-ans-${tab}`).value);
+        if (ans !== captchas[tab]) {
+            alert('Jawaban matematika salah! Silakan coba lagi.');
+            generateCaptcha(tab);
+            return false;
+        }
+        return true;
+    }
+
+    function switchTab(tab) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        
+        document.getElementById(`tab-${tab}`).classList.add('active');
+        // Find the button that called this and set it active
+        event.currentTarget.classList.add('active');
+        
+        generateCaptcha(tab);
+    }
+
+    // Initialize captchas on load
+    document.addEventListener("DOMContentLoaded", function() {
+        generateCaptcha('ijazah');
+        generateCaptcha('nim');
+    });
+    function showModal(isSuccess, data, message, sivilStatus) {
+        const modal = document.getElementById('resultModal');
+        const icon = document.getElementById('modalIcon');
+        const title = document.getElementById('modalTitle');
+        const table = document.getElementById('dataTable');
+        const errorMsg = document.getElementById('errorMsg');
+
+        modal.classList.add('show');
+
+        if(isSuccess) {
+            const isActive = data.blockchain_data?.is_active ?? false;
+            
+            if (sivilStatus === 'academic_only') {
+                icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>';
+                icon.className = 'modal-icon';
+                title.innerText = 'Status Mahasiswa';
+            } else if (isActive) {
+                icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>';
+                icon.className = 'modal-icon';
+                title.innerText = 'Data Terverifikasi';
+            } else {
+                icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning);"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
+                icon.className = 'modal-icon';
+                icon.style.color = 'var(--warning)';
+                title.innerText = 'Ijazah Dibatalkan / Revoked';
+            }
+            
+            table.style.display = 'table';
+            errorMsg.style.display = 'none';
+
+            let tokenId = data.blockchain_data?.token_id || '-';
+            if (sivilStatus === 'academic_only') {
+                tokenId = 'Belum diterbitkan';
+            } else if (tokenId !== '-') {
+                tokenId = '#' + tokenId;
+            }
+            
+            document.getElementById('resTokenId').innerText = tokenId;
+            document.getElementById('resNim').innerText = data.nim || '-';
+            document.getElementById('resNama').innerText = data.nama_mahasiswa || data.studentName || '-';
+            document.getElementById('resPt').innerText = data.perguruan_tinggi || data.faculty || '-';
+            document.getElementById('resProdi').innerText = data.program_studi || data.major || '-';
+            
+            if (sivilStatus === 'academic_only') {
+                document.getElementById('resNomor').innerText = 'Belum diterbitkan';
+                document.getElementById('resHash').innerText = '-';
+            } else {
+                document.getElementById('resNomor').innerText = data.nina || data.diplomaNumber || '-';
+                let txHash = data.blockchain_data?.tx_hash || data.txHash || '-';
+                if (txHash !== '-' && txHash) {
+                    const shortHash = txHash.substring(0, 10) + '...' + txHash.substring(txHash.length - 8);
+                    document.getElementById('resHash').innerHTML = `<a href="https://amoy.polygonscan.com/tx/${txHash}" target="_blank" style="color: #8b5cf6; text-decoration: none; display:inline-flex; align-items:center; gap:4px;">${shortHash} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>`;
+                } else {
+                    document.getElementById('resHash').innerText = '-';
+                }
+            }
+            
+            if (sivilStatus === 'academic_only') {
+                let statusBadgeClass = 'badge-status';
+                let acStat = data.academic_status || 'Aktif';
+                if (acStat.toLowerCase() === 'aktif') statusBadgeClass += ' aktif';
+                else statusBadgeClass += ' bg-secondary';
+                
+                document.getElementById('resStatus').innerText = acStat;
+                document.getElementById('resStatus').className = statusBadgeClass;
+                document.getElementById('resStatus').style.background = acStat.toLowerCase() === 'aktif' ? 'var(--warning)' : '#6b7280';
+                
+                document.getElementById('rowRevokeReason').style.display = 'none';
+                document.getElementById('rowRevokeHash').style.display = 'none';
+                document.getElementById('rowRevokeDate').style.display = 'none';
+            } else if (isActive) {
+                document.getElementById('resStatus').innerText = 'Lulus';
+                document.getElementById('resStatus').className = 'badge-status lulus';
+                document.getElementById('resStatus').style.background = 'var(--success)';
+                document.getElementById('rowRevokeReason').style.display = 'none';
+                document.getElementById('rowRevokeHash').style.display = 'none';
+                document.getElementById('rowRevokeDate').style.display = 'none';
+            } else {
+                document.getElementById('resStatus').innerText = '⚠️ DIREVOKE';
+                document.getElementById('resStatus').className = 'badge-status';
+                document.getElementById('resStatus').style.background = 'var(--danger)';
+                
+                document.getElementById('rowRevokeReason').style.display = '';
+                document.getElementById('resRevokeReason').innerText = data.blockchain_data?.revoke_reason || 'Tidak ada alasan diberikan';
+                
+                let revokeHash = data.blockchain_data?.revoke_tx_hash || '-';
+                if (revokeHash !== '-' && revokeHash) {
+                    const shortRevokeHash = revokeHash.substring(0, 10) + '...' + revokeHash.substring(revokeHash.length - 8);
+                    document.getElementById('resRevokeHash').innerHTML = `<a href="https://amoy.polygonscan.com/tx/${revokeHash}" target="_blank" style="color: var(--danger); text-decoration: none; display:inline-flex; align-items:center; gap:4px;">${shortRevokeHash} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>`;
+                } else {
+                    document.getElementById('resRevokeHash').innerText = '-';
+                }
+                
+                document.getElementById('rowRevokeHash').style.display = '';
+                
+                document.getElementById('rowRevokeDate').style.display = '';
+                let revokedAt = data.blockchain_data?.revoked_at;
+                if (revokedAt) {
+                    let d = new Date(revokedAt);
+                    document.getElementById('resRevokeDate').innerText = d.toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' });
+                } else {
+                    document.getElementById('resRevokeDate').innerText = '-';
+                }
+            }
+        } else {
+            icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--danger);"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>';
+            icon.className = 'modal-icon error';
+            title.innerText = 'Peringatan';
+            table.style.display = 'none';
+            errorMsg.style.display = 'block';
+            errorMsg.innerText = message || 'Dokumen atau data tidak ditemukan.';
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('resultModal').classList.remove('show');
+    }
+
+
+</script>
+
+<script>
+    // Show modal automatically if returning from text search
+    document.addEventListener("DOMContentLoaded", function() {
+        const isValid = true;
+        const sivilStatus = 'found';
+        const sivilData = {"nina":"040410582605039","nim":"20210040","nama_mahasiswa":"Eman Latupono","perguruan_tinggi":"Universitas Simulasi","program_studi":"Sistem Informasi","jenjang":"S1","tanggal_lulus":"08 Aug 2026","issued_at":"08 Aug 2026 21:16","academic_status":"Lulus"};
+        const blockchainData = {"valid":true,"is_active":true,"token_id":"1040","cid":"bafkreifg6wafsidpbir4gepgmchwrmfugs5tl3rlf2tnvnvy5gfjsic5dq","owner":"0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54","non_transferable":true,"correct_owner":true,"message":"NFT ijazah terverifikasi di blockchain Polygon (V4 - Maximum Privacy)","tx_hash":"0xdfe1cae5ae34a5be8b519698d88858676ca8c3476237131be850e194559145f6","contract_address":"0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54","revoke_reason":null,"revoke_tx_hash":null,"revoked_at":null};
+        
+        const hasValidData = isValid || (sivilData && sivilStatus === 'revoked' && blockchainData && blockchainData.is_active === false);
+
+        if(hasValidData) {
+            sivilData.blockchain_data = blockchainData;
+            showModal(true, sivilData, 'Status Ijazah', sivilStatus);
+        } else if (sivilStatus === 'academic_only' && sivilData) {
+            showModal(true, sivilData, 'Status Mahasiswa', sivilStatus);
+        } else {
+            showModal(false, null, 'Data tidak ditemukan atau tidak valid di Blockchain.');
+        }
+    });
+</script>
+
+</body>
+</html>
