@@ -669,6 +669,32 @@ Email: `andrianmaulana5612@gmail.com`
 
 ---
 
+## Repository History
+
+On 2026-09-29 the history of `main` was rewritten to remove attribution trailers
+(`Co-Authored-By`) from three commit messages. Nothing else changed: file
+contents, authors, dates and the rest of each message are identical, and each
+rewritten commit has the same git tree hash as the commit it replaces.
+
+| Original commit | Rewritten commit on `main` | Tree (identical) |
+|---|---|---|
+| `83b4f87` | `936d6f1` | `aa39e80` |
+| `3b709af` | `485c260` | `b5248d6` |
+| `7f318f4` | `09bbc38` | `1817a80` |
+
+The release tags were **not** moved. `v1.0.2` still points to `3b709af` and
+`v1.0.3` still points to `7f318f4`, so they match their Zenodo archives exactly:
+v1.0.2 is `10.5281/zenodo.22874585` and v1.0.3 is `10.5281/zenodo.23039695`,
+both under concept DOI `10.5281/zenodo.22142508`. The root folder of the v1.0.2
+zip is named after `3b709af`.
+
+The original history is kept on the branch `archive/v1.0.3`, which points to
+`7f318f4`. Because the rewritten commits have identical trees, `main` is
+content-equivalent to that history, but the tags are no longer ancestors of
+`main`. To inspect the exact archived state, check out the tag.
+
+---
+
 ## Disclaimer
 
 This repository is an academic proof-of-concept replication package.
