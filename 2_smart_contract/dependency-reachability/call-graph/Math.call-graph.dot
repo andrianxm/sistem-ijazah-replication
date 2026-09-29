@@ -1,0 +1,99 @@
+strict digraph {
+rankdir="LR"
+node [shape=box]
+subgraph cluster_7319_Math {
+label = "Math"
+"7319_tryMul(uint256,uint256)" [label="tryMul(uint256,uint256)"]
+"7319_min(uint256,uint256)" [label="min(uint256,uint256)"]
+"7319_invMod(uint256,uint256)" [label="invMod(uint256,uint256)"]
+"7319_invModPrime(uint256,uint256)" [label="invModPrime(uint256,uint256)"]
+"7319_log10(uint256)" [label="log10(uint256)"]
+"7319_log2(uint256)" [label="log2(uint256)"]
+"7319_ternary(bool,uint256,uint256)" [label="ternary(bool,uint256,uint256)"]
+"7319_tryAdd(uint256,uint256)" [label="tryAdd(uint256,uint256)"]
+"7319_add512(uint256,uint256)" [label="add512(uint256,uint256)"]
+"7319_unsignedRoundsUp(Math.Rounding)" [label="unsignedRoundsUp(Math.Rounding)"]
+"7319_average(uint256,uint256)" [label="average(uint256,uint256)"]
+"7319_log10(uint256,Math.Rounding)" [label="log10(uint256,Math.Rounding)"]
+"7319_mulDiv(uint256,uint256,uint256,Math.Rounding)" [label="mulDiv(uint256,uint256,uint256,Math.Rounding)"]
+"7319_modExp(uint256,uint256,uint256)" [label="modExp(uint256,uint256,uint256)"]
+"7319_trySub(uint256,uint256)" [label="trySub(uint256,uint256)"]
+"7319_modExp(bytes,bytes,bytes)" [label="modExp(bytes,bytes,bytes)"]
+"7319_log2(uint256,Math.Rounding)" [label="log2(uint256,Math.Rounding)"]
+"7319_mul512(uint256,uint256)" [label="mul512(uint256,uint256)"]
+"7319_saturatingAdd(uint256,uint256)" [label="saturatingAdd(uint256,uint256)"]
+"7319_sqrt(uint256,Math.Rounding)" [label="sqrt(uint256,Math.Rounding)"]
+"7319_saturatingSub(uint256,uint256)" [label="saturatingSub(uint256,uint256)"]
+"7319__zeroBytes(bytes)" [label="_zeroBytes(bytes)"]
+"7319_mulShr(uint256,uint256,uint8)" [label="mulShr(uint256,uint256,uint8)"]
+"7319_max(uint256,uint256)" [label="max(uint256,uint256)"]
+"7319_log256(uint256,Math.Rounding)" [label="log256(uint256,Math.Rounding)"]
+"7319_ceilDiv(uint256,uint256)" [label="ceilDiv(uint256,uint256)"]
+"7319_mulDiv(uint256,uint256,uint256)" [label="mulDiv(uint256,uint256,uint256)"]
+"7319_saturatingMul(uint256,uint256)" [label="saturatingMul(uint256,uint256)"]
+"7319_tryModExp(bytes,bytes,bytes)" [label="tryModExp(bytes,bytes,bytes)"]
+"7319_clz(uint256)" [label="clz(uint256)"]
+"7319_log256(uint256)" [label="log256(uint256)"]
+"7319_tryDiv(uint256,uint256)" [label="tryDiv(uint256,uint256)"]
+"7319_tryMod(uint256,uint256)" [label="tryMod(uint256,uint256)"]
+"7319_sqrt(uint256)" [label="sqrt(uint256)"]
+"7319_tryModExp(uint256,uint256,uint256)" [label="tryModExp(uint256,uint256,uint256)"]
+"7319_mulShr(uint256,uint256,uint8,Math.Rounding)" [label="mulShr(uint256,uint256,uint8,Math.Rounding)"]
+"7319_log256(uint256,Math.Rounding)" -> "7319_log256(uint256)"
+"7319_mulShr(uint256,uint256,uint8,Math.Rounding)" -> "7319_unsignedRoundsUp(Math.Rounding)"
+"7319_saturatingSub(uint256,uint256)" -> "7319_trySub(uint256,uint256)"
+"7319_saturatingMul(uint256,uint256)" -> "7319_tryMul(uint256,uint256)"
+"7319_sqrt(uint256,Math.Rounding)" -> "7319_unsignedRoundsUp(Math.Rounding)"
+"7319_invModPrime(uint256,uint256)" -> "7319_modExp(uint256,uint256,uint256)"
+"7319_mulDiv(uint256,uint256,uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319_log2(uint256,Math.Rounding)" -> "7319_unsignedRoundsUp(Math.Rounding)"
+"7319_saturatingMul(uint256,uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319_log10(uint256,Math.Rounding)" -> "7319_log10(uint256)"
+"7319_modExp(bytes,bytes,bytes)" -> "7319_tryModExp(bytes,bytes,bytes)"
+"7319_log10(uint256,Math.Rounding)" -> "7319_unsignedRoundsUp(Math.Rounding)"
+"7319_mulDiv(uint256,uint256,uint256,Math.Rounding)" -> "7319_mulDiv(uint256,uint256,uint256)"
+"7319_log256(uint256,Math.Rounding)" -> "7319_unsignedRoundsUp(Math.Rounding)"
+"7319_min(uint256,uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319__zeroBytes(bytes)" -> "7319_saturatingSub(uint256,uint256)"
+"7319_saturatingAdd(uint256,uint256)" -> "7319_tryAdd(uint256,uint256)"
+"7319_clz(uint256)" -> "7319_log2(uint256)"
+"7319_saturatingAdd(uint256,uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319_mulDiv(uint256,uint256,uint256)" -> "7319_mul512(uint256,uint256)"
+"7319_invMod(uint256,uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319_max(uint256,uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319_tryModExp(bytes,bytes,bytes)" -> "7319__zeroBytes(bytes)"
+"7319_mulShr(uint256,uint256,uint8,Math.Rounding)" -> "7319_mulShr(uint256,uint256,uint8)"
+"7319_modExp(uint256,uint256,uint256)" -> "7319_tryModExp(uint256,uint256,uint256)"
+"7319_mulDiv(uint256,uint256,uint256,Math.Rounding)" -> "7319_unsignedRoundsUp(Math.Rounding)"
+"7319_log2(uint256,Math.Rounding)" -> "7319_log2(uint256)"
+"7319_sqrt(uint256,Math.Rounding)" -> "7319_sqrt(uint256)"
+"7319_clz(uint256)" -> "7319_ternary(bool,uint256,uint256)"
+"7319_mulShr(uint256,uint256,uint8)" -> "7319_mul512(uint256,uint256)"
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"staticcall(uint256,uint256,uint256,uint256,uint256,uint256)" 
+"abi.encodePacked()" 
+"gas()" 
+"mstore(uint256,uint256)" 
+"byte(uint256,uint256)" 
+"mulmod(uint256,uint256,uint256)" 
+"mload(uint256)" 
+"7319__zeroBytes(bytes)" -> "mload(uint256)"
+"7319_tryModExp(uint256,uint256,uint256)" -> "gas()"
+"7319_tryModExp(bytes,bytes,bytes)" -> "gas()"
+"7319_mulDiv(uint256,uint256,uint256,Math.Rounding)" -> "mulmod(uint256,uint256,uint256)"
+"7319_tryModExp(bytes,bytes,bytes)" -> "mstore(uint256,uint256)"
+"7319_mulDiv(uint256,uint256,uint256)" -> "mulmod(uint256,uint256,uint256)"
+"7319_tryModExp(uint256,uint256,uint256)" -> "staticcall(uint256,uint256,uint256,uint256,uint256,uint256)"
+"7319_mul512(uint256,uint256)" -> "mulmod(uint256,uint256,uint256)"
+"7319_tryModExp(uint256,uint256,uint256)" -> "mstore(uint256,uint256)"
+"7319_tryModExp(bytes,bytes,bytes)" -> "mload(uint256)"
+"7319_log2(uint256)" -> "byte(uint256,uint256)"
+"7319_tryModExp(uint256,uint256,uint256)" -> "mload(uint256)"
+"7319_mulShr(uint256,uint256,uint8,Math.Rounding)" -> "mulmod(uint256,uint256,uint256)"
+"7319_tryModExp(bytes,bytes,bytes)" -> "staticcall(uint256,uint256,uint256,uint256,uint256,uint256)"
+"7319_tryModExp(bytes,bytes,bytes)" -> "abi.encodePacked()"
+}subgraph cluster_toplevel {
+label = "[Top Level]"
+}
+}

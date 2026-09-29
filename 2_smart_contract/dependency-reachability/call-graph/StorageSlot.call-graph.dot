@@ -1,0 +1,20 @@
+strict digraph {
+rankdir="LR"
+node [shape=box]
+subgraph cluster_4831_StorageSlot {
+label = "StorageSlot"
+"4831_getBooleanSlot(bytes32)" [label="getBooleanSlot(bytes32)"]
+"4831_getBytesSlot(bytes32)" [label="getBytesSlot(bytes32)"]
+"4831_getUint256Slot(bytes32)" [label="getUint256Slot(bytes32)"]
+"4831_getStringSlot(string)" [label="getStringSlot(string)"]
+"4831_getStringSlot(bytes32)" [label="getStringSlot(bytes32)"]
+"4831_getBytesSlot(bytes)" [label="getBytesSlot(bytes)"]
+"4831_getAddressSlot(bytes32)" [label="getAddressSlot(bytes32)"]
+"4831_getInt256Slot(bytes32)" [label="getInt256Slot(bytes32)"]
+"4831_getBytes32Slot(bytes32)" [label="getBytes32Slot(bytes32)"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+}subgraph cluster_toplevel {
+label = "[Top Level]"
+}
+}

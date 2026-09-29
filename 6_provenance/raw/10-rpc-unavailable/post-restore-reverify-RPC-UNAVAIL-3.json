@@ -1,0 +1,28 @@
+{
+  "case_id": "RPC-UNAVAIL-3",
+  "purpose": "Satu verifikasi ulang terdokumentasi setelah post_restore pertama gagal karena galat transport RPC publik (missing revert data); baris CSV tidak diubah",
+  "timestamp_start": "2026-09-29T12:12:31.210Z",
+  "timestamp_end": "2026-09-29T12:12:32.659Z",
+  "latency_ms": 1449,
+  "nim": "20210120",
+  "token_id": 1120,
+  "registry_status": "aktif",
+  "http_status": 200,
+  "is_valid": true,
+  "final_verification": "valid",
+  "blockchain_valid": true,
+  "blockchain_is_active": true,
+  "blockchain_message": "NFT ijazah terverifikasi di blockchain Polygon (V4 - Maximum Privacy)",
+  "log": {
+    "log_id": 153,
+    "sivil_valid": true,
+    "blockchain_valid": true,
+    "dual_verified": true
+  },
+  "first_post_restore_failure": {
+    "log_id": 150,
+    "siakad_log": "Blockchain verification error: missing revert data (action=\"call\", data=null, reason=null, transaction={ \"data\": \"0xa906002ad4fcd8afebb61fdcd3cd7e14cc24bb941b09371ffc7bdc602c33466e610af92c\", \"to\": \"0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54\" }, invocation=null, revert=null, code=CALL_EXCEPTION, version=6.17.0)",
+    "siakad_log_timestamp": "2026-09-29T12:11:50.845Z",
+    "rpc": "https://polygon-amoy.drpc.org (konfigurasi asli yang sudah dipulihkan)"
+  }
+}

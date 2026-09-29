@@ -1,0 +1,5 @@
+2026-09-29T12:11:44.890854715Z ▲ Next.js 16.2.6
+2026-09-29T12:11:44.891927397Z - Local:         http://c2cc1071a205:3000
+2026-09-29T12:11:44.891945089Z - Network:       http://c2cc1071a205:3000
+2026-09-29T12:11:44.891947947Z ✓ Ready in 0ms
+2026-09-29T12:11:50.845127473Z Blockchain verification error: missing revert data (action="call", data=null, reason=null, transaction={ "data": "0xa906002ad4fcd8afebb61fdcd3cd7e14cc24bb941b09371ffc7bdc602c33466e610af92c", "to": "0x99b047a0165ef97d585aB8C3a50E3E001B9A1e54" }, invocation=null, revert=null, code=CALL_EXCEPTION, version=6.17.0)

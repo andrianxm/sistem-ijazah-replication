@@ -65,7 +65,7 @@ b453f588ff9fb73360f0d998585cd4890db8f288eec263dfbfe9274aaccad3ef  raw/09-reverse
 b00a66ba4a2b1ea9edf2c6be6ac7dda8f51fea2dccb4f7a98f78992d8279b2be  raw/09-reverse-chainfail/receipts/REV-CHAINFAIL-4.json
 36427916ae57e425fa49c28d0d611b8316442e7309101251eedc36a550a5a2d8  raw/09-reverse-chainfail/receipts/REV-CHAINFAIL-5.json
 beb0756fc546244962fca7c987646726010bba9eac62258a3c76125df8eeb120  raw/09-reverse-chainfail/results.csv
-e8fbbc010c5520ec6961148669fb546224e842c4d0d52975d8b8e36c58a22468  raw/09-reverse-chainfail/validation-report.json
+b61c15f4599e65c2c379d214d64c13b8da5c7330c4cf7d6d4281d57886bcb5af  raw/09-reverse-chainfail/validation-report.json
 3504ba71b9914f486f87450727ad03d63eae015be3cda6005664a7373f44697a  raw/09-reverse-chainfail/run-attempt-aborted.json
 782638cf930b3c86919898555078be5ca7bf8dc988e8953a0c730e3e61e69629  raw/09-reverse-chainfail/run.json
 ```
@@ -138,6 +138,15 @@ Two column semantics are worth stating explicitly:
    unaffected: 212 students / 200 diplomas / 200 tokens in `#1001–#1200` before
    and after (`audit.json -> bookkeeping_before`, `bookkeeping_after`).
    The recorded five cases therefore use tokens `1025, 1026, 1027, 1028, 1023`.
+   Because the aborted attempt had already been assigned the case identifier
+   `REV-CHAINFAIL-1`, its on-chain revoke reason carries that label, and the
+   re-run then assigned the same label to token `1025`. Two transactions on the
+   contract therefore read `REV-CHAINFAIL-1`; only the one on token `1025`
+   corresponds to a row in the measurement table. Counted over this experiment
+   the contract records six `revokeIjazah` calls, in blocks 48103763 to
+   48103898. Earlier revocation experiments account for a further fourteen,
+   listed in `19_transaksi_revoke_final_14.csv`, so the issued range
+   `#1001-#1200` holds twenty inactive tokens in total.
 
 2. **Read hardening after that abort.** Chain reads were given bounded retries
    and, from the third attempt, a second independent RPC endpoint

@@ -101,6 +101,8 @@ The contract implements role-based access control for authorised credential oper
 
 > A fresh deployment will produce a different contract address, transaction history, token history, and transaction hashes. The address above identifies the deployment used for the reported experiments.
 
+`dependency-reachability/` shows, using a Slither call-graph closure and the deployed-bytecode source map, that the OpenZeppelin `Math.sol` findings in the Slither report cannot be reached from any entry point of the deployed contract. See its `README.md`.
+
 Never commit private keys, API secrets, or wallet recovery phrases to the repository.
 
 ---
@@ -235,6 +237,7 @@ Contents include:
 - `EXCLUDED.md` — documents evidence or files intentionally excluded from the public release package.
 - `scripts/` — the same sixteen test and builder scripts also present in `5_test_scripts/`; duplicated here so that `checksums.sha256` verifies cleanly.
 - `security-static/` — Solidity source, Slither report, compiler settings, and toolchain versions.
+- `ADDENDUM_09_REVERSE_CHAINFAIL.md`, `ADDENDUM_10_RPC_UNAVAILABLE.md` — experiments added after the package was sealed (reverse chain-failure revocation; verification with the RPC path unavailable), with their own SHA-256 lists. The sealed manifests and `checksums.sha256` are intentionally left unchanged.
 
 > **Note on duplication.** The `scripts/` directory in `6_provenance/` duplicates `5_test_scripts/`, and several CSV files duplicate those in `3_raw_measurements/`. This is intentional: `checksums.sha256` was generated over the complete package, and removing files would cause checksum verification to fail.
 

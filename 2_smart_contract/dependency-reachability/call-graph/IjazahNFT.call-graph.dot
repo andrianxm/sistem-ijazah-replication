@@ -1,0 +1,305 @@
+strict digraph {
+rankdir="LR"
+node [shape=box]
+subgraph cluster_2784_IAccessControl {
+label = "IAccessControl"
+"2784_renounceRole(bytes32,address)" [label="renounceRole(bytes32,address)"]
+"2784_getRoleAdmin(bytes32)" [label="getRoleAdmin(bytes32)"]
+"2784_grantRole(bytes32,address)" [label="grantRole(bytes32,address)"]
+"2784_hasRole(bytes32,address)" [label="hasRole(bytes32,address)"]
+"2784_revokeRole(bytes32,address)" [label="revokeRole(bytes32,address)"]
+}subgraph cluster_1508_AccessControl {
+label = "AccessControl"
+"1508_getRoleAdmin(bytes32)" [label="getRoleAdmin(bytes32)"]
+"1508_revokeRole(bytes32,address)" [label="revokeRole(bytes32,address)"]
+"1508__setRoleAdmin(bytes32,bytes32)" [label="_setRoleAdmin(bytes32,bytes32)"]
+"1508__grantRole(bytes32,address)" [label="_grantRole(bytes32,address)"]
+"1508__checkRole(bytes32)" [label="_checkRole(bytes32)"]
+"1508_renounceRole(bytes32,address)" [label="renounceRole(bytes32,address)"]
+"1508__revokeRole(bytes32,address)" [label="_revokeRole(bytes32,address)"]
+"1508_supportsInterface(bytes4)" [label="supportsInterface(bytes4)"]
+"1508_grantRole(bytes32,address)" [label="grantRole(bytes32,address)"]
+"1508__checkRole(bytes32,address)" [label="_checkRole(bytes32,address)"]
+"1508_hasRole(bytes32,address)" [label="hasRole(bytes32,address)"]
+"1508__grantRole(bytes32,address)" -> "1508_hasRole(bytes32,address)"
+"1508_grantRole(bytes32,address)" -> "1508_onlyRole(bytes32)"
+"1508_renounceRole(bytes32,address)" -> "1508__revokeRole(bytes32,address)"
+"1508__revokeRole(bytes32,address)" -> "1508__msgSender()"
+"1508_renounceRole(bytes32,address)" -> "1508__msgSender()"
+"1508__checkRole(bytes32,address)" -> "1508_hasRole(bytes32,address)"
+"1508__revokeRole(bytes32,address)" -> "1508_hasRole(bytes32,address)"
+"1508_grantRole(bytes32,address)" -> "1508_getRoleAdmin(bytes32)"
+"1508__checkRole(bytes32)" -> "1508__msgSender()"
+"1508_supportsInterface(bytes4)" -> "1508_supportsInterface(bytes4)"
+"1508_revokeRole(bytes32,address)" -> "1508__revokeRole(bytes32,address)"
+"1508__checkRole(bytes32)" -> "1508__checkRole(bytes32,address)"
+"1508__grantRole(bytes32,address)" -> "1508__msgSender()"
+"1508_grantRole(bytes32,address)" -> "1508__grantRole(bytes32,address)"
+"1508__setRoleAdmin(bytes32,bytes32)" -> "1508_getRoleAdmin(bytes32)"
+"1508_revokeRole(bytes32,address)" -> "1508_getRoleAdmin(bytes32)"
+"1508_revokeRole(bytes32,address)" -> "1508_onlyRole(bytes32)"
+}subgraph cluster_4843_IERC165 {
+label = "IERC165"
+"4843_supportsInterface(bytes4)" [label="supportsInterface(bytes4)"]
+}subgraph cluster_2701_ReentrancyGuard {
+label = "ReentrancyGuard"
+"2701__reentrancyGuardEntered()" [label="_reentrancyGuardEntered()"]
+"2701__reentrancyGuardStorageSlot()" [label="_reentrancyGuardStorageSlot()"]
+"2701__nonReentrantAfter()" [label="_nonReentrantAfter()"]
+"2701_constructor()" [label="constructor()"]
+"2701__nonReentrantBeforeView()" [label="_nonReentrantBeforeView()"]
+"2701__nonReentrantBefore()" [label="_nonReentrantBefore()"]
+"2701__nonReentrantBeforeView()" -> "2701__reentrancyGuardEntered()"
+"2701_constructor()" -> "2701__reentrancyGuardStorageSlot()"
+"2701__reentrancyGuardEntered()" -> "2701__reentrancyGuardStorageSlot()"
+"2701__nonReentrantBefore()" -> "2701__nonReentrantBeforeView()"
+"2701__nonReentrantBefore()" -> "2701__reentrancyGuardStorageSlot()"
+"2701__nonReentrantAfter()" -> "2701__reentrancyGuardStorageSlot()"
+}subgraph cluster_2480_ERC721 {
+label = "ERC721"
+"2480__safeMint(address,uint256)" [label="_safeMint(address,uint256)"]
+"2480_name()" [label="name()"]
+"2480__isAuthorized(address,address,uint256)" [label="_isAuthorized(address,address,uint256)"]
+"2480_symbol()" [label="symbol()"]
+"2480__checkAuthorized(address,address,uint256)" [label="_checkAuthorized(address,address,uint256)"]
+"2480_transferFrom(address,address,uint256)" [label="transferFrom(address,address,uint256)"]
+"2480__approve(address,uint256,address,bool)" [label="_approve(address,uint256,address,bool)"]
+"2480_approve(address,uint256)" [label="approve(address,uint256)"]
+"2480__safeMint(address,uint256,bytes)" [label="_safeMint(address,uint256,bytes)"]
+"2480_getApproved(uint256)" [label="getApproved(uint256)"]
+"2480__approve(address,uint256,address)" [label="_approve(address,uint256,address)"]
+"2480__baseURI()" [label="_baseURI()"]
+"2480_constructor(string,string)" [label="constructor(string,string)"]
+"2480__mint(address,uint256)" [label="_mint(address,uint256)"]
+"2480__requireOwned(uint256)" [label="_requireOwned(uint256)"]
+"2480__safeTransfer(address,address,uint256,bytes)" [label="_safeTransfer(address,address,uint256,bytes)"]
+"2480_supportsInterface(bytes4)" [label="supportsInterface(bytes4)"]
+"2480__setApprovalForAll(address,address,bool)" [label="_setApprovalForAll(address,address,bool)"]
+"2480_ownerOf(uint256)" [label="ownerOf(uint256)"]
+"2480_isApprovedForAll(address,address)" [label="isApprovedForAll(address,address)"]
+"2480_tokenURI(uint256)" [label="tokenURI(uint256)"]
+"2480__transfer(address,address,uint256)" [label="_transfer(address,address,uint256)"]
+"2480__getApproved(uint256)" [label="_getApproved(uint256)"]
+"2480__update(address,uint256,address)" [label="_update(address,uint256,address)"]
+"2480__burn(uint256)" [label="_burn(uint256)"]
+"2480_balanceOf(address)" [label="balanceOf(address)"]
+"2480_safeTransferFrom(address,address,uint256)" [label="safeTransferFrom(address,address,uint256)"]
+"2480__ownerOf(uint256)" [label="_ownerOf(uint256)"]
+"2480__increaseBalance(address,uint128)" [label="_increaseBalance(address,uint128)"]
+"2480_safeTransferFrom(address,address,uint256,bytes)" [label="safeTransferFrom(address,address,uint256,bytes)"]
+"2480__safeTransfer(address,address,uint256)" [label="_safeTransfer(address,address,uint256)"]
+"2480_setApprovalForAll(address,bool)" [label="setApprovalForAll(address,bool)"]
+"2480__approve(address,uint256,address,bool)" -> "2480_isApprovedForAll(address,address)"
+"2480_safeTransferFrom(address,address,uint256,bytes)" -> "2480__msgSender()"
+"2480_getApproved(uint256)" -> "2480__requireOwned(uint256)"
+"2480__update(address,uint256,address)" -> "2480__ownerOf(uint256)"
+"2480__update(address,uint256,address)" -> "2480__approve(address,uint256,address,bool)"
+"2480__update(address,uint256,address)" -> "2480__checkAuthorized(address,address,uint256)"
+"2480_setApprovalForAll(address,bool)" -> "2480__msgSender()"
+"2480__isAuthorized(address,address,uint256)" -> "2480_isApprovedForAll(address,address)"
+"2480__approve(address,uint256,address)" -> "2480__approve(address,uint256,address,bool)"
+"2480__mint(address,uint256)" -> "2480__update(address,uint256,address)"
+"2480_transferFrom(address,address,uint256)" -> "2480__update(address,uint256,address)"
+"2480_setApprovalForAll(address,bool)" -> "2480__setApprovalForAll(address,address,bool)"
+"2480__safeTransfer(address,address,uint256,bytes)" -> "2480__msgSender()"
+"2480__isAuthorized(address,address,uint256)" -> "2480__getApproved(uint256)"
+"2480_approve(address,uint256)" -> "2480__msgSender()"
+"2480__safeMint(address,uint256)" -> "2480__safeMint(address,uint256,bytes)"
+"2480_ownerOf(uint256)" -> "2480__requireOwned(uint256)"
+"2480_tokenURI(uint256)" -> "2480__requireOwned(uint256)"
+"2480_getApproved(uint256)" -> "2480__getApproved(uint256)"
+"2480_supportsInterface(bytes4)" -> "2480_supportsInterface(bytes4)"
+"2480_tokenURI(uint256)" -> "2480__baseURI()"
+"2480_approve(address,uint256)" -> "2480__approve(address,uint256,address)"
+"2480__burn(uint256)" -> "2480__update(address,uint256,address)"
+"2480__safeMint(address,uint256,bytes)" -> "2480__msgSender()"
+"2480_transferFrom(address,address,uint256)" -> "2480__msgSender()"
+"2480__transfer(address,address,uint256)" -> "2480__update(address,uint256,address)"
+"2480__approve(address,uint256,address,bool)" -> "2480__requireOwned(uint256)"
+"2480_safeTransferFrom(address,address,uint256)" -> "2480_safeTransferFrom(address,address,uint256,bytes)"
+"2480__requireOwned(uint256)" -> "2480__ownerOf(uint256)"
+"2480__checkAuthorized(address,address,uint256)" -> "2480__isAuthorized(address,address,uint256)"
+"2480__safeTransfer(address,address,uint256,bytes)" -> "2480__transfer(address,address,uint256)"
+"2480__safeMint(address,uint256,bytes)" -> "2480__mint(address,uint256)"
+"2480_safeTransferFrom(address,address,uint256,bytes)" -> "2480_transferFrom(address,address,uint256)"
+"2480__safeTransfer(address,address,uint256)" -> "2480__safeTransfer(address,address,uint256,bytes)"
+}subgraph cluster_3120_IERC721Metadata {
+label = "IERC721Metadata"
+"3120_symbol()" [label="symbol()"]
+"3120_tokenURI(uint256)" [label="tokenURI(uint256)"]
+"3120_name()" [label="name()"]
+}subgraph cluster_1212_IjazahNFT {
+label = "IjazahNFT"
+"1212_receive()" [label="receive()"]
+"1212__update(address,uint256,address)" [label="_update(address,uint256,address)"]
+"1212__mintSingle(bytes32,bytes32,string,string,uint256)" [label="_mintSingle(bytes32,bytes32,string,string,uint256)"]
+"1212_getUpdateHistory(uint256)" [label="getUpdateHistory(uint256)"]
+"1212_getTokenIdByHashedNina(bytes32)" [label="getTokenIdByHashedNina(bytes32)"]
+"1212_getUpdateCount(uint256)" [label="getUpdateCount(uint256)"]
+"1212_revokeIjazah(uint256,string)" [label="revokeIjazah(uint256,string)"]
+"1212_updateIjazah(uint256,string)" [label="updateIjazah(uint256,string)"]
+"1212_countTotalMintedByContract()" [label="countTotalMintedByContract()"]
+"1212_mintIjazah(bytes32,bytes32,string,string)" [label="mintIjazah(bytes32,bytes32,string,string)"]
+"1212_slitherConstructorConstantVariables()" [label="slitherConstructorConstantVariables()"]
+"1212_getRevokeReason(uint256)" [label="getRevokeReason(uint256)"]
+"1212_deactivateInstitution(uint256)" [label="deactivateInstitution(uint256)"]
+"1212_getInstitutionId(uint256)" [label="getInstitutionId(uint256)"]
+"1212_pause()" [label="pause()"]
+"1212_tokenURI(uint256)" [label="tokenURI(uint256)"]
+"1212_fallback()" [label="fallback()"]
+"1212_gantiRektor(address,address)" [label="gantiRektor(address,address)"]
+"1212_getIjazahByHashedNina(bytes32)" [label="getIjazahByHashedNina(bytes32)"]
+"1212_supportsInterface(bytes4)" [label="supportsInterface(bytes4)"]
+"1212_registerInstitution(string,address)" [label="registerInstitution(string,address)"]
+"1212_slitherConstructorVariables()" [label="slitherConstructorVariables()"]
+"1212_getNextTokenId()" [label="getNextTokenId()"]
+"1212_batchMintIjazah(bytes32[],bytes32[],string[],string[])" [label="batchMintIjazah(bytes32[],bytes32[],string[],string[])"]
+"1212_unpause()" [label="unpause()"]
+"1212_getIjazahData(uint256)" [label="getIjazahData(uint256)"]
+"1212_mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)" [label="mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)"]
+"1212_getInstitution(uint256)" [label="getInstitution(uint256)"]
+"1212_constructor(address)" [label="constructor(address)"]
+"1212_getTokenIdByHashedNim(bytes32)" [label="getTokenIdByHashedNim(bytes32)"]
+"1212_deactivateInstitution(uint256)" -> "1212_onlyRole(bytes32)"
+"1212_countTotalMintedByContract()" -> "1212_balanceOf(address)"
+"1212_mintIjazah(bytes32,bytes32,string,string)" -> "1212_whenNotPaused()"
+"1212_gantiRektor(address,address)" -> "1212__grantRole(bytes32,address)"
+"1212_registerInstitution(string,address)" -> "1212_onlyRole(bytes32)"
+"1212_batchMintIjazah(bytes32[],bytes32[],string[],string[])" -> "1212_onlyRole(bytes32)"
+"1212_gantiRektor(address,address)" -> "1212_hasRole(bytes32,address)"
+"1212_constructor(address)" -> "1212_constructor(string,string)"
+"1212_pause()" -> "1212_onlyRole(bytes32)"
+"1212_revokeIjazah(uint256,string)" -> "1212_tokenAktif(uint256)"
+"1212_revokeIjazah(uint256,string)" -> "1212_onlyRole(bytes32)"
+"1212_gantiRektor(address,address)" -> "1212__revokeRole(bytes32,address)"
+"1212_getIjazahData(uint256)" -> "1212__ownerOf(uint256)"
+"1212_revokeIjazah(uint256,string)" -> "1212_nonReentrant()"
+"1212_getIjazahByHashedNina(bytes32)" -> "1212__ownerOf(uint256)"
+"1212_gantiRektor(address,address)" -> "1212_onlyRole(bytes32)"
+"1212__update(address,uint256,address)" -> "1212__update(address,uint256,address)"
+"1212__mintSingle(bytes32,bytes32,string,string,uint256)" -> "1212__mint(address,uint256)"
+"1212_batchMintIjazah(bytes32[],bytes32[],string[],string[])" -> "1212__mintSingle(bytes32,bytes32,string,string,uint256)"
+"1212__update(address,uint256,address)" -> "1212__ownerOf(uint256)"
+"1212_unpause()" -> "1212_onlyRole(bytes32)"
+"1212_unpause()" -> "1212__unpause()"
+"1212_pause()" -> "1212__pause()"
+"1212_mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)" -> "1212_nonReentrant()"
+"1212_registerInstitution(string,address)" -> "1212__grantRole(bytes32,address)"
+"1212_mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)" -> "1212_whenNotPaused()"
+"1212_mintIjazah(bytes32,bytes32,string,string)" -> "1212_nonReentrant()"
+"1212_supportsInterface(bytes4)" -> "1212_supportsInterface(bytes4)"
+"1212_revokeIjazah(uint256,string)" -> "1212_whenNotPaused()"
+"1212_mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)" -> "1212__mintSingle(bytes32,bytes32,string,string,uint256)"
+"1212_tokenURI(uint256)" -> "1212__ownerOf(uint256)"
+"1212_updateIjazah(uint256,string)" -> "1212_tokenAktif(uint256)"
+"1212_getInstitutionId(uint256)" -> "1212__ownerOf(uint256)"
+"1212_batchMintIjazah(bytes32[],bytes32[],string[],string[])" -> "1212_nonReentrant()"
+"1212_getRevokeReason(uint256)" -> "1212__ownerOf(uint256)"
+"1212_mintIjazah(bytes32,bytes32,string,string)" -> "1212__mintSingle(bytes32,bytes32,string,string,uint256)"
+"1212_mintIjazah(bytes32,bytes32,string,string)" -> "1212_onlyRole(bytes32)"
+"1212_updateIjazah(uint256,string)" -> "1212_whenNotPaused()"
+"1212_updateIjazah(uint256,string)" -> "1212_nonReentrant()"
+"1212_mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)" -> "1212_onlyRole(bytes32)"
+"1212_batchMintIjazah(bytes32[],bytes32[],string[],string[])" -> "1212_whenNotPaused()"
+"1212_constructor(address)" -> "1212__grantRole(bytes32,address)"
+"1212_updateIjazah(uint256,string)" -> "1212_onlyRole(bytes32)"
+"1212_getUpdateHistory(uint256)" -> "1212__ownerOf(uint256)"
+}subgraph cluster_3092_IERC721 {
+label = "IERC721"
+"3092_safeTransferFrom(address,address,uint256,bytes)" [label="safeTransferFrom(address,address,uint256,bytes)"]
+"3092_transferFrom(address,address,uint256)" [label="transferFrom(address,address,uint256)"]
+"3092_getApproved(uint256)" [label="getApproved(uint256)"]
+"3092_ownerOf(uint256)" [label="ownerOf(uint256)"]
+"3092_approve(address,uint256)" [label="approve(address,uint256)"]
+"3092_isApprovedForAll(address,address)" [label="isApprovedForAll(address,address)"]
+"3092_setApprovalForAll(address,bool)" [label="setApprovalForAll(address,bool)"]
+"3092_safeTransferFrom(address,address,uint256)" [label="safeTransferFrom(address,address,uint256)"]
+"3092_balanceOf(address)" [label="balanceOf(address)"]
+}subgraph cluster_2838_ERC165 {
+label = "ERC165"
+"2838_supportsInterface(bytes4)" [label="supportsInterface(bytes4)"]
+}subgraph cluster_2588_Pausable {
+label = "Pausable"
+"2588__requirePaused()" [label="_requirePaused()"]
+"2588_paused()" [label="paused()"]
+"2588__pause()" [label="_pause()"]
+"2588__requireNotPaused()" [label="_requireNotPaused()"]
+"2588__unpause()" [label="_unpause()"]
+"2588__requireNotPaused()" -> "2588_paused()"
+"2588__requirePaused()" -> "2588_paused()"
+"2588__unpause()" -> "2588__msgSender()"
+"2588__pause()" -> "2588__msgSender()"
+"2588__pause()" -> "2588_whenNotPaused()"
+"2588__unpause()" -> "2588_whenPaused()"
+}subgraph cluster_2814_Context {
+label = "Context"
+"2814__msgData()" [label="_msgData()"]
+"2814__contextSuffixLength()" [label="_contextSuffixLength()"]
+"2814__msgSender()" [label="_msgSender()"]
+}subgraph cluster_solidity {
+label = "[Solidity]"
+"revert ERC721InvalidOwner(address)" 
+"revert ERC721InvalidReceiver(address)" 
+"revert AccessControlBadConfirmation()" 
+"revert EnforcedPause()" 
+"string.concat()" 
+"revert ERC721InvalidApprover(address)" 
+"revert ERC721NonexistentToken(uint256)" 
+"keccak256(bytes)" 
+"revert ERC721IncorrectOwner(address,uint256,address)" 
+"revert ERC721InvalidOperator(address)" 
+"revert(string)" 
+"revert ERC721InsufficientApproval(address,uint256)" 
+"revert AccessControlUnauthorizedAccount(address,bytes32)" 
+"revert ReentrancyGuardReentrantCall()" 
+"type()" 
+"require(bool,string)" 
+"revert ExpectedPause()" 
+"abi.encodePacked()" 
+"revert ERC721InvalidSender(address)" 
+"2480__mint(address,uint256)" -> "revert ERC721InvalidReceiver(address)"
+"2480__checkAuthorized(address,address,uint256)" -> "revert ERC721NonexistentToken(uint256)"
+"2480_tokenURI(uint256)" -> "string.concat()"
+"1212_getIjazahData(uint256)" -> "require(bool,string)"
+"1212_gantiRektor(address,address)" -> "require(bool,string)"
+"1212_fallback()" -> "revert(string)"
+"2480__transfer(address,address,uint256)" -> "revert ERC721NonexistentToken(uint256)"
+"1212_slitherConstructorConstantVariables()" -> "keccak256(bytes)"
+"2480__requireOwned(uint256)" -> "revert ERC721NonexistentToken(uint256)"
+"1212_receive()" -> "revert(string)"
+"2480__transfer(address,address,uint256)" -> "revert ERC721InvalidReceiver(address)"
+"2480_supportsInterface(bytes4)" -> "type()"
+"1212_tokenURI(uint256)" -> "abi.encodePacked()"
+"1212_revokeIjazah(uint256,string)" -> "require(bool,string)"
+"2480__approve(address,uint256,address,bool)" -> "revert ERC721InvalidApprover(address)"
+"2480__mint(address,uint256)" -> "revert ERC721InvalidSender(address)"
+"1212__mintSingle(bytes32,bytes32,string,string,uint256)" -> "require(bool,string)"
+"2588__requireNotPaused()" -> "revert EnforcedPause()"
+"1508_renounceRole(bytes32,address)" -> "revert AccessControlBadConfirmation()"
+"2480_transferFrom(address,address,uint256)" -> "revert ERC721InvalidReceiver(address)"
+"1212__update(address,uint256,address)" -> "require(bool,string)"
+"1212_getUpdateHistory(uint256)" -> "require(bool,string)"
+"2480__setApprovalForAll(address,address,bool)" -> "revert ERC721InvalidApprover(address)"
+"2480__transfer(address,address,uint256)" -> "revert ERC721IncorrectOwner(address,uint256,address)"
+"1508_supportsInterface(bytes4)" -> "type()"
+"2588__requirePaused()" -> "revert ExpectedPause()"
+"1508__checkRole(bytes32,address)" -> "revert AccessControlUnauthorizedAccount(address,bytes32)"
+"1212_getRevokeReason(uint256)" -> "require(bool,string)"
+"1212_deactivateInstitution(uint256)" -> "require(bool,string)"
+"1212_batchMintIjazah(bytes32[],bytes32[],string[],string[])" -> "require(bool,string)"
+"1212_mintIjazahForInstitution(bytes32,bytes32,string,string,uint256)" -> "require(bool,string)"
+"2480__setApprovalForAll(address,address,bool)" -> "revert ERC721InvalidOperator(address)"
+"2701__nonReentrantBeforeView()" -> "revert ReentrancyGuardReentrantCall()"
+"2838_supportsInterface(bytes4)" -> "type()"
+"2480__checkAuthorized(address,address,uint256)" -> "revert ERC721InsufficientApproval(address,uint256)"
+"2480__burn(uint256)" -> "revert ERC721NonexistentToken(uint256)"
+"2480_transferFrom(address,address,uint256)" -> "revert ERC721IncorrectOwner(address,uint256,address)"
+"1212_getInstitutionId(uint256)" -> "require(bool,string)"
+"1212_tokenURI(uint256)" -> "require(bool,string)"
+"2480_balanceOf(address)" -> "revert ERC721InvalidOwner(address)"
+"1212_constructor(address)" -> "require(bool,string)"
+"1212_registerInstitution(string,address)" -> "require(bool,string)"
+}subgraph cluster_toplevel {
+label = "[Top Level]"
+}
+}
